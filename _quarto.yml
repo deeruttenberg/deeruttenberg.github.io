@@ -3,7 +3,7 @@ project:
   output-dir: docs
 
 website:
-  title: "deeruttenberg.github.io"
+  title: "Dee Ruttenberg"
   navbar:
     left:
       - href: index.qmd
@@ -15,6 +15,5 @@ format:
     theme: cosmo
     css: styles.css
     toc: true
-
-editor: visual
+    page-layout: full
 
