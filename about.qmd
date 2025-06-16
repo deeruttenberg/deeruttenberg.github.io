@@ -13,7 +13,7 @@ about:
       href: https://github.com
 ---
 
-Prior to working as a Professor at Stonehill, I completed by Ph.D. at Princeton University with Dr. Sarah Kocher. My dissertation is on the collective behavior of bees, at both the individual-level and the colony-level.
+Prior to working as a Professor at Stonehill, I completed my Ph.D. at Princeton University with Dr. Sarah Kocher. My dissertation is on the collective behavior of bees, at both the individual-level and the colony-level.
 
 Over the time, I have learned a great deal on raising bumblebees, insect biology, mathematical modeling, and developing bioinformatics pipelines to understand social behavior. I am always excited to talk science, and I love collaboration! I am especially excited to chat with Stonehill students who are looking to develop skills in data visualization, programming, or biological modeling, or who are working on a project where utilizing these skills will be useful.
 
