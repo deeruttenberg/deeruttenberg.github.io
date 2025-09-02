@@ -11,6 +11,7 @@ website:
       - about.qmd
       - values.qmd
       - publications.qmd
+      - posts.qmd
 
 format:
   html:
