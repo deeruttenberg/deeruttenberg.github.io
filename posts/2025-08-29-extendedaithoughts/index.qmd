@@ -18,7 +18,7 @@ Recently, I attended a professional development seminar at Stonehill focused on 
 
 ## I. An Aside: AI is Many Different Things
 
-A big part of the success of the ‘hype’ cycle with regard to AI is its ability to leverage many different technologies and lump them in one more easily marketable category.  Many of these tools have existed for years: deep-learning methods in computer vision have been a massive part of the last two decades of the field \[@chai2021deep\]. 
+A big part of the success of the ‘hype’ cycle with regard to AI is its ability to leverage many different technologies and lump them in one more easily marketable category.  Many of these tools have existed for years: deep-learning methods in computer vision have been a massive part of the last two decades of the field [@chai2021deep]. 
 
 When we develop AI policy, we really are developing policies on many different technologies.  Some of these technologies can do a lot of good!  For instance, when properly used, Github Copilot makes workflows far more efficient and accessible (especially when compared to the previous technique, obsessively searching Stackoverflow).
 
