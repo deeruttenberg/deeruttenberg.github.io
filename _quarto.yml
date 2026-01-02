@@ -12,6 +12,7 @@ website:
       - values.qmd
       - publications.qmd
       - posts.qmd
+      - labs.qmd
 
 format:
   html:

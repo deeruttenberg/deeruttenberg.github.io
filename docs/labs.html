@@ -7,7 +7,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
 
-<title>Publications – Dee Ruttenberg</title>
+<title>Labs – Dee Ruttenberg</title>
 <style>
 code{white-space: pre-wrap;}
 span.smallcaps{font-variant: small-caps;}
@@ -30,6 +30,8 @@ ul.task-list li input[type="checkbox"] {
 <script src="site_libs/quarto-search/fuse.min.js"></script>
 <script src="site_libs/quarto-search/quarto-search.js"></script>
 <meta name="quarto:offset" content="./">
+<script src="site_libs/quarto-listing/list.min.js"></script>
+<script src="site_libs/quarto-listing/quarto-listing.js"></script>
 <script src="site_libs/quarto-html/quarto.js" type="module"></script>
 <script src="site_libs/quarto-html/tabsets/tabsets.js" type="module"></script>
 <script src="site_libs/quarto-html/popper.min.js"></script>
@@ -67,7 +69,65 @@ ul.task-list li input[type="checkbox"] {
     "search-label": "Search"
   }
 }</script>
+<script>
 
+  window.document.addEventListener("DOMContentLoaded", function (_event) {
+    const listingTargetEl = window.document.querySelector('#listing-listing .list');
+    if (!listingTargetEl) {
+      // No listing discovered, do not attach.
+      return; 
+    }
+
+    const options = {
+      valueNames: ['listing-date','listing-title','listing-author','listing-subtitle','listing-image','listing-description','listing-categories',{ data: ['index'] },{ data: ['categories'] },{ data: ['listing-date-sort'] },{ data: ['listing-file-modified-sort'] }],
+      
+      searchColumns: ["listing-date","listing-title","listing-author","listing-subtitle","listing-image","listing-description","listing-categories"],
+    };
+
+    window['quarto-listings'] = window['quarto-listings'] || {};
+    window['quarto-listings']['listing-listing'] = new List('listing-listing', options);
+
+    if (window['quarto-listing-loaded']) {
+      window['quarto-listing-loaded']();
+    }
+  });
+
+  window.addEventListener('hashchange',() => {
+    if (window['quarto-listing-loaded']) {
+      window['quarto-listing-loaded']();
+    }
+  })
+  </script>
+
+  <script src="https://cdnjs.cloudflare.com/polyfill/v3/polyfill.min.js?features=es6"></script>
+  <script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml-full.js" type="text/javascript"></script>
+
+<script type="text/javascript">
+const typesetMath = (el) => {
+  if (window.MathJax) {
+    // MathJax Typeset
+    window.MathJax.typeset([el]);
+  } else if (window.katex) {
+    // KaTeX Render
+    var mathElements = el.getElementsByClassName("math");
+    var macros = [];
+    for (var i = 0; i < mathElements.length; i++) {
+      var texText = mathElements[i].firstChild;
+      if (mathElements[i].tagName == "SPAN") {
+        window.katex.render(texText.data, mathElements[i], {
+          displayMode: mathElements[i].classList.contains('display'),
+          throwOnError: false,
+          macros: macros,
+          fleqn: false
+        });
+      }
+    }
+  }
+}
+window.Quarto = {
+  typesetMath
+};
+</script>
 
 <link rel="stylesheet" href="styles.css">
 </head>
@@ -75,7 +135,7 @@ ul.task-list li input[type="checkbox"] {
 <body class="nav-fixed quarto-light">
 
 <div id="quarto-search-results"></div>
-  <header id="quarto-header" class="headroom fixed-top">
+  <header id="quarto-header" class="headroom fixed-top quarto-banner">
     <nav class="navbar navbar-expand-lg " data-bs-theme="dark">
       <div class="navbar-container container-fluid">
       <div class="navbar-brand-container mx-auto">
@@ -102,7 +162,7 @@ ul.task-list li input[type="checkbox"] {
 <span class="menu-text">Values</span></a>
   </li>  
   <li class="nav-item">
-    <a class="nav-link active" href="./publications.html" aria-current="page"> 
+    <a class="nav-link" href="./publications.html"> 
 <span class="menu-text">Publications</span></a>
   </li>  
   <li class="nav-item">
@@ -110,7 +170,7 @@ ul.task-list li input[type="checkbox"] {
 <span class="menu-text">Blog</span></a>
   </li>  
   <li class="nav-item">
-    <a class="nav-link" href="./labs.html"> 
+    <a class="nav-link active" href="./labs.html" aria-current="page"> 
 <span class="menu-text">Labs</span></a>
   </li>  
 </ul>
@@ -121,73 +181,129 @@ ul.task-list li input[type="checkbox"] {
     </nav>
 </header>
 <!-- content -->
-<div id="quarto-content" class="quarto-container page-columns page-rows-contents page-layout-full page-navbar">
+<header id="title-block-header" class="quarto-title-block default page-columns page-full">
+  <div class="quarto-title-banner page-columns page-full">
+    <div class="quarto-title column-page-left">
+      <h1 class="title">Labs</h1>
+            <p class="subtitle lead">Labs for BIO331 (Adopted from Diogo Melo, Scott Wolf, and Michelle White)</p>
+                      </div>
+  </div>
+    
+  
+  <div class="quarto-title-meta column-page-left">
+
+      
+    
+      
+    </div>
+    
+  
+  </header><div id="quarto-content" class="quarto-container page-columns page-rows-contents page-layout-full page-navbar">
 <!-- sidebar -->
 <!-- margin-sidebar -->
     <div id="quarto-margin-sidebar" class="sidebar margin-sidebar">
-        <nav id="TOC" role="doc-toc" class="toc-active">
-    <h2 id="toc-title">On this page</h2>
-   
-  <ul>
-  <li><a href="#section" id="toc-section" class="nav-link active" data-scroll-target="#section">2025</a></li>
-  <li><a href="#section-1" id="toc-section-1" class="nav-link" data-scroll-target="#section-1">2024</a></li>
-  <li><a href="#section-2" id="toc-section-2" class="nav-link" data-scroll-target="#section-2">2023</a></li>
-  <li><a href="#section-3" id="toc-section-3" class="nav-link" data-scroll-target="#section-3">2021</a></li>
-  </ul>
-</nav>
-    </div>
+        
+    <h5 class="quarto-listing-category-title">Categories</h5><div class="quarto-listing-category category-default"><div class="category" data-category="">All <span class="quarto-category-count">(3)</span></div></div></div>
 <!-- main -->
-<main class="content column-page-left" id="quarto-document-content">
+<main class="content quarto-banner-title-block column-page-left" id="quarto-document-content">
 
-<header id="title-block-header" class="quarto-title-block default">
-<div class="quarto-title">
-<h1 class="title">Publications</h1>
+
+
+
+
+
+
+
+
+<div class="quarto-listing quarto-listing-container-default" id="listing-listing">
+<div class="list quarto-listing-default">
+<div class="quarto-post image-right" data-index="0" data-listing-date-sort="1768971600000" data-listing-file-modified-sort="1767379324152" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="2" data-listing-word-count-sort="248">
+<div class="thumbnail"><a href="./labs/lab1-setup/index.html" class="no-external">
+
+<div class="listing-item-img-placeholder card-img-top" >&nbsp;</div>
+
+</a></div>
+<div class="body">
+<h3 class="no-anchor listing-title">
+<a href="./labs/lab1-setup/index.html" class="no-external">BIO331 – Lab 01: Prerequisites</a>
+</h3>
+<div class="listing-subtitle">
+<a href="./labs/lab1-setup/index.html" class="no-external">Setting up in preparation for next week</a>
 </div>
+<div class="delink listing-description"><a href="./labs/lab1-setup/index.html" class="no-external">
+This course focuses on the <strong>R</strong> and <strong>Python</strong> programming languages. <strong>Git</strong> will also be taught and used for the assignments. A good code editor and environment (<strong>Vscode</strong> or <strong>Rstudio</strong>)…<br><em></em>
+</a></div>
+</div>
+<div class="metadata">
+<a href="./labs/lab1-setup/index.html" class="no-external">
+<div class="listing-date">
+Jan 21, 2026
+</div>
+<div class="listing-author">
+Dee Ruttenberg (Adapted from Scott Wolf, Michelle White)
+</div>
+</a>
+</div>
+</div>
+<div class="quarto-post image-right" data-index="1" data-listing-date-sort="NaN" data-listing-file-modified-sort="1767379324010" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="5" data-listing-word-count-sort="824">
+<div class="thumbnail"><a href="./labs/lab3-controlflow/index.html" class="no-external">
 
+<div class="listing-item-img-placeholder card-img-top" >&nbsp;</div>
 
+</a></div>
+<div class="body">
+<h3 class="no-anchor listing-title">
+<a href="./labs/lab3-controlflow/index.html" class="no-external">BIO331 – Precept 03: Control flow</a>
+</h3>
+<div class="listing-subtitle">
+<a href="./labs/lab3-controlflow/index.html" class="no-external">Simple control flow in R</a>
+</div>
+<div class="delink listing-description"><a href="./labs/lab3-controlflow/index.html" class="no-external">
+Make sure that you are comfortable with git and have a basic understanding of how to run code in R. If you need a refresher, please see the Lab 2 materials and external…
+</a></div>
+</div>
+<div class="metadata">
+<a href="./labs/lab3-controlflow/index.html" class="no-external">
+<div class="listing-date">
+Invalid Date
+</div>
+<div class="listing-author">
+Dee Ruttenberg
+</div>
+</a>
+</div>
+</div>
+<div class="quarto-post image-right" data-index="2" data-listing-date-sort="1769576400000" data-listing-file-modified-sort="1767379324051" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="6" data-listing-word-count-sort="1100">
+<div class="thumbnail"><a href="./labs/lab2-git/index.html" class="no-external">
 
-<div class="quarto-title-meta column-page-left">
+<p class="card-img-top"><img src="labs/lab2-git/index_files/figure-html/unnamed-chunk-4-1.png"  class="thumbnail-image card-img"/></p>
 
-    
-  
-    
-  </div>
-  
-
-
-</header>
-
-
-<!-- references -->
-<section id="section" class="level1">
-<h1>2025</h1>
-<ul>
-<li><strong>Ruttenberg, Dee M.</strong>, Scott W. Wolf, Andrew E. Webb, Eli S. Wyman, Michelle L. White, Diogo Melo, Ian M. Traniello, and Sarah D. Kocher. “Queen loss unmasks cryptic worker influence and decentralizes the bumble bee social network.” <em>bioRxiv</em> (2025): <a href="https://www.biorxiv.org/content/10.1101/2025.01.07.630106v1">2025.01.07.630106</a></li>
-</ul>
-</section>
-<section id="section-1" class="level1">
-<h1>2024</h1>
-<ul>
-<li><strong>Ruttenberg, Dee M.</strong>, Simon A. Levin, Ned S. Wingreen, and Sarah D. Kocher. “Variation in season length and development time is sufficient to drive the emergence and coexistence of social and solitary behavioural strategies.” <em>Proceedings of the Royal Society B</em> 291, no. 2032 (2024): <a href="https://royalsocietypublishing.org/doi/10.1098/rspb.2024.1221">rspb.2024.1221</a></li>
-</ul>
-</section>
-<section id="section-2" class="level1">
-<h1>2023</h1>
-<ul>
-<li>Wolf, Scott W., <strong>Dee M. Ruttenberg</strong>, Daniel Y. Knapp, Andrew E. Webb, Ian M. Traniello, Grace C. McKenzie‐Smith, Sophie A. Leheny, Joshua W. Shaevitz, and Sarah D. Kocher. “NAPS: Integrating pose estimation and tag‐based tracking.” <em>Methods in Ecology and Evolution</em> 14, no. 10 (2023): <a href="https://besjournals.onlinelibrary.wiley.com/doi/full/10.1111/2041-210X.14201">2041-210X.14201</a></li>
-</ul>
-</section>
-<section id="section-3" class="level1">
-<h1>2021</h1>
-<ul>
-<li><strong>Ruttenberg, Dee M.</strong>, Nicholas W. VanKuren, Sumitha Nallu, Shen-Horn Yen, Djunijanti Peggie, David J. Lohman and Marcus R. Kronforst. “The evolution and genetics of sexually dimorphic ‘dual’ mimicry in the butterfly Elymnias hypermnestra.” <em>Proceedings of the Royal Society B</em> 288, no. 2020 (2021): <a href="https://royalsocietypublishing.org/doi/10.1098/rspb.2020.2192">rspb.2020.2192</a></li>
-</ul>
-<!-- /references -->
-
-
-</section>
-
-</main> <!-- /main -->
+</a></div>
+<div class="body">
+<h3 class="no-anchor listing-title">
+<a href="./labs/lab2-git/index.html" class="no-external">BIO331 – Lab 02: Intro to git</a>
+</h3>
+<div class="listing-subtitle">
+<a href="./labs/lab2-git/index.html" class="no-external">Basic programming in R and Python and version control with git</a>
+</div>
+<div class="delink listing-description"><a href="./labs/lab2-git/index.html" class="no-external">
+Labs can be found here.
+</a></div>
+</div>
+<div class="metadata">
+<a href="./labs/lab2-git/index.html" class="no-external">
+<div class="listing-date">
+Jan 28, 2026
+</div>
+<div class="listing-author">
+Dee Ruttenberg (Adapted from Scott Wolf, Michelle White)
+</div>
+</a>
+</div>
+</div>
+</div>
+<div class="listing-no-matching d-none">No matching items</div>
+</div></main> <!-- /main -->
 <script id="quarto-html-after-body" type="application/javascript">
   window.document.addEventListener("DOMContentLoaded", function (event) {
     const icon = "";

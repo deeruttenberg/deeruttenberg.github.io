@@ -6,10 +6,9 @@
 
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
-<meta name="dcterms.date" content="2025-12-16">
-<meta name="description" content="Rejoice, Rejoice!">
+<meta name="author" content="Dee Ruttenberg">
 
-<title>Albums of the Year: 2025 – Dee Ruttenberg</title>
+<title>BIO331 – Precept 03: Control flow – Dee Ruttenberg</title>
 <style>
 code{white-space: pre-wrap;}
 span.smallcaps{font-variant: small-caps;}
@@ -21,6 +20,41 @@ ul.task-list li input[type="checkbox"] {
   width: 0.8em;
   margin: 0 0.8em 0.2em -1em; /* quarto-specific, see https://github.com/quarto-dev/quarto-cli/issues/4556 */ 
   vertical-align: middle;
+}
+/* CSS for syntax highlighting */
+html { -webkit-text-size-adjust: 100%; }
+pre > code.sourceCode { white-space: pre; position: relative; }
+pre > code.sourceCode > span { display: inline-block; line-height: 1.25; }
+pre > code.sourceCode > span:empty { height: 1.2em; }
+.sourceCode { overflow: visible; }
+code.sourceCode > span { color: inherit; text-decoration: inherit; }
+div.sourceCode { margin: 1em 0; }
+pre.sourceCode { margin: 0; }
+@media screen {
+div.sourceCode { overflow: auto; }
+}
+@media print {
+pre > code.sourceCode { white-space: pre-wrap; }
+pre > code.sourceCode > span { text-indent: -5em; padding-left: 5em; }
+}
+pre.numberSource code
+  { counter-reset: source-line 0; }
+pre.numberSource code > span
+  { position: relative; left: -4em; counter-increment: source-line; }
+pre.numberSource code > span > a:first-child::before
+  { content: counter(source-line);
+    position: relative; left: -1em; text-align: right; vertical-align: baseline;
+    border: none; display: inline-block;
+    -webkit-touch-callout: none; -webkit-user-select: none;
+    -khtml-user-select: none; -moz-user-select: none;
+    -ms-user-select: none; user-select: none;
+    padding: 0 4px; width: 4em;
+  }
+pre.numberSource { margin-left: 3em;  padding-left: 4px; }
+div.sourceCode
+  {   }
+@media screen {
+pre > code.sourceCode > span > a:first-child::before { text-decoration: underline; }
 }
 </style>
 
@@ -131,18 +165,28 @@ ul.task-list li input[type="checkbox"] {
     <h2 id="toc-title">On this page</h2>
    
   <ul>
-  <li><a href="#twenty-songs-i-love-from-other-albums" id="toc-twenty-songs-i-love-from-other-albums" class="nav-link active" data-scroll-target="#twenty-songs-i-love-from-other-albums">Twenty Songs I Love from Other Albums</a></li>
-  <li><a href="#top-ten-albums-of-2025" id="toc-top-ten-albums-of-2025" class="nav-link" data-scroll-target="#top-ten-albums-of-2025">Top Ten Albums of 2025</a></li>
-  <li><a href="#ten" id="toc-ten" class="nav-link" data-scroll-target="#ten">Ten</a></li>
-  <li><a href="#nine" id="toc-nine" class="nav-link" data-scroll-target="#nine">Nine</a></li>
-  <li><a href="#eight" id="toc-eight" class="nav-link" data-scroll-target="#eight">Eight</a></li>
-  <li><a href="#seven" id="toc-seven" class="nav-link" data-scroll-target="#seven">Seven</a></li>
-  <li><a href="#six" id="toc-six" class="nav-link" data-scroll-target="#six">Six</a></li>
-  <li><a href="#five" id="toc-five" class="nav-link" data-scroll-target="#five">Five</a></li>
-  <li><a href="#four" id="toc-four" class="nav-link" data-scroll-target="#four">Four</a></li>
-  <li><a href="#three" id="toc-three" class="nav-link" data-scroll-target="#three">Three</a></li>
-  <li><a href="#two" id="toc-two" class="nav-link" data-scroll-target="#two">Two</a></li>
-  <li><a href="#one" id="toc-one" class="nav-link" data-scroll-target="#one">One</a></li>
+  <li><a href="#pre-work" id="toc-pre-work" class="nav-link active" data-scroll-target="#pre-work">Pre work</a></li>
+  <li><a href="#precept-2-introduction-to-control-flow-in-r" id="toc-precept-2-introduction-to-control-flow-in-r" class="nav-link" data-scroll-target="#precept-2-introduction-to-control-flow-in-r">Precept 2 – Introduction to Control Flow in R</a>
+  <ul class="collapse">
+  <li><a href="#basic-conditionals" id="toc-basic-conditionals" class="nav-link" data-scroll-target="#basic-conditionals">Basic conditionals</a></li>
+  <li><a href="#loops" id="toc-loops" class="nav-link" data-scroll-target="#loops">Loops</a></li>
+  <li><a href="#functions" id="toc-functions" class="nav-link" data-scroll-target="#functions">Functions</a>
+  <ul class="collapse">
+  <li><a href="#scoping" id="toc-scoping" class="nav-link" data-scroll-target="#scoping">Scoping</a></li>
+  <li><a href="#recursion" id="toc-recursion" class="nav-link" data-scroll-target="#recursion">Recursion</a></li>
+  </ul></li>
+  </ul></li>
+  <li><a href="#submission" id="toc-submission" class="nav-link" data-scroll-target="#submission">Submission</a>
+  <ul class="collapse">
+  <li><a href="#exercises" id="toc-exercises" class="nav-link" data-scroll-target="#exercises">Exercises</a>
+  <ul class="collapse">
+  <li><a href="#conditionals" id="toc-conditionals" class="nav-link" data-scroll-target="#conditionals">1. Conditionals</a></li>
+  <li><a href="#for" id="toc-for" class="nav-link" data-scroll-target="#for">2. For</a></li>
+  <li><a href="#while" id="toc-while" class="nav-link" data-scroll-target="#while">3. While</a></li>
+  <li><a href="#functions-with-conditionals-and-loops" id="toc-functions-with-conditionals-and-loops" class="nav-link" data-scroll-target="#functions-with-conditionals-and-loops">4. Functions with conditionals and loops</a></li>
+  <li><a href="#recursive-functions" id="toc-recursive-functions" class="nav-link" data-scroll-target="#recursive-functions">5. Recursive Functions</a></li>
+  </ul></li>
+  </ul></li>
   </ul>
 </nav>
     </div>
@@ -151,26 +195,25 @@ ul.task-list li input[type="checkbox"] {
 
 <header id="title-block-header" class="quarto-title-block default">
 <div class="quarto-title">
-<h1 class="title">Albums of the Year: 2025</h1>
-  <div class="quarto-categories">
-    <div class="quarto-category">off-topic</div>
-  </div>
-  </div>
-
-<div>
-  <div class="description">
-    <p>Rejoice, Rejoice!</p>
-  </div>
+<h1 class="title">BIO331 – Precept 03: Control flow</h1>
+<p class="subtitle lead">Simple control flow in R</p>
 </div>
+
 
 
 <div class="quarto-title-meta column-page-left">
 
+    <div>
+    <div class="quarto-title-meta-heading">Author</div>
+    <div class="quarto-title-meta-contents">
+             <p>Dee Ruttenberg </p>
+          </div>
+  </div>
     
     <div>
     <div class="quarto-title-meta-heading">Published</div>
     <div class="quarto-title-meta-contents">
-      <p class="date">December 16, 2025</p>
+      <p class="date">Invalid Date</p>
     </div>
   </div>
   
@@ -182,96 +225,175 @@ ul.task-list li input[type="checkbox"] {
 </header>
 
 
-<p>Music is good, and now that I have a blog, I don’t have to make a notes document with my albums of the year! Welcome to the discourse!</p>
-<section id="twenty-songs-i-love-from-other-albums" class="level2">
-<h2 class="anchored" data-anchor-id="twenty-songs-i-love-from-other-albums">Twenty Songs I Love from Other Albums</h2>
-<p><a href="https://www.youtube.com/watch?v=KYUMoL9FrIA">Anywhere — Ratboys</a></p>
-<p><a href="https://www.youtube.com/watch?v=ecIH-4RbbOk">Chains &amp; Whips — Clipse. Kenrick Lamar, Pusha T, &amp; Malice</a></p>
-<p><a href="https://www.youtube.com/watch?v=UGg-BuSl-UI">Cherry Hard Candy — Snocaps</a></p>
-<p><a href="https://www.youtube.com/watch?v=EjchyxshPNw">Childlike Things — FKA Twigs</a></p>
-<p><a href="https://www.youtube.com/watch?v=F7h3PTMioAU">Copycats — Danny Brown &amp; underscores</a></p>
-<p><a href="https://www.youtube.com/watch?v=o1qkVd48Rlc">Crystal — Adult Mom</a></p>
-<p><a href="https://www.youtube.com/watch?v=7BUI9S6PEiI">Dancing in the Club — MJ Lenderman &amp; This is Lorelei</a></p>
-<p><a href="https://www.youtube.com/watch?v=KDPxtsCHu2E">Gemini v. Cancer — Mal Blum</a></p>
-<p><a href="https://www.youtube.com/watch?v=mKkH8X03OG0">Just Around the Corner — Beach Bunny</a></p>
-<p><a href="https://www.youtube.com/watch?v=StIcDroU2nY">Mirror Shades — clipping.</a></p>
-<p><a href="https://www.youtube.com/watch?v=x-YWoVuqtp0">No Joy — The Beths</a></p>
-<p><a href="https://www.youtube.com/watch?v=TPHafKOd9A4">Red — Jesse Welles</a></p>
-<p><a href="https://www.youtube.com/watch?v=F1oKhsy8wGw">Sally, When then Wine Runs Out — ROLE MODEL</a></p>
-<p><a href="https://www.youtube.com/watch?v=TZ8SPnrwF-U">Something Cool — saoirse dream</a></p>
-<p><a href="https://www.youtube.com/watch?v=8kjxal7S87o">Suddenly I See — Scott Bradlee’s Post Modern Jukebox</a></p>
-<p><a href="https://www.youtube.com/watch?v=n2TgsM4fkpQ">Tape Runs Out — Julien Baker &amp; TORRES</a></p>
-<p><a href="https://www.youtube.com/watch?v=E8cKoQqdtwA">Townies — Wednesday</a></p>
-<p><a href="https://www.youtube.com/watch?v=H326Gz2d_Tw">We’re Outside, Rejoice! – McKinley Dixon</a></p>
-<p><a href="https://www.youtube.com/watch?v=_zW85R-VIEk">X-Games Mode — Dim Wizard, Mike Krol, &amp; Ratboys</a></p>
-<p><a href="https://www.youtube.com/watch?v=SwVRXvweQQk">The Yips — Petey USA</a></p>
+<section id="pre-work" class="level1">
+<h1>Pre work</h1>
+<p>Make sure that you are comfortable with git and have a basic understanding of how to run code in R. If you need a refresher, please see the <a href="https://deeruttenberg.github.io/#labs">Lab 2</a> materials and external resources. Feel free to ask any remaining questions.</p>
+<p>Before coming to precept, you should have:</p>
+<ul>
+<li>Accepted the assignment <a href="https://classroom.github.com/a/kLOR3dvS">intro-to-control-flow</a> from GitHub Classrooms.</li>
+<li>A working installation of RStudio or VS Code</li>
+<li>A git repository for the precept. This git repository should be created using the precept assignment link.</li>
+<li>A draft branch in your assignment repository. <strong><em>Do not work in main!</em></strong></li>
+</ul>
 </section>
-<section id="top-ten-albums-of-2025" class="level2">
-<h2 class="anchored" data-anchor-id="top-ten-albums-of-2025">Top Ten Albums of 2025</h2>
+<section id="precept-2-introduction-to-control-flow-in-r" class="level1">
+<h1>Precept 2 – Introduction to Control Flow in R</h1>
+<p>Control flows in R determine the sequence in which the instructions are executed. This ability to control the flow of execution allows for more complex and flexible scripts.</p>
+<section id="basic-conditionals" class="level2">
+<h2 class="anchored" data-anchor-id="basic-conditionals">Basic conditionals</h2>
+<p>In R, the basic conditional statements are <code>if</code>, <code>else</code>, and <code>else if</code>.</p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb1"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="fu">set.seed</span>(<span class="dv">42</span>) <span class="co"># This ensures that the random number generator will produce the same results each time the script is run</span></span>
+<span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a>x <span class="ot">&lt;-</span> <span class="fu">runif</span>(<span class="dv">1</span>, <span class="dv">0</span>, <span class="dv">10</span>)</span>
+<span id="cb1-3"><a href="#cb1-3" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-4"><a href="#cb1-4" aria-hidden="true" tabindex="-1"></a><span class="cf">if</span> (x <span class="sc">&gt;</span> <span class="dv">5</span>) {</span>
+<span id="cb1-5"><a href="#cb1-5" aria-hidden="true" tabindex="-1"></a>     <span class="fu">print</span>(<span class="st">"x is greater than 5"</span>)</span>
+<span id="cb1-6"><a href="#cb1-6" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-7"><a href="#cb1-7" aria-hidden="true" tabindex="-1"></a>} <span class="cf">else</span> <span class="cf">if</span> (x <span class="sc">&lt;</span> <span class="dv">5</span>) {</span>
+<span id="cb1-8"><a href="#cb1-8" aria-hidden="true" tabindex="-1"></a>     <span class="fu">print</span>(<span class="st">"x is less than 5"</span>)</span>
+<span id="cb1-9"><a href="#cb1-9" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-10"><a href="#cb1-10" aria-hidden="true" tabindex="-1"></a>} <span class="cf">else</span> {</span>
+<span id="cb1-11"><a href="#cb1-11" aria-hidden="true" tabindex="-1"></a>     <span class="fu">print</span>(<span class="st">"x is equal to 5"</span>)</span>
+<span id="cb1-12"><a href="#cb1-12" aria-hidden="true" tabindex="-1"></a>}</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>[1] "x is greater than 5"</code></pre>
+</div>
+</div>
 </section>
-<section id="ten" class="level1">
-<h1>Ten</h1>
-<p>Cheekface — Middle Spoon</p>
-<p><a href="https://www.youtube.com/watch?v=RLTmj3yxzKE">“We are living the dream in a room full of flies / and we look out of place in a space out of time”</a></p>
+<section id="loops" class="level2">
+<h2 class="anchored" data-anchor-id="loops">Loops</h2>
+<p>There are two primary loops in R - <code>for</code> and <code>while</code>. <code>for</code> loops are used when the number of iterations is known, while <code>while</code> loops are used when the number of iterations is unknown and require an iterator variable.</p>
+<p><strong>For loop</strong></p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb3"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a><span class="cf">for</span> (i <span class="cf">in</span> <span class="dv">1</span><span class="sc">:</span><span class="dv">5</span>) {</span>
+<span id="cb3-2"><a href="#cb3-2" aria-hidden="true" tabindex="-1"></a>     <span class="fu">print</span>(i)</span>
+<span id="cb3-3"><a href="#cb3-3" aria-hidden="true" tabindex="-1"></a>}</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>[1] 1
+[1] 2
+[1] 3
+[1] 4
+[1] 5</code></pre>
+</div>
+</div>
+<p><strong>While loop</strong></p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb5"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb5-1"><a href="#cb5-1" aria-hidden="true" tabindex="-1"></a>counter <span class="ot">&lt;-</span> <span class="dv">1</span> <span class="co"># this is the iterator variable</span></span>
+<span id="cb5-2"><a href="#cb5-2" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb5-3"><a href="#cb5-3" aria-hidden="true" tabindex="-1"></a><span class="cf">while</span> (counter <span class="sc">&lt;=</span> <span class="dv">5</span>) {</span>
+<span id="cb5-4"><a href="#cb5-4" aria-hidden="true" tabindex="-1"></a>     <span class="fu">print</span>(counter)</span>
+<span id="cb5-5"><a href="#cb5-5" aria-hidden="true" tabindex="-1"></a>     counter <span class="ot">&lt;-</span> counter <span class="sc">+</span> <span class="dv">1</span></span>
+<span id="cb5-6"><a href="#cb5-6" aria-hidden="true" tabindex="-1"></a>}</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>[1] 1
+[1] 2
+[1] 3
+[1] 4
+[1] 5</code></pre>
+</div>
+</div>
 </section>
-<section id="nine" class="level1">
-<h1>Nine</h1>
-<p>Alex G — Headlights</p>
-<p><a href="https://www.youtube.com/watch?v=2tzrJPQD71s">“Love ain’t for the young anyhow / something that you learn from falling’ down”</a></p>
+<section id="functions" class="level2">
+<h2 class="anchored" data-anchor-id="functions">Functions</h2>
+<p>Functions are blocks of reusable code. Functions are used to perform a specific task and are only run when they are called.</p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb7"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb7-1"><a href="#cb7-1" aria-hidden="true" tabindex="-1"></a>calculate_sum <span class="ot">&lt;-</span> <span class="cf">function</span>(a, b) { <span class="co"># a and b are the function arguments</span></span>
+<span id="cb7-2"><a href="#cb7-2" aria-hidden="true" tabindex="-1"></a>     <span class="fu">return</span>(a <span class="sc">+</span> b)</span>
+<span id="cb7-3"><a href="#cb7-3" aria-hidden="true" tabindex="-1"></a>}</span>
+<span id="cb7-4"><a href="#cb7-4" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb7-5"><a href="#cb7-5" aria-hidden="true" tabindex="-1"></a><span class="fu">calculate_sum</span>(<span class="dv">3</span>, <span class="dv">4</span>) <span class="co"># this is where we call the function</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>[1] 7</code></pre>
+</div>
+</div>
+<section id="scoping" class="level3">
+<h3 class="anchored" data-anchor-id="scoping">Scoping</h3>
+<p>Scoping refers to the visibility of variables. In R, there are two main scopes: global and local. Global variables are accessible throughout the entire script, while local variables are only available within the function or script in which they are defined.</p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb9"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb9-1"><a href="#cb9-1" aria-hidden="true" tabindex="-1"></a>global_var <span class="ot">&lt;-</span> <span class="dv">10</span></span>
+<span id="cb9-2"><a href="#cb9-2" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb9-3"><a href="#cb9-3" aria-hidden="true" tabindex="-1"></a>function_with_scope <span class="ot">&lt;-</span> <span class="cf">function</span>() { </span>
+<span id="cb9-4"><a href="#cb9-4" aria-hidden="true" tabindex="-1"></a>  local_var <span class="ot">&lt;-</span> <span class="dv">5</span></span>
+<span id="cb9-5"><a href="#cb9-5" aria-hidden="true" tabindex="-1"></a>  <span class="fu">return</span>(global_var <span class="sc">+</span> local_var) <span class="co"># function_with_scope() has access to global_var even though it is not defined in the function</span></span>
+<span id="cb9-6"><a href="#cb9-6" aria-hidden="true" tabindex="-1"></a>}</span>
+<span id="cb9-7"><a href="#cb9-7" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb9-8"><a href="#cb9-8" aria-hidden="true" tabindex="-1"></a><span class="fu">function_with_scope</span>()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>[1] 15</code></pre>
+</div>
+</div>
 </section>
-<section id="eight" class="level1">
-<h1>Eight</h1>
-<p>Lucy Dacus — Forever is a Feeling</p>
-<p><a href="https://www.youtube.com/watch?v=j8Hudcruuwg">“You’ve got style / no one’s doin’ it like you are”</a></p>
+<section id="recursion" class="level3">
+<h3 class="anchored" data-anchor-id="recursion">Recursion</h3>
+<p>A function that calls itself is known as a recursive function. Recursive function are only used for very specific problems, such as when you need to solve a problem that can be broken down into smaller, similar problems.</p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb11"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb11-1"><a href="#cb11-1" aria-hidden="true" tabindex="-1"></a>factorial <span class="ot">&lt;-</span> <span class="cf">function</span>(n) {</span>
+<span id="cb11-2"><a href="#cb11-2" aria-hidden="true" tabindex="-1"></a>     <span class="cf">if</span> (n <span class="sc">&lt;=</span> <span class="dv">1</span>) {</span>
+<span id="cb11-3"><a href="#cb11-3" aria-hidden="true" tabindex="-1"></a>          <span class="fu">return</span>(<span class="dv">1</span>)</span>
+<span id="cb11-4"><a href="#cb11-4" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb11-5"><a href="#cb11-5" aria-hidden="true" tabindex="-1"></a>     } <span class="cf">else</span> {</span>
+<span id="cb11-6"><a href="#cb11-6" aria-hidden="true" tabindex="-1"></a>     <span class="fu">return</span>(n <span class="sc">*</span> <span class="fu">factorial</span>(n<span class="dv">-1</span>)) <span class="co"># this is where factorial() calls itself</span></span>
+<span id="cb11-7"><a href="#cb11-7" aria-hidden="true" tabindex="-1"></a>     }</span>
+<span id="cb11-8"><a href="#cb11-8" aria-hidden="true" tabindex="-1"></a>}</span>
+<span id="cb11-9"><a href="#cb11-9" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb11-10"><a href="#cb11-10" aria-hidden="true" tabindex="-1"></a><span class="fu">factorial</span>(<span class="dv">5</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>[1] 120</code></pre>
+</div>
+</div>
 </section>
-<section id="seven" class="level1">
-<h1>Seven</h1>
-<p>Dave Malloy — Three Houses</p>
-<p><a href="https://www.youtube.com/watch?v=p0uayPCuqZU">“atwood, austen / bronte and bronte / didion, jackson / so much good stuff / butler, lessing, murdoch, morrison, oates / wharton! / and a surprising number of trashy romance novels by danielle steele!!!”</a></p>
 </section>
-<section id="six" class="level1">
-<h1>Six</h1>
-<p>Carmen Perry — Eyes Like a Mirror</p>
-<p><a href="https://www.youtube.com/watch?v=r0vO5qvaYxM">“I have to go now / I have class”</a></p>
 </section>
-<section id="five" class="level1">
-<h1>Five</h1>
-<p>Viagra Boys — viagr aboys</p>
-<p><a href="https://www.youtube.com/watch?v=WvnIJlWqRD8">“It’s our policy / our policy / I’m sorry sir / but you got to leave”</a></p>
+<section id="submission" class="level1">
+<h1>Submission</h1>
+<p>For this precept, please submit a single R file containing the answers to the exercises found here. Please make intermediate commits in your development branch as you write to get in the habit of committing often. You should commit at least once for each question. Finally, you should submit a pull request and merge your development branch into your main branch. As a reminder, once you merge this PR, your assignment will be marked as complete and may be graded.</p>
+<section id="exercises" class="level2">
+<h2 class="anchored" data-anchor-id="exercises">Exercises</h2>
+<section id="conditionals" class="level3">
+<h3 class="anchored" data-anchor-id="conditionals">1. Conditionals</h3>
+<p>Consider a vector containing the values: 91, 77, 68, 65, 89, 72, 85, 90, 80.</p>
+<p><strong>Tip</strong>: A vector is a way of storing data, in this case, ordered integers:</p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb13"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb13-1"><a href="#cb13-1" aria-hidden="true" tabindex="-1"></a>grades <span class="ot">&lt;-</span> <span class="fu">c</span>(<span class="dv">91</span>, <span class="dv">77</span>, <span class="dv">68</span>, <span class="dv">65</span>, <span class="dv">89</span>, <span class="dv">72</span>, <span class="dv">85</span>, <span class="dv">90</span>, <span class="dv">80</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+<p>Write a conditional script that:</p>
+<ol type="1">
+<li>Tags grades above 90 as “Excellent”</li>
+<li>Between 80 and 90 (inclusive) as “Good”</li>
+<li>Below 80 as “Fair”</li>
+</ol>
+<p>Store the result in a new variable called grade_tags. Ensure the order in grade_tags corresponds to the order of grades in the grades vector, and print the result.</p>
 </section>
-<section id="four" class="level1">
-<h1>Four</h1>
-<p>Geese — Getting Killed</p>
-<p><a href="https://www.youtube.com/watch?v=HMKrmLcA0VQ">“I was a car / and now I’m the road”</a></p>
+<section id="for" class="level3">
+<h3 class="anchored" data-anchor-id="for">2. For</h3>
+<p>Create a sequence of numbers from 3 to 15 (included). Using a for loop, compute the cumulative product of these numbers and print the results.</p>
 </section>
-<section id="three" class="level1">
-<h1>Three</h1>
-<p>Kicksie – BIG SUCKER</p>
-<p><a href="https://www.youtube.com/watch?v=zWuYmFMN8oo">“My laundry is here, my hamper is there / my mind is not in the same room”</a></p>
+<section id="while" class="level3">
+<h3 class="anchored" data-anchor-id="while">3. While</h3>
+<p>Starting with a number 50, decrease it by 5% in every iteration using a while loop. Continue the iterations until the number goes below 20. Return and print the number of iterations it took.</p>
 </section>
-<section id="two" class="level1">
-<h1>Two</h1>
-<p>Jeffrey Lewis and the Voltage — EVEN MORE Freewheelin’ Jeffrey Lewis</p>
-<p><a href="https://www.youtube.com/watch?v=jPK8l2DIkZg">“But what’s inside of me / is basically gravity / a meaningless cavity / a bottomless hole / all the lazy sensations / easy gratifications / the corruption and gluttony / and sugar and fat / the me that I’d follow / is just shallow and hollow / to just me a natural me / will only me that”</a></p>
+<section id="functions-with-conditionals-and-loops" class="level3">
+<h3 class="anchored" data-anchor-id="functions-with-conditionals-and-loops">4. Functions with conditionals and loops</h3>
+<p>Write a function named series_sum that accepts two arguments: a start value ‘s’ and an end value ‘e’. The function should sum all numbers from ‘s’ to ‘e’. However, if a number in the series is divisible by 3, it should be skipped.</p>
+<p><strong>Tip</strong>: The modulo operator (<code>%%</code> in R) returns the remainder of the division of two numbers.</p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb14"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb14-1"><a href="#cb14-1" aria-hidden="true" tabindex="-1"></a><span class="co"># as in R</span></span>
+<span id="cb14-2"><a href="#cb14-2" aria-hidden="true" tabindex="-1"></a><span class="dv">5</span><span class="sc">%%</span><span class="dv">2</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>[1] 1</code></pre>
+</div>
+</div>
 </section>
-<section id="one" class="level1">
-<h1>One</h1>
-<p>Saintseneca — Highwallow and Supermoon Songs</p>
-<p><a href="https://www.youtube.com/watch?v=M2mzdq04i9Y">“If it’s true, what they say / that the end will come some day / well it’s too true to be good”</a></p>
+<section id="recursive-functions" class="level3">
+<h3 class="anchored" data-anchor-id="recursive-functions">5. Recursive Functions</h3>
+<p>The Lucas series is a sequence of numbers similar to the Fibonacci series but starts with 2 and 1 instead of 0 and 1. Write a recursive function <code>lucas</code> that computes the nth value of the Lucas series.</p>
 
 
 </section>
+</section>
+</section>
 
-<div id="quarto-appendix" class="default"><section class="quarto-appendix-contents" id="quarto-citation"><h2 class="anchored quarto-appendix-heading">Citation</h2><div><div class="quarto-appendix-secondary-label">BibTeX citation:</div><pre class="sourceCode code-with-copy quarto-appendix-bibtex"><code class="sourceCode bibtex">@online{2025,
-  author = {},
-  title = {Albums of the {Year:} 2025},
-  date = {2025-12-16},
-  url = {https://deeruttenberg.github.io/posts/2025-12-16-albums/},
-  langid = {en}
-}
-</code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre><div class="quarto-appendix-secondary-label">For attribution, please cite this work as:</div><div id="ref-2025" class="csl-entry quarto-appendix-citeas" role="listitem">
-<span>“Albums of the Year: 2025.”</span> 2025. December 16, 2025. <a href="https://deeruttenberg.github.io/posts/2025-12-16-albums/">https://deeruttenberg.github.io/posts/2025-12-16-albums/</a>.
-</div></div></section></div></main> <!-- /main -->
+</main> <!-- /main -->
 <script id="quarto-html-after-body" type="application/javascript">
   window.document.addEventListener("DOMContentLoaded", function (event) {
     const icon = "";

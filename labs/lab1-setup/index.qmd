@@ -1,0 +1,37 @@
+---
+title: "BIO331 -- Lab 01: Prerequisites"
+subtitle: "Setting up in preparation for next week"
+author: Dee Ruttenberg (Adapted from Scott Wolf, Michelle White)
+date: Jan. 21, 2026
+output: html_document
+---
+
+# Prerequisites
+
+This course focuses on the **R** and **Python** programming languages. 
+**Git** will also be taught and used for the assignments. 
+A good code editor and environment (**Vscode** or **Rstudio**) is also necessary.  
+Your take-off will be much easier if you can install all these on your computer *before the first precept*.
+
+### R
+
+Here are [instructions](https://rstudio-education.github.io/hopr/starting.html) to install R on Windows, Mac and Linux. 
+This includes downloading R from [CRAN](https://cran.r-project.org/).
+Linux users might install R directly with their package manager, such as apt.  
+Please check you can run a simplistic ["hello, world"](https://en.wikipedia.org/wiki/%22Hello,_World!%22_program) script on your Python installation.
+
+### Text editor / IDE
+
+Standard usage is to develop code in an integrated development environment (IDE), rather than a simple text editor 
+(though some still use old school editors such as [neovim](https://neovim.io/) and [emacs](https://www.gnu.org/software/emacs/)). 
+We advise to install an IDE, as they show complex code highlighting, can run and help debug code, and connects to AI and git tools.  
+
+We suggest Rstudio, as it is the best for data visualization and analysis in R. See [here](https://posit.co/products/open-source/rstudio/) for installation on all OS.
+
+One of the most popular IDEs is [VsCode](https://code.visualstudio.com/). 
+Vscode has plugins/extensions for many languages, including those for R -- you will find it especially useful in the later half of the class, especially if you do final project 1.  
+
+### Github
+
+You should also set up a [github account](https://github.com/) and [install git](https://git-scm.com/book/en/v2/Getting-Started-Installing-Git) locally. 
+For easier interaction with github repositories, it is also advised to setup a SSH authentification key: follow instructions [here](https://docs.github.com/en/authentication/connecting-to-github-with-ssh/adding-a-new-ssh-key-to-your-github-account).
