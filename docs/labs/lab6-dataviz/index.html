@@ -6,8 +6,10 @@
 
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
+<meta name="author" content="Dee Ruttenberg (Adapted from Scott Wolf, Michelle White)">
+<meta name="dcterms.date" content="2026-03-04">
 
-<title>Labs – Dee Ruttenberg</title>
+<title>BIO331 – Lab 06: Data Visualization – Dee Ruttenberg</title>
 <style>
 code{white-space: pre-wrap;}
 span.smallcaps{font-variant: small-caps;}
@@ -20,28 +22,61 @@ ul.task-list li input[type="checkbox"] {
   margin: 0 0.8em 0.2em -1em; /* quarto-specific, see https://github.com/quarto-dev/quarto-cli/issues/4556 */ 
   vertical-align: middle;
 }
+/* CSS for syntax highlighting */
+html { -webkit-text-size-adjust: 100%; }
+pre > code.sourceCode { white-space: pre; position: relative; }
+pre > code.sourceCode > span { display: inline-block; line-height: 1.25; }
+pre > code.sourceCode > span:empty { height: 1.2em; }
+.sourceCode { overflow: visible; }
+code.sourceCode > span { color: inherit; text-decoration: inherit; }
+div.sourceCode { margin: 1em 0; }
+pre.sourceCode { margin: 0; }
+@media screen {
+div.sourceCode { overflow: auto; }
+}
+@media print {
+pre > code.sourceCode { white-space: pre-wrap; }
+pre > code.sourceCode > span { text-indent: -5em; padding-left: 5em; }
+}
+pre.numberSource code
+  { counter-reset: source-line 0; }
+pre.numberSource code > span
+  { position: relative; left: -4em; counter-increment: source-line; }
+pre.numberSource code > span > a:first-child::before
+  { content: counter(source-line);
+    position: relative; left: -1em; text-align: right; vertical-align: baseline;
+    border: none; display: inline-block;
+    -webkit-touch-callout: none; -webkit-user-select: none;
+    -khtml-user-select: none; -moz-user-select: none;
+    -ms-user-select: none; user-select: none;
+    padding: 0 4px; width: 4em;
+  }
+pre.numberSource { margin-left: 3em;  padding-left: 4px; }
+div.sourceCode
+  {   }
+@media screen {
+pre > code.sourceCode > span > a:first-child::before { text-decoration: underline; }
+}
 </style>
 
 
-<script src="site_libs/quarto-nav/quarto-nav.js"></script>
-<script src="site_libs/quarto-nav/headroom.min.js"></script>
-<script src="site_libs/clipboard/clipboard.min.js"></script>
-<script src="site_libs/quarto-search/autocomplete.umd.js"></script>
-<script src="site_libs/quarto-search/fuse.min.js"></script>
-<script src="site_libs/quarto-search/quarto-search.js"></script>
-<meta name="quarto:offset" content="./">
-<script src="site_libs/quarto-listing/list.min.js"></script>
-<script src="site_libs/quarto-listing/quarto-listing.js"></script>
-<script src="site_libs/quarto-html/quarto.js" type="module"></script>
-<script src="site_libs/quarto-html/tabsets/tabsets.js" type="module"></script>
-<script src="site_libs/quarto-html/popper.min.js"></script>
-<script src="site_libs/quarto-html/tippy.umd.min.js"></script>
-<script src="site_libs/quarto-html/anchor.min.js"></script>
-<link href="site_libs/quarto-html/tippy.css" rel="stylesheet">
-<link href="site_libs/quarto-html/quarto-syntax-highlighting-e1a5c8363afafaef2c763b6775fbf3ca.css" rel="stylesheet" id="quarto-text-highlighting-styles">
-<script src="site_libs/bootstrap/bootstrap.min.js"></script>
-<link href="site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
-<link href="site_libs/bootstrap/bootstrap-c1fac2584b48ed01fb6e278e36375074.min.css" rel="stylesheet" append-hash="true" id="quarto-bootstrap" data-mode="light">
+<script src="../../site_libs/quarto-nav/quarto-nav.js"></script>
+<script src="../../site_libs/quarto-nav/headroom.min.js"></script>
+<script src="../../site_libs/clipboard/clipboard.min.js"></script>
+<script src="../../site_libs/quarto-search/autocomplete.umd.js"></script>
+<script src="../../site_libs/quarto-search/fuse.min.js"></script>
+<script src="../../site_libs/quarto-search/quarto-search.js"></script>
+<meta name="quarto:offset" content="../../">
+<script src="../../site_libs/quarto-html/quarto.js" type="module"></script>
+<script src="../../site_libs/quarto-html/tabsets/tabsets.js" type="module"></script>
+<script src="../../site_libs/quarto-html/popper.min.js"></script>
+<script src="../../site_libs/quarto-html/tippy.umd.min.js"></script>
+<script src="../../site_libs/quarto-html/anchor.min.js"></script>
+<link href="../../site_libs/quarto-html/tippy.css" rel="stylesheet">
+<link href="../../site_libs/quarto-html/quarto-syntax-highlighting-e1a5c8363afafaef2c763b6775fbf3ca.css" rel="stylesheet" id="quarto-text-highlighting-styles">
+<script src="../../site_libs/bootstrap/bootstrap.min.js"></script>
+<link href="../../site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
+<link href="../../site_libs/bootstrap/bootstrap-c1fac2584b48ed01fb6e278e36375074.min.css" rel="stylesheet" append-hash="true" id="quarto-bootstrap" data-mode="light">
 <script id="quarto-search-options" type="application/json">{
   "location": "navbar",
   "copy-button": false,
@@ -69,77 +104,19 @@ ul.task-list li input[type="checkbox"] {
     "search-label": "Search"
   }
 }</script>
-<script>
 
-  window.document.addEventListener("DOMContentLoaded", function (_event) {
-    const listingTargetEl = window.document.querySelector('#listing-listing .list');
-    if (!listingTargetEl) {
-      // No listing discovered, do not attach.
-      return; 
-    }
 
-    const options = {
-      valueNames: ['listing-date','listing-title','listing-author','listing-subtitle','listing-image','listing-description','listing-categories',{ data: ['index'] },{ data: ['categories'] },{ data: ['listing-date-sort'] },{ data: ['listing-file-modified-sort'] }],
-      
-      searchColumns: ["listing-date","listing-title","listing-author","listing-subtitle","listing-image","listing-description","listing-categories"],
-    };
-
-    window['quarto-listings'] = window['quarto-listings'] || {};
-    window['quarto-listings']['listing-listing'] = new List('listing-listing', options);
-
-    if (window['quarto-listing-loaded']) {
-      window['quarto-listing-loaded']();
-    }
-  });
-
-  window.addEventListener('hashchange',() => {
-    if (window['quarto-listing-loaded']) {
-      window['quarto-listing-loaded']();
-    }
-  })
-  </script>
-
-  <script src="https://cdnjs.cloudflare.com/polyfill/v3/polyfill.min.js?features=es6"></script>
-  <script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml-full.js" type="text/javascript"></script>
-
-<script type="text/javascript">
-const typesetMath = (el) => {
-  if (window.MathJax) {
-    // MathJax Typeset
-    window.MathJax.typeset([el]);
-  } else if (window.katex) {
-    // KaTeX Render
-    var mathElements = el.getElementsByClassName("math");
-    var macros = [];
-    for (var i = 0; i < mathElements.length; i++) {
-      var texText = mathElements[i].firstChild;
-      if (mathElements[i].tagName == "SPAN") {
-        window.katex.render(texText.data, mathElements[i], {
-          displayMode: mathElements[i].classList.contains('display'),
-          throwOnError: false,
-          macros: macros,
-          fleqn: false
-        });
-      }
-    }
-  }
-}
-window.Quarto = {
-  typesetMath
-};
-</script>
-
-<link rel="stylesheet" href="styles.css">
+<link rel="stylesheet" href="../../styles.css">
 </head>
 
 <body class="nav-fixed quarto-light">
 
 <div id="quarto-search-results"></div>
-  <header id="quarto-header" class="headroom fixed-top quarto-banner">
+  <header id="quarto-header" class="headroom fixed-top">
     <nav class="navbar navbar-expand-lg " data-bs-theme="dark">
       <div class="navbar-container container-fluid">
       <div class="navbar-brand-container mx-auto">
-    <a class="navbar-brand" href="./index.html">
+    <a class="navbar-brand" href="../../index.html">
     <span class="navbar-title">Dee Ruttenberg</span>
     </a>
   </div>
@@ -150,27 +127,27 @@ window.Quarto = {
           <div class="collapse navbar-collapse" id="navbarCollapse">
             <ul class="navbar-nav navbar-nav-scroll me-auto">
   <li class="nav-item">
-    <a class="nav-link" href="./index.html"> 
+    <a class="nav-link" href="../../index.html"> 
 <span class="menu-text">Home</span></a>
   </li>  
   <li class="nav-item">
-    <a class="nav-link" href="./about.html"> 
+    <a class="nav-link" href="../../about.html"> 
 <span class="menu-text">About</span></a>
   </li>  
   <li class="nav-item">
-    <a class="nav-link" href="./values.html"> 
+    <a class="nav-link" href="../../values.html"> 
 <span class="menu-text">Values</span></a>
   </li>  
   <li class="nav-item">
-    <a class="nav-link" href="./publications.html"> 
+    <a class="nav-link" href="../../publications.html"> 
 <span class="menu-text">Publications</span></a>
   </li>  
   <li class="nav-item">
-    <a class="nav-link" href="./posts.html"> 
+    <a class="nav-link" href="../../posts.html"> 
 <span class="menu-text">Blog</span></a>
   </li>  
   <li class="nav-item">
-    <a class="nav-link active" href="./labs.html" aria-current="page"> 
+    <a class="nav-link" href="../../labs.html"> 
 <span class="menu-text">Labs</span></a>
   </li>  
 </ul>
@@ -181,269 +158,178 @@ window.Quarto = {
     </nav>
 </header>
 <!-- content -->
-<header id="title-block-header" class="quarto-title-block default page-columns page-full">
-  <div class="quarto-title-banner page-columns page-full">
-    <div class="quarto-title column-page-left">
-      <h1 class="title">Labs</h1>
-            <p class="subtitle lead">Labs for BIO331 (Adopted from Diogo Melo, Scott Wolf, and Michelle White)</p>
-                      </div>
-  </div>
-    
-  
-  <div class="quarto-title-meta column-page-left">
-
-      
-    
-      
-    </div>
-    
-  
-  </header><div id="quarto-content" class="quarto-container page-columns page-rows-contents page-layout-full page-navbar">
+<div id="quarto-content" class="quarto-container page-columns page-rows-contents page-layout-full page-navbar">
 <!-- sidebar -->
 <!-- margin-sidebar -->
     <div id="quarto-margin-sidebar" class="sidebar margin-sidebar">
-        
-    <h5 class="quarto-listing-category-title">Categories</h5><div class="quarto-listing-category category-default"><div class="category" data-category="">All <span class="quarto-category-count">(8)</span></div></div></div>
+        <nav id="TOC" role="doc-toc" class="toc-active">
+    <h2 id="toc-title">On this page</h2>
+   
+  <ul>
+  <li><a href="#github-classroom-assignment" id="toc-github-classroom-assignment" class="nav-link active" data-scroll-target="#github-classroom-assignment">GitHub Classroom Assignment</a></li>
+  <li><a href="#exercises" id="toc-exercises" class="nav-link" data-scroll-target="#exercises">Exercises</a>
+  <ul class="collapse">
+  <li><a href="#exercise-1-bar-plot-modification" id="toc-exercise-1-bar-plot-modification" class="nav-link" data-scroll-target="#exercise-1-bar-plot-modification">Exercise 1 – Bar Plot Modification</a></li>
+  <li><a href="#exercise-2-histogram-modification" id="toc-exercise-2-histogram-modification" class="nav-link" data-scroll-target="#exercise-2-histogram-modification">Exercise 2 – Histogram Modification</a></li>
+  <li><a href="#exercise-3-scatter-plot-with-facets" id="toc-exercise-3-scatter-plot-with-facets" class="nav-link" data-scroll-target="#exercise-3-scatter-plot-with-facets">Exercise 3 – Scatter Plot with Facets</a></li>
+  <li><a href="#exercise-4-enhanced-boxplots-using-after_stat-and-patchwork" id="toc-exercise-4-enhanced-boxplots-using-after_stat-and-patchwork" class="nav-link" data-scroll-target="#exercise-4-enhanced-boxplots-using-after_stat-and-patchwork">Exercise 4: Enhanced Boxplots using after_stat() and patchwork</a></li>
+  </ul></li>
+  </ul>
+</nav>
+    </div>
 <!-- main -->
-<main class="content quarto-banner-title-block column-page-left" id="quarto-document-content">
+<main class="content column-page-left" id="quarto-document-content">
+
+<header id="title-block-header" class="quarto-title-block default">
+<div class="quarto-title">
+<h1 class="title">BIO331 – Lab 06: Data Visualization</h1>
+<p class="subtitle lead">Working with data frames and data wrangling in R</p>
+</div>
 
 
 
+<div class="quarto-title-meta column-page-left">
+
+    <div>
+    <div class="quarto-title-meta-heading">Author</div>
+    <div class="quarto-title-meta-contents">
+             <p>Dee Ruttenberg (Adapted from Scott Wolf, Michelle White) </p>
+          </div>
+  </div>
+    
+    <div>
+    <div class="quarto-title-meta-heading">Published</div>
+    <div class="quarto-title-meta-contents">
+      <p class="date">March 4, 2026</p>
+    </div>
+  </div>
+  
+    
+  </div>
+  
 
 
+</header>
 
 
+<section id="github-classroom-assignment" class="level2">
+<h2 class="anchored" data-anchor-id="github-classroom-assignment"><a href="https://classroom.github.com/a/kCg_EfG5">GitHub Classroom Assignment</a></h2>
+<ul>
+<li>Check out the cheat sheet for ggplot2: <a href="https://rstudio.github.io/cheatsheets/html/data-visualization.html">Data Visualization with ggplot2: CHEAT SHEET</a></li>
+<li><em>Deadline is back to one week from the original precept date.</em></li>
+<li><em>Please save each plot as an image (.png or .jpg) and upload them to your GitHub repository (4 images total).</em></li>
+</ul>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb1"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="co"># R</span></span>
+<span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(pak)</span>
+<span id="cb1-3"><a href="#cb1-3" aria-hidden="true" tabindex="-1"></a>packages <span class="ot">&lt;-</span> <span class="fu">c</span>(<span class="st">"ggplot2"</span>, <span class="st">"cowplot"</span>, <span class="st">"ggthemes"</span>, <span class="st">"patchwork"</span>)</span>
+<span id="cb1-4"><a href="#cb1-4" aria-hidden="true" tabindex="-1"></a>pak<span class="sc">::</span><span class="fu">pkg_install</span>(packages)</span>
+<span id="cb1-5"><a href="#cb1-5" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-6"><a href="#cb1-6" aria-hidden="true" tabindex="-1"></a><span class="fu">lapply</span>(packages, require, <span class="at">character.only =</span> <span class="cn">TRUE</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+</section>
+<section id="exercises" class="level2">
+<h2 class="anchored" data-anchor-id="exercises">Exercises</h2>
+<section id="exercise-1-bar-plot-modification" class="level3">
+<h3 class="anchored" data-anchor-id="exercise-1-bar-plot-modification">Exercise 1 – Bar Plot Modification</h3>
+<ul>
+<li><strong>Task:</strong>
+<ul>
+<li>Add a title to the plot: “Distribution of Cars by Class”.</li>
+<li>Change the x-axis label to “Type of Car”.</li>
+<li>Color the bars in blue.</li>
+<li>Rotate the x-axis labels by 45 degrees.</li>
+</ul></li>
+<li><strong>Expected Output:</strong> An updated plot with the above specifications.</li>
+</ul>
+<p>Initial Plot: A simple bar plot displaying the number of cars for each class in the mpg dataset.</p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb2"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a><span class="co"># R</span></span>
+<span id="cb2-2"><a href="#cb2-2" aria-hidden="true" tabindex="-1"></a><span class="fu">ggplot</span>(<span class="at">data =</span> mpg, <span class="fu">aes</span>(<span class="at">x =</span> class)) <span class="sc">+</span></span>
+<span id="cb2-3"><a href="#cb2-3" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_bar</span>()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+</section>
+<section id="exercise-2-histogram-modification" class="level3">
+<h3 class="anchored" data-anchor-id="exercise-2-histogram-modification">Exercise 2 – Histogram Modification</h3>
+<ul>
+<li><strong>Task:</strong>
+<ul>
+<li>Add a title to the plot: “Highway Mileage Distribution”.</li>
+<li>Change the x-axis label to “Miles Per Gallon”.</li>
+<li>Fill the histogram bars with green but have a black border.</li>
+<li>Set the bin width to 2.</li>
+</ul></li>
+<li><strong>Expected Output:</strong> An updated plot with the above specifications.</li>
+</ul>
+<p>Initial Plot: A histogram showcasing the distribution of highway miles per gallon (hwy) from the mpg dataset.</p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb3"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a><span class="co"># R</span></span>
+<span id="cb3-2"><a href="#cb3-2" aria-hidden="true" tabindex="-1"></a><span class="fu">ggplot</span>(<span class="at">data =</span> mpg, <span class="fu">aes</span>(<span class="at">x =</span> hwy)) <span class="sc">+</span> </span>
+<span id="cb3-3"><a href="#cb3-3" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_histogram</span>()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stderr">
+<pre><code>`stat_bin()` using `bins = 30`. Pick better value `binwidth`.</code></pre>
+</div>
+</div>
+</section>
+<section id="exercise-3-scatter-plot-with-facets" class="level3">
+<h3 class="anchored" data-anchor-id="exercise-3-scatter-plot-with-facets">Exercise 3 – Scatter Plot with Facets</h3>
+<ul>
+<li><strong>Task:</strong>
+<ul>
+<li>Add a title: “Engine Displacement vs.&nbsp;Highway MPG”.</li>
+<li>Change the x-axis label to “Engine Size (liters)” and y-axis label to “Highway MPG”.</li>
+<li>Color the points by class and shape them by the type of drive (e.g., 4wd, fwd, rwd).</li>
+<li>Add a smooth trend line (with standard error or confidence interval) to the plot. Consider adjusting the alpha of the points for clarity.</li>
+<li>Facet the plot by cyl (number of cylinders) in a 2x2 grid format.</li>
+</ul></li>
+<li><strong>Expected Output:</strong> An updated plot with the above specifications.</li>
+</ul>
+<p>Initial Plot: A scatter plot illustrating the relationship between engine displacement (displ) and highway MPG (hwy).</p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb5"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb5-1"><a href="#cb5-1" aria-hidden="true" tabindex="-1"></a><span class="co"># R</span></span>
+<span id="cb5-2"><a href="#cb5-2" aria-hidden="true" tabindex="-1"></a><span class="fu">ggplot</span>(<span class="at">data =</span> mpg, <span class="fu">aes</span>(<span class="at">x =</span> displ, <span class="at">y =</span> hwy)) <span class="sc">+</span> </span>
+<span id="cb5-3"><a href="#cb5-3" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_point</span>()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+</section>
+<section id="exercise-4-enhanced-boxplots-using-after_stat-and-patchwork" class="level3">
+<h3 class="anchored" data-anchor-id="exercise-4-enhanced-boxplots-using-after_stat-and-patchwork">Exercise 4: Enhanced Boxplots using after_stat() and patchwork</h3>
+<ul>
+<li><strong>Task:</strong></li>
+</ul>
+<ol type="1">
+<li>Modify plot1:
+<ul>
+<li>Color the boxes based on median value of cty using a gradient from light blue (low mpg) to dark blue (high mpg).</li>
+<li>Add a title: “City MPG by Manufacturer”.</li>
+<li>Rotate x-axis labels by 90 degrees and adjust their size for readability.</li>
+<li>Apply a theme of your choice from the ggthemes library</li>
+</ul></li>
+<li>Modify plot2:
+<ul>
+<li>Color the boxes based on median value of hwy using a gradient from light green (low mpg) to dark green (high mpg).</li>
+<li>Add a title: “Highway MPG by Manufacturer”.</li>
+<li>Rotate x-axis labels by 90 degrees and adjust their size for readability.</li>
+<li>Apply the same theme as plot1.</li>
+</ul></li>
+<li>Combine the two modified plots side by side using the patchwork library</li>
+</ol>
+<ul>
+<li><strong>Expected Output:</strong> A plot with the above specifications.</li>
+</ul>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb6"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb6-1"><a href="#cb6-1" aria-hidden="true" tabindex="-1"></a><span class="co"># R</span></span>
+<span id="cb6-2"><a href="#cb6-2" aria-hidden="true" tabindex="-1"></a>plot1 <span class="ot">&lt;-</span> <span class="fu">ggplot</span>(<span class="at">data =</span> mpg, <span class="fu">aes</span>(<span class="at">x =</span> manufacturer, <span class="at">y =</span> cty)) <span class="sc">+</span></span>
+<span id="cb6-3"><a href="#cb6-3" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_boxplot</span>()</span>
+<span id="cb6-4"><a href="#cb6-4" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb6-5"><a href="#cb6-5" aria-hidden="true" tabindex="-1"></a>plot2 <span class="ot">&lt;-</span> <span class="fu">ggplot</span>(<span class="at">data =</span> mpg, <span class="fu">aes</span>(<span class="at">x =</span> manufacturer, <span class="at">y =</span> hwy)) <span class="sc">+</span></span>
+<span id="cb6-6"><a href="#cb6-6" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_boxplot</span>()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
 
 
-<div class="quarto-listing quarto-listing-container-default" id="listing-listing">
-<div class="list quarto-listing-default">
-<div class="quarto-post image-right" data-index="0" data-listing-date-sort="1774411200000" data-listing-file-modified-sort="1767405168864" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="6" data-listing-word-count-sort="1004">
-<div class="thumbnail"><a href="./labs/lab8-assembly/index.html" class="no-external">
+</section>
+</section>
 
-<div class="listing-item-img-placeholder card-img-top" >&nbsp;</div>
-
-</a></div>
-<div class="body">
-<h3 class="no-anchor listing-title">
-<a href="./labs/lab8-assembly/index.html" class="no-external">BIO331 – Lab 08: Genome Assembly</a>
-</h3>
-<div class="listing-subtitle">
-<a href="./labs/lab8-assembly/index.html" class="no-external">Principles of Genome Assembly in R</a>
-</div>
-<div class="delink listing-description"><a href="./labs/lab8-assembly/index.html" class="no-external">
-Challenge: Assemble a 1 billion piece puzzle where the pieces are all made of only 4 colors and repeated shapes.
-</a></div>
-</div>
-<div class="metadata">
-<a href="./labs/lab8-assembly/index.html" class="no-external">
-<div class="listing-date">
-Mar 25, 2026
-</div>
-<div class="listing-author">
-Dee Ruttenberg (Adapted from Rob Harbert)
-</div>
-</a>
-</div>
-</div>
-<div class="quarto-post image-right" data-index="1" data-listing-date-sort="1773806400000" data-listing-file-modified-sort="1767382901525" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="4" data-listing-word-count-sort="799">
-<div class="thumbnail"><a href="./labs/lab7-rblast/index.html" class="no-external">
-
-<div class="listing-item-img-placeholder card-img-top" >&nbsp;</div>
-
-</a></div>
-<div class="body">
-<h3 class="no-anchor listing-title">
-<a href="./labs/lab7-rblast/index.html" class="no-external">BIO331 – Lab 07: Bioinformatics and BLAST</a>
-</h3>
-<div class="listing-subtitle">
-<a href="./labs/lab7-rblast/index.html" class="no-external">Working with BLAST in R</a>
-</div>
-<div class="delink listing-description"><a href="./labs/lab7-rblast/index.html" class="no-external">
-The rBLAST package provides R code tools that implement access to the commandline BLAST tools in R. Today we will use this package to build a new BLAST database, run BLAST…
-</a></div>
-</div>
-<div class="metadata">
-<a href="./labs/lab7-rblast/index.html" class="no-external">
-<div class="listing-date">
-Mar 18, 2026
-</div>
-<div class="listing-author">
-Dee Ruttenberg (Adapted from Rob Harbert)
-</div>
-</a>
-</div>
-</div>
-<div class="quarto-post image-right" data-index="2" data-listing-date-sort="1772600400000" data-listing-file-modified-sort="1767381716303" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="3" data-listing-word-count-sort="559">
-<div class="thumbnail"><a href="./labs/lab6-dataviz/index.html" class="no-external">
-
-<div class="listing-item-img-placeholder card-img-top" >&nbsp;</div>
-
-</a></div>
-<div class="body">
-<h3 class="no-anchor listing-title">
-<a href="./labs/lab6-dataviz/index.html" class="no-external">BIO331 – Lab 06: Data Visualization</a>
-</h3>
-<div class="listing-subtitle">
-<a href="./labs/lab6-dataviz/index.html" class="no-external">Working with data frames and data wrangling in R</a>
-</div>
-<div class="delink listing-description"><a href="./labs/lab6-dataviz/index.html" class="no-external">
-Initial Plot: A simple bar plot displaying the number of cars for each class in the mpg dataset.
-</a></div>
-</div>
-<div class="metadata">
-<a href="./labs/lab6-dataviz/index.html" class="no-external">
-<div class="listing-date">
-Mar 4, 2026
-</div>
-<div class="listing-author">
-Dee Ruttenberg (Adapted from Scott Wolf, Michelle White)
-</div>
-</a>
-</div>
-</div>
-<div class="quarto-post image-right" data-index="3" data-listing-date-sort="1771995600000" data-listing-file-modified-sort="1767381689754" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="6" data-listing-word-count-sort="1130">
-<div class="thumbnail"><a href="./labs/lab5-datawrangling/index.html" class="no-external">
-
-<div class="listing-item-img-placeholder card-img-top" >&nbsp;</div>
-
-</a></div>
-<div class="body">
-<h3 class="no-anchor listing-title">
-<a href="./labs/lab5-datawrangling/index.html" class="no-external">BIO331 – Lab 05: Data Wrangling</a>
-</h3>
-<div class="listing-subtitle">
-<a href="./labs/lab5-datawrangling/index.html" class="no-external">Working with data frames and data wrangling in R</a>
-</div>
-<div class="delink listing-description"><a href="./labs/lab5-datawrangling/index.html" class="no-external">
-<strong>Reminder</strong> If you have not installed pak, do so now. You can install it from CRAN with <code>install.packages("pak")</code> Once installed, load it with <code>library(pak)</code>.
-</a></div>
-</div>
-<div class="metadata">
-<a href="./labs/lab5-datawrangling/index.html" class="no-external">
-<div class="listing-date">
-Feb 25, 2026
-</div>
-<div class="listing-author">
-Dee Ruttenberg (Adapted from Scott Wolf, Michelle White)
-</div>
-</a>
-</div>
-</div>
-<div class="quarto-post image-right" data-index="4" data-listing-date-sort="1770786000000" data-listing-file-modified-sort="1767380245875" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="5" data-listing-word-count-sort="970">
-<div class="thumbnail"><a href="./labs/lab4-stringwrangling/index.html" class="no-external">
-
-<div class="listing-item-img-placeholder card-img-top" >&nbsp;</div>
-
-</a></div>
-<div class="body">
-<h3 class="no-anchor listing-title">
-<a href="./labs/lab4-stringwrangling/index.html" class="no-external">BIO331 – Lab 04: Data/String Wrangling</a>
-</h3>
-<div class="listing-subtitle">
-<a href="./labs/lab4-stringwrangling/index.html" class="no-external">Data IO and String Wrangling with Regex in R</a>
-</div>
-<div class="delink listing-description"><a href="./labs/lab4-stringwrangling/index.html" class="no-external">
-This week’s assignment can be found here.
-</a></div>
-</div>
-<div class="metadata">
-<a href="./labs/lab4-stringwrangling/index.html" class="no-external">
-<div class="listing-date">
-Feb 11, 2026
-</div>
-<div class="listing-author">
-Dee Ruttenberg (Adapted from Scott Wolf, Michelle White)
-</div>
-</a>
-</div>
-</div>
-<div class="quarto-post image-right" data-index="5" data-listing-date-sort="1770181200000" data-listing-file-modified-sort="1767380251554" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="5" data-listing-word-count-sort="824">
-<div class="thumbnail"><a href="./labs/lab3-controlflow/index.html" class="no-external">
-
-<div class="listing-item-img-placeholder card-img-top" >&nbsp;</div>
-
-</a></div>
-<div class="body">
-<h3 class="no-anchor listing-title">
-<a href="./labs/lab3-controlflow/index.html" class="no-external">BIO331 – Lab 03: Control flow</a>
-</h3>
-<div class="listing-subtitle">
-<a href="./labs/lab3-controlflow/index.html" class="no-external">Simple control flow in R</a>
-</div>
-<div class="delink listing-description"><a href="./labs/lab3-controlflow/index.html" class="no-external">
-Make sure that you are comfortable with git and have a basic understanding of how to run code in R. If you need a refresher, please see the Lab 2 materials and external…
-</a></div>
-</div>
-<div class="metadata">
-<a href="./labs/lab3-controlflow/index.html" class="no-external">
-<div class="listing-date">
-Feb 4, 2026
-</div>
-<div class="listing-author">
-Dee Ruttenberg (Adapted from Scott Wolf, Michelle White)
-</div>
-</a>
-</div>
-</div>
-<div class="quarto-post image-right" data-index="6" data-listing-date-sort="1769576400000" data-listing-file-modified-sort="1767379417043" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="6" data-listing-word-count-sort="1100">
-<div class="thumbnail"><a href="./labs/lab2-git/index.html" class="no-external">
-
-<p class="card-img-top"><img src="labs/lab2-git/index_files/figure-html/unnamed-chunk-4-1.png"  class="thumbnail-image card-img"/></p>
-
-</a></div>
-<div class="body">
-<h3 class="no-anchor listing-title">
-<a href="./labs/lab2-git/index.html" class="no-external">BIO331 – Lab 02: Intro to git</a>
-</h3>
-<div class="listing-subtitle">
-<a href="./labs/lab2-git/index.html" class="no-external">Basic programming in R and Python and version control with git</a>
-</div>
-<div class="delink listing-description"><a href="./labs/lab2-git/index.html" class="no-external">
-Labs can be found here.
-</a></div>
-</div>
-<div class="metadata">
-<a href="./labs/lab2-git/index.html" class="no-external">
-<div class="listing-date">
-Jan 28, 2026
-</div>
-<div class="listing-author">
-Dee Ruttenberg (Adapted from Scott Wolf, Michelle White)
-</div>
-</a>
-</div>
-</div>
-<div class="quarto-post image-right" data-index="7" data-listing-date-sort="1768971600000" data-listing-file-modified-sort="1767404998826" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="2" data-listing-word-count-sort="254">
-<div class="thumbnail"><a href="./labs/lab1-setup/index.html" class="no-external">
-
-<div class="listing-item-img-placeholder card-img-top" >&nbsp;</div>
-
-</a></div>
-<div class="body">
-<h3 class="no-anchor listing-title">
-<a href="./labs/lab1-setup/index.html" class="no-external">BIO331 – Lab 01: Prerequisites</a>
-</h3>
-<div class="listing-subtitle">
-<a href="./labs/lab1-setup/index.html" class="no-external">Setting up in preparation for next week</a>
-</div>
-<div class="delink listing-description"><a href="./labs/lab1-setup/index.html" class="no-external">
-This course focuses on the <strong>R</strong> and <strong>Unix</strong> programming languages, with a main focus on R. <strong>Git</strong> will also be taught and used for the assignments. A good code editor and environment (<strong>…</strong><strong></strong><br><em></em>
-</a></div>
-</div>
-<div class="metadata">
-<a href="./labs/lab1-setup/index.html" class="no-external">
-<div class="listing-date">
-Jan 21, 2026
-</div>
-<div class="listing-author">
-Dee Ruttenberg (Adapted from Scott Wolf, Michelle White)
-</div>
-</a>
-</div>
-</div>
-</div>
-<div class="listing-no-matching d-none">No matching items</div>
-</div></main> <!-- /main -->
+</main> <!-- /main -->
 <script id="quarto-html-after-body" type="application/javascript">
   window.document.addEventListener("DOMContentLoaded", function (event) {
     const icon = "";

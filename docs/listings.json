@@ -12,9 +12,14 @@
   {
     "listing": "/labs.html",
     "items": [
-      "/labs/lab1-setup/index.html",
+      "/labs/lab8-assembly/index.html",
+      "/labs/lab7-rblast/index.html",
+      "/labs/lab6-dataviz/index.html",
+      "/labs/lab5-datawrangling/index.html",
+      "/labs/lab4-stringwrangling/index.html",
       "/labs/lab3-controlflow/index.html",
-      "/labs/lab2-git/index.html"
+      "/labs/lab2-git/index.html",
+      "/labs/lab1-setup/index.html"
     ]
   }
 ]

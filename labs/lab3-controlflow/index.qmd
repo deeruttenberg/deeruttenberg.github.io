@@ -1,5 +1,5 @@
 ---
-title: "BIO331 -- Precept 03: Control flow"
+title: "BIO331 -- Lab 03: Control flow"
 subtitle: "Simple control flow in R"
 author: Dee Ruttenberg (Adapted from Scott Wolf, Michelle White)
 date: Feb. 4, 2026
