@@ -13,16 +13,13 @@ We're going to mostly be doing the precept problem sets during class, but I'll b
 
 # Introduction
 
-This precept is focused on getting started programming with R and utilizing git for version control -- including how we will submit assigments and projects throughout the semester.
+This precept is focused utilizing GitHub for version control, which is how we will submit assigments and projects throughout the semester.  Learning to use Github is especially important in bioinformatics, because it allows you to more easily work on collaborative projects, document your code, and engage with the bioinformatic community. Github allows you to create a global *repository* of all your code your code. If you develop a website, it will contain all the code to run your website. If you're doing a research project, it will contain all the code needed to reproduce your findings. If you're building a program, it may provide all the code needed to run that program. 
 
 # Getting started
 
 We support two IDEs in the course: RStudio and VS Code.  I'll be using RStudio for the early precepts, and VS Code for the later precepts. VS Code is a bit more lightweight and extensible, but RStudio has a lot of nice features specifially for R.
 
-Before going forward, lets install the basic software we need (you should have done this last week!): [R](https://cran.r-project.org/) and [git](https://git-scm.com/book/en/v2/Getting-Started-Installing-Git). 
-
-#### VS Code
-[VS Code](https://code.visualstudio.com/). Once you've installed and lauched VS Code, you'll need to grab a few extensions. I'd recommend getting the [R Extension](https://code.visualstudio.com/docs/languages/r)  and the [Python Extension](https://https://code.visualstudio.com/docs/languages/python) at minimum.
+Before going forward, let's install the basic software we need (you should have done this last week!): [R](https://cran.r-project.org/) and [git](https://git-scm.com/book/en/v2/Getting-Started-Installing-Git). 
 
 #### RStudio
 [RStudio](https://rstudio.com/) 
@@ -35,47 +32,29 @@ Make sure that you're able to run basic R code like the following:
 print("Hello world!")
 ```
 
-## Git
-
-For the semester we're going to be using GitHub Classroom to manage assignments and projects. You should have received an announcement with the Classroom link. If you haven't, please let me know.
-
-If you have not already installed git, make sure to install it. The installation guide can be found here: [https://git-scm.com/book/en/v2/Getting-Started-Installing-Git](https://git-scm.com/book/en/v2/Getting-Started-Installing-Git).
-
 ## GitHub
 
-First, you'll need to create an account on GitHub. You can do that [https://github.com/join](https://github.com/join).
+First, you'll need to create an account on GitHub. You can do that at [https://github.com/join](https://github.com/join).
 
-#### Authentication
+## GitHub Desktop
 
-Install GitHub CLI -- found here: [https://cli.github.com/](https://cli.github.com/) -- and authenticate with GitHub.  You can do this by running the following command in your terminal:
-
-```{bash, eval=FALSE, engine="sh"}
-gh auth login
-```
-
-> A terminal is essentially the directory which underlies your computer. We will discuss terminal manipulation in unix later this semester. For now, you should be able to find it by searching for terminal.  
+Finally, you'll want to connect your global repository on GitHub to the local repository on your computer.  The best way to do this is through GitHub Desktop, which can be downloaded at [https://desktop.github.com/download/](https://desktop.github.com/download/)
 
 ### GitHub Classroom
 
 #### Accepting the assignment
 
-When you accept the assignment, it will create a private repository (only visible to BIO331 staff and yourself) that you can use. Once you have that repository, you can clone it to your local machine and start working on it.
+When you accept the assignment, it will create a global private repository (only visible to BIO331 staff and yourself) that you can use. Once you have that repository, you can clone it to your local machine and start working on it.
 
 ### Cloning the repository
 
-To clone the repository, you'll need to copy the URL from the repository page.  You can do this by clicking the green "Code" button and copying the URL.  Then, in your terminal, you can run `git clone <URL>` to clone the repository to your local machine.
-
-```{bash, eval=FALSE, engine="sh"}
-git clone https://github.com/Stonehill-College-Bioinformatics/introduction-to-github-classroom-{GITHUB_USERNAME}.git # Note that this can be found on the repository page under the green "Code" button after github has created the repository
-cd introduction-to-github-classroom-{GITHUB_USERNAME}
-git checkout -b precept-1 # or what you want to call your branch
-```
+To clone the repository, you'll want to go to your global repository in GitHub, and click on the green code button.  Then, you can copy the HTTPS link (usually something like https://github.com/Stonehill-College-Bioinformatics/introduction-to-github-classroom-[YOURUSERNAME].git). In your Github Desktop page, you can then press add repository, clone repository, and enter that link.  Once you've done that, you're set up!
 
 ### Working on the assignment in R
 
 For this assignment, you can just create an simple example R file containing some code and text. You can then commit and push your changes to the branch you created.
 
-__Running R code__: To run R code (in RStudio or VSCode), you can hit cmd+enter while selecting the line or block of code you want to run (if no line(s) are selected, then just the line that your cursor is on will run).  You can also run the entire file by hitting cmd+shift+s or cmd+shift+enter. If you're working on windows, you can use ctrl instead of cmd. You can also just click the play button in the top-right corner of the VSCode editor to run the entire file!
+__Running R code__: To run R code (in RStudio), you can hit cmd+enter while selecting the line or block of code you want to run (if no line(s) are selected, then just the line that your cursor is on will run).  You can also run the entire file by hitting cmd+shift+s or cmd+shift+enter. If you're working on windows, you can use ctrl instead of cmd. If you're working on a R Markdown file, you can just click the play button to run "chunks" of code (delineated by 3 '`' symbols followed by curly brackets)
 
 Our goal is to make a simple R file for exploring the iris data set (we'll explain the structure of this dataset in two labs!).
 
@@ -116,20 +95,7 @@ iris$Petal.Length.Class <- ifelse(iris$Petal.Length < 2, "Short",
 head(iris)
 ```
 
-#### Pushing your changes
-```{bash, eval=FALSE, engine="sh"}
-git add precept_1.Rmd # or the file you created
-git commit -m "Adding precept 1" # or the message you want
-git push -u origin precept-1 # or the branch you created
-```
-
-Note that after you set the upstream branch, you can just run `git push` to push your changes to the remote repository.
-
-### Submitting the assignment
-
-Once you make any changes to the main branch, the assignment will be marked as submitted. To avoid your work being marked as submitted, make sure you use branches and pull requests.
-
-Once you've made changes to your development branch, you can make a PR that details all of the changes you've made across multiple commits. This allows you to merge back in a single unit of work. 
+Once you save the new file in your local repository, Github Desktop will notice you have changed your local repository, and give you the option to commit those changes (giving a note saying what you did) and push them (sending the changes to the global repository)
 
 #### Creating a PR
 
@@ -156,8 +122,7 @@ N/A
 
 # Submission
 
-For this precept, you'll just need to make a merged PR with your changes. I'll be checking the PRs for the assignment to make sure you wrote __something__ in R and Python and that you've made a well structured PR and merged.  If you have any questions, please let me know!
-
+For this precept, you'll just need to make an updated global repository with your changes. I'll be checking the PRs for the assignment to make sure you wrote __something__ in R.
 
 
 

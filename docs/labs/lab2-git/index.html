@@ -170,13 +170,12 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
   <li><a href="#introduction" id="toc-introduction" class="nav-link" data-scroll-target="#introduction">Introduction</a></li>
   <li><a href="#getting-started" id="toc-getting-started" class="nav-link" data-scroll-target="#getting-started">Getting started</a>
   <ul class="collapse">
-  <li><a href="#git" id="toc-git" class="nav-link" data-scroll-target="#git">Git</a></li>
-  <li><a href="#github" id="toc-github" class="nav-link" data-scroll-target="#github">GitHub</a>
+  <li><a href="#github" id="toc-github" class="nav-link" data-scroll-target="#github">GitHub</a></li>
+  <li><a href="#github-desktop" id="toc-github-desktop" class="nav-link" data-scroll-target="#github-desktop">GitHub Desktop</a>
   <ul class="collapse">
   <li><a href="#github-classroom" id="toc-github-classroom" class="nav-link" data-scroll-target="#github-classroom">GitHub Classroom</a></li>
   <li><a href="#cloning-the-repository" id="toc-cloning-the-repository" class="nav-link" data-scroll-target="#cloning-the-repository">Cloning the repository</a></li>
   <li><a href="#working-on-the-assignment-in-r" id="toc-working-on-the-assignment-in-r" class="nav-link" data-scroll-target="#working-on-the-assignment-in-r">Working on the assignment in R</a></li>
-  <li><a href="#submitting-the-assignment" id="toc-submitting-the-assignment" class="nav-link" data-scroll-target="#submitting-the-assignment">Submitting the assignment</a></li>
   </ul></li>
   </ul></li>
   <li><a href="#submission" id="toc-submission" class="nav-link" data-scroll-target="#submission">Submission</a></li>
@@ -225,16 +224,12 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 </section>
 <section id="introduction" class="level1">
 <h1>Introduction</h1>
-<p>This precept is focused on getting started programming with R and utilizing git for version control – including how we will submit assigments and projects throughout the semester.</p>
+<p>This precept is focused utilizing GitHub for version control, which is how we will submit assigments and projects throughout the semester. Learning to use Github is especially important in bioinformatics, because it allows you to more easily work on collaborative projects, document your code, and engage with the bioinformatic community. Github allows you to create a global <em>repository</em> of all your code your code. If you develop a website, it will contain all the code to run your website. If you’re doing a research project, it will contain all the code needed to reproduce your findings. If you’re building a program, it may provide all the code needed to run that program.</p>
 </section>
 <section id="getting-started" class="level1">
 <h1>Getting started</h1>
 <p>We support two IDEs in the course: RStudio and VS Code. I’ll be using RStudio for the early precepts, and VS Code for the later precepts. VS Code is a bit more lightweight and extensible, but RStudio has a lot of nice features specifially for R.</p>
-<p>Before going forward, lets install the basic software we need (you should have done this last week!): <a href="https://cran.r-project.org/">R</a> and <a href="https://git-scm.com/book/en/v2/Getting-Started-Installing-Git">git</a>.</p>
-<section id="vs-code" class="level4">
-<h4 class="anchored" data-anchor-id="vs-code">VS Code</h4>
-<p><a href="https://code.visualstudio.com/">VS Code</a>. Once you’ve installed and lauched VS Code, you’ll need to grab a few extensions. I’d recommend getting the <a href="https://code.visualstudio.com/docs/languages/r">R Extension</a> and the <a href="https://https://code.visualstudio.com/docs/languages/python">Python Extension</a> at minimum.</p>
-</section>
+<p>Before going forward, let’s install the basic software we need (you should have done this last week!): <a href="https://cran.r-project.org/">R</a> and <a href="https://git-scm.com/book/en/v2/Getting-Started-Installing-Git">git</a>.</p>
 <section id="rstudio" class="level4">
 <h4 class="anchored" data-anchor-id="rstudio">RStudio</h4>
 <p><a href="https://rstudio.com/">RStudio</a></p>
@@ -249,53 +244,37 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 </div>
 </div>
 </section>
-<section id="git" class="level2">
-<h2 class="anchored" data-anchor-id="git">Git</h2>
-<p>For the semester we’re going to be using GitHub Classroom to manage assignments and projects. You should have received an announcement with the Classroom link. If you haven’t, please let me know.</p>
-<p>If you have not already installed git, make sure to install it. The installation guide can be found here: <a href="https://git-scm.com/book/en/v2/Getting-Started-Installing-Git">https://git-scm.com/book/en/v2/Getting-Started-Installing-Git</a>.</p>
-</section>
 <section id="github" class="level2">
 <h2 class="anchored" data-anchor-id="github">GitHub</h2>
-<p>First, you’ll need to create an account on GitHub. You can do that <a href="https://github.com/join">https://github.com/join</a>.</p>
-<section id="authentication" class="level4">
-<h4 class="anchored" data-anchor-id="authentication">Authentication</h4>
-<p>Install GitHub CLI – found here: <a href="https://cli.github.com/">https://cli.github.com/</a> – and authenticate with GitHub. You can do this by running the following command in your terminal:</p>
-<div class="cell">
-<div class="sourceCode cell-code" id="cb3"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a><span class="ex">gh</span> auth login</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-</div>
-<blockquote class="blockquote">
-<p>A terminal is essentially the directory which underlies your computer. We will discuss terminal manipulation in unix later this semester. For now, you should be able to find it by searching for terminal.</p>
-</blockquote>
+<p>First, you’ll need to create an account on GitHub. You can do that at <a href="https://github.com/join">https://github.com/join</a>.</p>
 </section>
+<section id="github-desktop" class="level2">
+<h2 class="anchored" data-anchor-id="github-desktop">GitHub Desktop</h2>
+<p>Finally, you’ll want to connect your global repository on GitHub to the local repository on your computer. The best way to do this is through GitHub Desktop, which can be downloaded at <a href="https://desktop.github.com/download/">https://desktop.github.com/download/</a></p>
 <section id="github-classroom" class="level3">
 <h3 class="anchored" data-anchor-id="github-classroom">GitHub Classroom</h3>
 <section id="accepting-the-assignment" class="level4">
 <h4 class="anchored" data-anchor-id="accepting-the-assignment">Accepting the assignment</h4>
-<p>When you accept the assignment, it will create a private repository (only visible to BIO331 staff and yourself) that you can use. Once you have that repository, you can clone it to your local machine and start working on it.</p>
+<p>When you accept the assignment, it will create a global private repository (only visible to BIO331 staff and yourself) that you can use. Once you have that repository, you can clone it to your local machine and start working on it.</p>
 </section>
 </section>
 <section id="cloning-the-repository" class="level3">
 <h3 class="anchored" data-anchor-id="cloning-the-repository">Cloning the repository</h3>
-<p>To clone the repository, you’ll need to copy the URL from the repository page. You can do this by clicking the green “Code” button and copying the URL. Then, in your terminal, you can run <code>git clone &lt;URL&gt;</code> to clone the repository to your local machine.</p>
-<div class="cell">
-<div class="sourceCode cell-code" id="cb4"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb4-1"><a href="#cb4-1" aria-hidden="true" tabindex="-1"></a><span class="fu">git</span> clone https://github.com/Stonehill-College-Bioinformatics/introduction-to-github-classroom-{GITHUB_USERNAME}.git <span class="co"># Note that this can be found on the repository page under the green "Code" button after github has created the repository</span></span>
-<span id="cb4-2"><a href="#cb4-2" aria-hidden="true" tabindex="-1"></a><span class="bu">cd</span> introduction-to-github-classroom-{GITHUB_USERNAME}</span>
-<span id="cb4-3"><a href="#cb4-3" aria-hidden="true" tabindex="-1"></a><span class="fu">git</span> checkout <span class="at">-b</span> precept-1 <span class="co"># or what you want to call your branch</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-</div>
+<p>To clone the repository, you’ll want to go to your global repository in GitHub, and click on the green code button. Then, you can copy the HTTPS link (usually something like https://github.com/Stonehill-College-Bioinformatics/introduction-to-github-classroom-[YOURUSERNAME].git). In your Github Desktop page, you can then press add repository, clone repository, and enter that link. Once you’ve done that, you’re set up!</p>
 </section>
 <section id="working-on-the-assignment-in-r" class="level3">
 <h3 class="anchored" data-anchor-id="working-on-the-assignment-in-r">Working on the assignment in R</h3>
 <p>For this assignment, you can just create an simple example R file containing some code and text. You can then commit and push your changes to the branch you created.</p>
-<p><strong>Running R code</strong>: To run R code (in RStudio or VSCode), you can hit cmd+enter while selecting the line or block of code you want to run (if no line(s) are selected, then just the line that your cursor is on will run). You can also run the entire file by hitting cmd+shift+s or cmd+shift+enter. If you’re working on windows, you can use ctrl instead of cmd. You can also just click the play button in the top-right corner of the VSCode editor to run the entire file!</p>
+<p><strong>Running R code</strong>: To run R code (in RStudio), you can hit cmd+enter while selecting the line or block of code you want to run (if no line(s) are selected, then just the line that your cursor is on will run). You can also run the entire file by hitting cmd+shift+s or cmd+shift+enter. If you’re working on windows, you can use ctrl instead of cmd. If you’re working on a R Markdown file, you can just click the play button to run “chunks” of code (delineated by 3 ‘`’ symbols followed by curly brackets)</p>
 <p>Our goal is to make a simple R file for exploring the iris data set (we’ll explain the structure of this dataset in two labs!).</p>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb5"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb5-1"><a href="#cb5-1" aria-hidden="true" tabindex="-1"></a><span class="co"># ----- Loading and Exploring the iris dataset -----</span></span>
-<span id="cb5-2"><a href="#cb5-2" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb5-3"><a href="#cb5-3" aria-hidden="true" tabindex="-1"></a><span class="co"># Load the dataset -- note that this is a built-in dataset in R</span></span>
-<span id="cb5-4"><a href="#cb5-4" aria-hidden="true" tabindex="-1"></a><span class="fu">data</span>(iris)</span>
-<span id="cb5-5"><a href="#cb5-5" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb5-6"><a href="#cb5-6" aria-hidden="true" tabindex="-1"></a><span class="co"># View the first few rows to understand its structure</span></span>
-<span id="cb5-7"><a href="#cb5-7" aria-hidden="true" tabindex="-1"></a><span class="fu">head</span>(iris)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb3"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a><span class="co"># ----- Loading and Exploring the iris dataset -----</span></span>
+<span id="cb3-2"><a href="#cb3-2" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb3-3"><a href="#cb3-3" aria-hidden="true" tabindex="-1"></a><span class="co"># Load the dataset -- note that this is a built-in dataset in R</span></span>
+<span id="cb3-4"><a href="#cb3-4" aria-hidden="true" tabindex="-1"></a><span class="fu">data</span>(iris)</span>
+<span id="cb3-5"><a href="#cb3-5" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb3-6"><a href="#cb3-6" aria-hidden="true" tabindex="-1"></a><span class="co"># View the first few rows to understand its structure</span></span>
+<span id="cb3-7"><a href="#cb3-7" aria-hidden="true" tabindex="-1"></a><span class="fu">head</span>(iris)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
 <pre><code>  Sepal.Length Sepal.Width Petal.Length Petal.Width Species
 1          5.1         3.5          1.4         0.2  setosa
@@ -305,8 +284,8 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 5          5.0         3.6          1.4         0.2  setosa
 6          5.4         3.9          1.7         0.4  setosa</code></pre>
 </div>
-<div class="sourceCode cell-code" id="cb7"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb7-1"><a href="#cb7-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Check the detailed structure of the dataset for more information on its columns</span></span>
-<span id="cb7-2"><a href="#cb7-2" aria-hidden="true" tabindex="-1"></a><span class="fu">str</span>(iris)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb5"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb5-1"><a href="#cb5-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Check the detailed structure of the dataset for more information on its columns</span></span>
+<span id="cb5-2"><a href="#cb5-2" aria-hidden="true" tabindex="-1"></a><span class="fu">str</span>(iris)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
 <pre><code>'data.frame':   150 obs. of  5 variables:
  $ Sepal.Length: num  5.1 4.9 4.7 4.6 5 5.4 4.6 5 4.4 4.9 ...
@@ -315,8 +294,8 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
  $ Petal.Width : num  0.2 0.2 0.2 0.2 0.2 0.4 0.3 0.2 0.2 0.1 ...
  $ Species     : Factor w/ 3 levels "setosa","versicolor",..: 1 1 1 1 1 1 1 1 1 1 ...</code></pre>
 </div>
-<div class="sourceCode cell-code" id="cb9"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb9-1"><a href="#cb9-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Generate summary statistics to get a sense of the data distribution</span></span>
-<span id="cb9-2"><a href="#cb9-2" aria-hidden="true" tabindex="-1"></a><span class="fu">summary</span>(iris)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb7"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb7-1"><a href="#cb7-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Generate summary statistics to get a sense of the data distribution</span></span>
+<span id="cb7-2"><a href="#cb7-2" aria-hidden="true" tabindex="-1"></a><span class="fu">summary</span>(iris)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
 <pre><code>  Sepal.Length    Sepal.Width     Petal.Length    Petal.Width   
  Min.   :4.300   Min.   :2.000   Min.   :1.000   Min.   :0.100  
@@ -333,38 +312,38 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
                 
                 </code></pre>
 </div>
-<div class="sourceCode cell-code" id="cb11"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb11-1"><a href="#cb11-1" aria-hidden="true" tabindex="-1"></a><span class="co"># ----- Data Visualization -----</span></span>
+<div class="sourceCode cell-code" id="cb9"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb9-1"><a href="#cb9-1" aria-hidden="true" tabindex="-1"></a><span class="co"># ----- Data Visualization -----</span></span>
+<span id="cb9-2"><a href="#cb9-2" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb9-3"><a href="#cb9-3" aria-hidden="true" tabindex="-1"></a><span class="co"># Scatter plot visualizing the relationship between Sepal measurements</span></span>
+<span id="cb9-4"><a href="#cb9-4" aria-hidden="true" tabindex="-1"></a><span class="fu">plot</span>(iris<span class="sc">$</span>Sepal.Length, iris<span class="sc">$</span>Sepal.Width, <span class="at">main=</span><span class="st">"Sepal Length vs Sepal Width"</span>, </span>
+<span id="cb9-5"><a href="#cb9-5" aria-hidden="true" tabindex="-1"></a>     <span class="at">xlab=</span><span class="st">"Sepal Length"</span>, <span class="at">ylab=</span><span class="st">"Sepal Width"</span>, <span class="at">col=</span>iris<span class="sc">$</span>Species, <span class="at">pch=</span><span class="dv">16</span>, <span class="at">cex=</span><span class="fl">1.3</span>)</span>
+<span id="cb9-6"><a href="#cb9-6" aria-hidden="true" tabindex="-1"></a><span class="fu">legend</span>(<span class="st">"topright"</span>, <span class="at">legend=</span><span class="fu">levels</span>(iris<span class="sc">$</span>Species), <span class="at">col=</span><span class="dv">1</span><span class="sc">:</span><span class="dv">3</span>, <span class="at">pch=</span><span class="dv">16</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output-display">
+<div>
+<figure class="figure">
+<p><img src="index_files/figure-html/unnamed-chunk-2-1.png" class="img-fluid figure-img" width="672"></p>
+</figure>
+</div>
+</div>
+<div class="sourceCode cell-code" id="cb10"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb10-1"><a href="#cb10-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Scatter plot visualizing the relationship between Petal measurements</span></span>
+<span id="cb10-2"><a href="#cb10-2" aria-hidden="true" tabindex="-1"></a><span class="fu">plot</span>(iris<span class="sc">$</span>Petal.Length, iris<span class="sc">$</span>Petal.Width, <span class="at">main=</span><span class="st">"Petal Length vs Petal Width"</span>, </span>
+<span id="cb10-3"><a href="#cb10-3" aria-hidden="true" tabindex="-1"></a>     <span class="at">xlab=</span><span class="st">"Petal Length"</span>, <span class="at">ylab=</span><span class="st">"Petal Width"</span>, <span class="at">col=</span>iris<span class="sc">$</span>Species, <span class="at">pch=</span><span class="dv">16</span>, <span class="at">cex=</span><span class="fl">1.3</span>)</span>
+<span id="cb10-4"><a href="#cb10-4" aria-hidden="true" tabindex="-1"></a><span class="fu">legend</span>(<span class="st">"topright"</span>, <span class="at">legend=</span><span class="fu">levels</span>(iris<span class="sc">$</span>Species), <span class="at">col=</span><span class="dv">1</span><span class="sc">:</span><span class="dv">3</span>, <span class="at">pch=</span><span class="dv">16</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output-display">
+<div>
+<figure class="figure">
+<p><img src="index_files/figure-html/unnamed-chunk-2-2.png" class="img-fluid figure-img" width="672"></p>
+</figure>
+</div>
+</div>
+<div class="sourceCode cell-code" id="cb11"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb11-1"><a href="#cb11-1" aria-hidden="true" tabindex="-1"></a><span class="co"># ----- Modifying the Dataset -----</span></span>
 <span id="cb11-2"><a href="#cb11-2" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb11-3"><a href="#cb11-3" aria-hidden="true" tabindex="-1"></a><span class="co"># Scatter plot visualizing the relationship between Sepal measurements</span></span>
-<span id="cb11-4"><a href="#cb11-4" aria-hidden="true" tabindex="-1"></a><span class="fu">plot</span>(iris<span class="sc">$</span>Sepal.Length, iris<span class="sc">$</span>Sepal.Width, <span class="at">main=</span><span class="st">"Sepal Length vs Sepal Width"</span>, </span>
-<span id="cb11-5"><a href="#cb11-5" aria-hidden="true" tabindex="-1"></a>     <span class="at">xlab=</span><span class="st">"Sepal Length"</span>, <span class="at">ylab=</span><span class="st">"Sepal Width"</span>, <span class="at">col=</span>iris<span class="sc">$</span>Species, <span class="at">pch=</span><span class="dv">16</span>, <span class="at">cex=</span><span class="fl">1.3</span>)</span>
-<span id="cb11-6"><a href="#cb11-6" aria-hidden="true" tabindex="-1"></a><span class="fu">legend</span>(<span class="st">"topright"</span>, <span class="at">legend=</span><span class="fu">levels</span>(iris<span class="sc">$</span>Species), <span class="at">col=</span><span class="dv">1</span><span class="sc">:</span><span class="dv">3</span>, <span class="at">pch=</span><span class="dv">16</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<div class="cell-output-display">
-<div>
-<figure class="figure">
-<p><img src="index_files/figure-html/unnamed-chunk-4-1.png" class="img-fluid figure-img" width="672"></p>
-</figure>
-</div>
-</div>
-<div class="sourceCode cell-code" id="cb12"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb12-1"><a href="#cb12-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Scatter plot visualizing the relationship between Petal measurements</span></span>
-<span id="cb12-2"><a href="#cb12-2" aria-hidden="true" tabindex="-1"></a><span class="fu">plot</span>(iris<span class="sc">$</span>Petal.Length, iris<span class="sc">$</span>Petal.Width, <span class="at">main=</span><span class="st">"Petal Length vs Petal Width"</span>, </span>
-<span id="cb12-3"><a href="#cb12-3" aria-hidden="true" tabindex="-1"></a>     <span class="at">xlab=</span><span class="st">"Petal Length"</span>, <span class="at">ylab=</span><span class="st">"Petal Width"</span>, <span class="at">col=</span>iris<span class="sc">$</span>Species, <span class="at">pch=</span><span class="dv">16</span>, <span class="at">cex=</span><span class="fl">1.3</span>)</span>
-<span id="cb12-4"><a href="#cb12-4" aria-hidden="true" tabindex="-1"></a><span class="fu">legend</span>(<span class="st">"topright"</span>, <span class="at">legend=</span><span class="fu">levels</span>(iris<span class="sc">$</span>Species), <span class="at">col=</span><span class="dv">1</span><span class="sc">:</span><span class="dv">3</span>, <span class="at">pch=</span><span class="dv">16</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<div class="cell-output-display">
-<div>
-<figure class="figure">
-<p><img src="index_files/figure-html/unnamed-chunk-4-2.png" class="img-fluid figure-img" width="672"></p>
-</figure>
-</div>
-</div>
-<div class="sourceCode cell-code" id="cb13"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb13-1"><a href="#cb13-1" aria-hidden="true" tabindex="-1"></a><span class="co"># ----- Modifying the Dataset -----</span></span>
-<span id="cb13-2"><a href="#cb13-2" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb13-3"><a href="#cb13-3" aria-hidden="true" tabindex="-1"></a><span class="co"># Add a new column 'Petal.Length.Class' that classifies flowers based on petal length</span></span>
-<span id="cb13-4"><a href="#cb13-4" aria-hidden="true" tabindex="-1"></a>iris<span class="sc">$</span>Petal.Length.Class <span class="ot">&lt;-</span> <span class="fu">ifelse</span>(iris<span class="sc">$</span>Petal.Length <span class="sc">&lt;</span> <span class="dv">2</span>, <span class="st">"Short"</span>, </span>
-<span id="cb13-5"><a href="#cb13-5" aria-hidden="true" tabindex="-1"></a>                           <span class="fu">ifelse</span>(iris<span class="sc">$</span>Petal.Length <span class="sc">&lt;</span> <span class="dv">5</span>, <span class="st">"Medium"</span>, <span class="st">"Long"</span>))</span>
-<span id="cb13-6"><a href="#cb13-6" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb13-7"><a href="#cb13-7" aria-hidden="true" tabindex="-1"></a><span class="co"># View the initial rows of the modified dataset to see the added column</span></span>
-<span id="cb13-8"><a href="#cb13-8" aria-hidden="true" tabindex="-1"></a><span class="fu">head</span>(iris)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<span id="cb11-3"><a href="#cb11-3" aria-hidden="true" tabindex="-1"></a><span class="co"># Add a new column 'Petal.Length.Class' that classifies flowers based on petal length</span></span>
+<span id="cb11-4"><a href="#cb11-4" aria-hidden="true" tabindex="-1"></a>iris<span class="sc">$</span>Petal.Length.Class <span class="ot">&lt;-</span> <span class="fu">ifelse</span>(iris<span class="sc">$</span>Petal.Length <span class="sc">&lt;</span> <span class="dv">2</span>, <span class="st">"Short"</span>, </span>
+<span id="cb11-5"><a href="#cb11-5" aria-hidden="true" tabindex="-1"></a>                           <span class="fu">ifelse</span>(iris<span class="sc">$</span>Petal.Length <span class="sc">&lt;</span> <span class="dv">5</span>, <span class="st">"Medium"</span>, <span class="st">"Long"</span>))</span>
+<span id="cb11-6"><a href="#cb11-6" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb11-7"><a href="#cb11-7" aria-hidden="true" tabindex="-1"></a><span class="co"># View the initial rows of the modified dataset to see the added column</span></span>
+<span id="cb11-8"><a href="#cb11-8" aria-hidden="true" tabindex="-1"></a><span class="fu">head</span>(iris)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
 <pre><code>  Sepal.Length Sepal.Width Petal.Length Petal.Width Species Petal.Length.Class
 1          5.1         3.5          1.4         0.2  setosa              Short
@@ -375,37 +354,24 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 6          5.4         3.9          1.7         0.4  setosa              Short</code></pre>
 </div>
 </div>
-<section id="pushing-your-changes" class="level4">
-<h4 class="anchored" data-anchor-id="pushing-your-changes">Pushing your changes</h4>
-<div class="cell">
-<div class="sourceCode cell-code" id="cb15"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb15-1"><a href="#cb15-1" aria-hidden="true" tabindex="-1"></a><span class="fu">git</span> add precept_1.Rmd <span class="co"># or the file you created</span></span>
-<span id="cb15-2"><a href="#cb15-2" aria-hidden="true" tabindex="-1"></a><span class="fu">git</span> commit <span class="at">-m</span> <span class="st">"Adding precept 1"</span> <span class="co"># or the message you want</span></span>
-<span id="cb15-3"><a href="#cb15-3" aria-hidden="true" tabindex="-1"></a><span class="fu">git</span> push <span class="at">-u</span> origin precept-1 <span class="co"># or the branch you created</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-</div>
-<p>Note that after you set the upstream branch, you can just run <code>git push</code> to push your changes to the remote repository.</p>
-</section>
-</section>
-<section id="submitting-the-assignment" class="level3">
-<h3 class="anchored" data-anchor-id="submitting-the-assignment">Submitting the assignment</h3>
-<p>Once you make any changes to the main branch, the assignment will be marked as submitted. To avoid your work being marked as submitted, make sure you use branches and pull requests.</p>
-<p>Once you’ve made changes to your development branch, you can make a PR that details all of the changes you’ve made across multiple commits. This allows you to merge back in a single unit of work.</p>
+<p>Once you save the new file in your local repository, Github Desktop will notice you have changed your local repository, and give you the option to commit those changes (giving a note saying what you did) and push them (sending the changes to the global repository)</p>
 <section id="creating-a-pr" class="level4">
 <h4 class="anchored" data-anchor-id="creating-a-pr">Creating a PR</h4>
 <p>To create a Pull Request on GitHub, you navigate to your branch (under branches on web interface), and select contribute &gt; open pull request.</p>
 </section>
 <section id="example-pull-request" class="level4">
 <h4 class="anchored" data-anchor-id="example-pull-request">Example Pull Request</h4>
-<div class="sourceCode" id="cb16"><pre class="sourceCode default code-with-copy"><code class="sourceCode default"><span id="cb16-1"><a href="#cb16-1" aria-hidden="true" tabindex="-1"></a># Summary</span>
-<span id="cb16-2"><a href="#cb16-2" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb16-3"><a href="#cb16-3" aria-hidden="true" tabindex="-1"></a>This PR shows example formatting. Because PRs are the primary location at which code is evaluated, make sure that your PRs are clear and descriptive. PRs can include markdown so they can become relatively complex if the assignment is complicated. This should be paired with will documented code to allow others to easily follow your design and implementation.</span>
-<span id="cb16-4"><a href="#cb16-4" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb16-5"><a href="#cb16-5" aria-hidden="true" tabindex="-1"></a># Design notes</span>
-<span id="cb16-6"><a href="#cb16-6" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb16-7"><a href="#cb16-7" aria-hidden="true" tabindex="-1"></a>N/A</span>
-<span id="cb16-8"><a href="#cb16-8" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb16-9"><a href="#cb16-9" aria-hidden="true" tabindex="-1"></a># Implementation notes</span>
-<span id="cb16-10"><a href="#cb16-10" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb16-11"><a href="#cb16-11" aria-hidden="true" tabindex="-1"></a>N/A</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode" id="cb13"><pre class="sourceCode default code-with-copy"><code class="sourceCode default"><span id="cb13-1"><a href="#cb13-1" aria-hidden="true" tabindex="-1"></a># Summary</span>
+<span id="cb13-2"><a href="#cb13-2" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb13-3"><a href="#cb13-3" aria-hidden="true" tabindex="-1"></a>This PR shows example formatting. Because PRs are the primary location at which code is evaluated, make sure that your PRs are clear and descriptive. PRs can include markdown so they can become relatively complex if the assignment is complicated. This should be paired with will documented code to allow others to easily follow your design and implementation.</span>
+<span id="cb13-4"><a href="#cb13-4" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb13-5"><a href="#cb13-5" aria-hidden="true" tabindex="-1"></a># Design notes</span>
+<span id="cb13-6"><a href="#cb13-6" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb13-7"><a href="#cb13-7" aria-hidden="true" tabindex="-1"></a>N/A</span>
+<span id="cb13-8"><a href="#cb13-8" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb13-9"><a href="#cb13-9" aria-hidden="true" tabindex="-1"></a># Implementation notes</span>
+<span id="cb13-10"><a href="#cb13-10" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb13-11"><a href="#cb13-11" aria-hidden="true" tabindex="-1"></a>N/A</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <blockquote class="blockquote">
 <p><strong>WARNING</strong></p>
 <p>Be careful here! Please try to only merge PRs when you have completed assignments. If you merge multiple PRs for an assignment, I’ll try to loop back to them if I’ve already graded one, but if I miss them for some reason, please let me know!</p>
@@ -416,7 +382,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 </section>
 <section id="submission" class="level1">
 <h1>Submission</h1>
-<p>For this precept, you’ll just need to make a merged PR with your changes. I’ll be checking the PRs for the assignment to make sure you wrote <strong>something</strong> in R and Python and that you’ve made a well structured PR and merged. If you have any questions, please let me know!</p>
+<p>For this precept, you’ll just need to make an updated global repository with your changes. I’ll be checking the PRs for the assignment to make sure you wrote <strong>something</strong> in R.</p>
 
 
 </section>
