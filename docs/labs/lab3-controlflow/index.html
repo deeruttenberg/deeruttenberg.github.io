@@ -357,6 +357,14 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <div class="cell">
 <div class="sourceCode cell-code" id="cb13"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb13-1"><a href="#cb13-1" aria-hidden="true" tabindex="-1"></a>grades <span class="ot">&lt;-</span> <span class="fu">c</span>(<span class="dv">91</span>, <span class="dv">77</span>, <span class="dv">68</span>, <span class="dv">65</span>, <span class="dv">89</span>, <span class="dv">72</span>, <span class="dv">85</span>, <span class="dv">90</span>, <span class="dv">80</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
+<p><strong>Tip</strong>: To access the nth number in a vector, you can use vector[n]</p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb14"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb14-1"><a href="#cb14-1" aria-hidden="true" tabindex="-1"></a>grades <span class="ot">&lt;-</span> <span class="fu">c</span>(<span class="dv">91</span>, <span class="dv">77</span>, <span class="dv">68</span>, <span class="dv">65</span>, <span class="dv">89</span>, <span class="dv">72</span>, <span class="dv">85</span>, <span class="dv">90</span>, <span class="dv">80</span>)</span>
+<span id="cb14-2"><a href="#cb14-2" aria-hidden="true" tabindex="-1"></a>grades[<span class="dv">1</span>]</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>[1] 91</code></pre>
+</div>
+</div>
 <p>Write a conditional script that:</p>
 <ol type="1">
 <li>Tags grades above 90 as “Excellent”</li>
@@ -378,8 +386,8 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <p>Write a function named series_sum that accepts two arguments: a start value ‘s’ and an end value ‘e’. The function should sum all numbers from ‘s’ to ‘e’. However, if a number in the series is divisible by 3, it should be skipped.</p>
 <p><strong>Tip</strong>: The modulo operator (<code>%%</code> in R) returns the remainder of the division of two numbers.</p>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb14"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb14-1"><a href="#cb14-1" aria-hidden="true" tabindex="-1"></a><span class="co"># as in R</span></span>
-<span id="cb14-2"><a href="#cb14-2" aria-hidden="true" tabindex="-1"></a><span class="dv">5</span><span class="sc">%%</span><span class="dv">2</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb16"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb16-1"><a href="#cb16-1" aria-hidden="true" tabindex="-1"></a><span class="co"># as in R</span></span>
+<span id="cb16-2"><a href="#cb16-2" aria-hidden="true" tabindex="-1"></a><span class="dv">5</span><span class="sc">%%</span><span class="dv">2</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
 <pre><code>[1] 1</code></pre>
 </div>

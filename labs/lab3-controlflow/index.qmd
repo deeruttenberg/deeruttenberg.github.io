@@ -125,6 +125,13 @@ Consider a vector containing the values: 91, 77, 68, 65, 89, 72, 85, 90, 80.
 grades <- c(91, 77, 68, 65, 89, 72, 85, 90, 80)
 ```
 
+**Tip**: To access the nth number in a vector, you can use vector[n]
+
+```{r}
+grades <- c(91, 77, 68, 65, 89, 72, 85, 90, 80)
+grades[1]
+```
+
 Write a conditional script that:
 
 1. Tags grades above 90 as "Excellent"
