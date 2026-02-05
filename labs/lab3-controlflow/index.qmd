@@ -41,6 +41,15 @@ if (x > 5) {
 }
 ```
 
+'ifelse' statements can also be used as a single function to identify multiple individuals within an ordered list:
+
+```{r}
+set.seed(42) # This ensures that the random number generator will produce the same results each time the script is run
+x <- runif(10, 0, 10)
+
+x_greater <- ifelse(x > 5, "Larger than 5", "Smaller than 5")
+```
+
 ## Loops
 
 There are two primary loops in R - `for` and `while`. `for` loops are used when the number of iterations is known, while `while` loops are used when the number of iterations is unknown and require an iterator variable.
@@ -119,13 +128,7 @@ For this precept, please submit a single R file containing the answers to the ex
 
 Consider a vector containing the values: 91, 77, 68, 65, 89, 72, 85, 90, 80.
 
-**Tip**: A vector is a way of storing data, in this case, ordered integers:
-
-```{r}
-grades <- c(91, 77, 68, 65, 89, 72, 85, 90, 80)
-```
-
-**Tip**: To access the nth number in a vector, you can use vector[n]
+**Tip**: A vector is a way of storing data, in this case, ordered integers. To access the nth number in a vector, you can use vector[n]
 
 ```{r}
 grades <- c(91, 77, 68, 65, 89, 72, 85, 90, 80)
@@ -140,16 +143,18 @@ Write a conditional script that:
 
 Store the result in a new variable called grade_tags. Ensure the order in grade_tags corresponds to the order of grades in the grades vector, and print the result.
 
+grade_tags <- ifelse(
+  grades > 90, "Excellent",
+  ifelse(grades >= 80, "Good", "Fair")
+)
 
 ### 2. For
 
 Create a sequence of numbers from 3 to 15 (included). Using a for loop, compute the cumulative product of these numbers and print the results.
 
-
 ### 3. While
 
 Starting with a number 50, decrease it by 5% in every iteration using a while loop. Continue the iterations until the number goes below 20. Return and print the number of iterations it took.
-
 
 ### 4. Functions with conditionals and loops
 
@@ -161,7 +166,6 @@ Write a function named series_sum that accepts two arguments: a start value 's' 
 # as in R
 5%%2
 ```
-
 
 ### 5. Recursive Functions
 
