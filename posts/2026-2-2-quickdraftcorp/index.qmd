@@ -35,7 +35,7 @@ The benefit of these three combos is that all three provide both a fast advance 
 
 I find Obokata has the edge just because it pairs with two agendas (Astroscript and BitW).  I really love Obokata BitW: it gives you the space to go full damage/grinder, which is especially potent when you can draw your damage cards incredibly consistently, and your opponent only has 34 total hit points.  You don’t even need to go full grinder — with enough tempo you can find the windows pretty readily against very strong players.  I also prefer Obo with my third favorite 2-pointer (Medical Breakthrough), which furthers my weak preference.
 
-My hunch is the math changes if Tomorrow’s Headline is legal, or if there is another Bellona combo that folks find maximizes its leverage.  But with 2 3-pointers and 4-pointers, I’d rather a 3-pointer which best leverages the 2-pointers.  
+My hunch is the math changes if Tomorrow’s Headline is legal, or if there is another Bellona combo that folks find maximizes its leverage.  But with 2 2-pointers and 4 3-pointers, I’d rather a 3-pointer which best leverages the 2-pointers.  
 
 *Other 3 Pointers:* My A-tier 3-pointers are The Future Perfect and Vacheron.  Generally, I find these two agendas are better central protection, but limit scoring plans, which removed your draft flexibility. On the 10% you get none of these, I find Send a Message to be an okay B-Tier pick because it means I can take an Accelerated Beta Test and build for ice-hell, but that's last resort territory (as you typically die to Sifr or Paperclip). The other on-score or on-steal effects just do not have the time in a first-to-6 game to play a meaningful role, as much as I wish SSL was better. 
 
@@ -73,11 +73,11 @@ Obviously if you have a synergy piece, B2L, R+, Outfit, Earth Station, Prav are 
 
 # Later Picks: 
 
-These are where you can cement the strategy: If you have good ice, find the money to afford it. If you have a damage based strategy, keep finding ways to knock cards out of hand or require runners to answer threats. If you have good Econ, find a wincon to leverage it. Often, you need to make a slightly out there pick here to just have what you need, whether that's a below-level ice, or an installable just to have more bluffing tools (love Vlad in this format). Here is also where currents can be REALLY good -- they can stick for a while in this format with so many defensive agendas and no strong countercurrent meta.  
+These are where you can cement the strategy: If you have good ice, find the money to afford it. If you have a damage based strategy, keep finding ways to knock cards out of hand or require runners to answer threats. If you have good econ, find a wincon to leverage it. Often, you need to make a slightly out there pick here to just have what you need, whether that's a below-level ice, or an installable just to have more bluffing tools (love Vlad in this format). Here is also where currents can be REALLY good -- they can stick for a while in this format with so many defensive agendas and no strong counter-current meta.  
 
 # Wincons:
 
-I generally find tags hard to consider because it requires two synergy pieces -- I'll consider it if I get a strong early enabler (HHN or Drago)
+I generally find tags hard to consider because it requires two synergy pieces -- I'll consider it if I get a strong early enabler (HHN or Drago).
 
 I like Measured Response a lot even with the low threats -- with 4 2-pointers you can usually force to threat 4 for at least a turn or two.  I don't like Punitive for pretty much the same reason (esp'y with such high film critic stocks)
 
