@@ -7,8 +7,7 @@ description: |
   #   affiliation: Professor of Practice, Stonehill College
   #   affiliation-url: https://www.stonehill.edu/
 date: 2026-02-02
-citation: 
-   url: https://deeruttenberg.github.io/posts/2026-2-2-quickdraftcorp/
+url: https://deeruttenberg.github.io/posts/2026-2-2-quickdraftcorp/
 categories: [netrunner]
 image: zwicky.jpg
 ---
