@@ -185,8 +185,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
   <li><a href="#exercise-2.-regex-to-english" id="toc-exercise-2.-regex-to-english" class="nav-link" data-scroll-target="#exercise-2.-regex-to-english">Exercise 2. Regex to English</a></li>
   <li><a href="#exercise-3-extracting-the-parts-of-an-address" id="toc-exercise-3-extracting-the-parts-of-an-address" class="nav-link" data-scroll-target="#exercise-3-extracting-the-parts-of-an-address">Exercise 3: Extracting the parts of an address</a></li>
   <li><a href="#exercise-4-more-string-extraction" id="toc-exercise-4-more-string-extraction" class="nav-link" data-scroll-target="#exercise-4-more-string-extraction">Exercise 4: More string extraction</a></li>
-  <li><a href="#exercise-5-place-names" id="toc-exercise-5-place-names" class="nav-link" data-scroll-target="#exercise-5-place-names">Exercise 5: Place names</a></li>
-  <li><a href="#exercise-6-extracting-month-day-year-from-a-date-variable" id="toc-exercise-6-extracting-month-day-year-from-a-date-variable" class="nav-link" data-scroll-target="#exercise-6-extracting-month-day-year-from-a-date-variable">Exercise 6: Extracting month, day, year from a date variable</a></li>
+  <li><a href="#exercise-5-extracting-month-day-year-from-a-date-variable" id="toc-exercise-5-extracting-month-day-year-from-a-date-variable" class="nav-link" data-scroll-target="#exercise-5-extracting-month-day-year-from-a-date-variable">Exercise 5: Extracting month, day, year from a date variable</a></li>
   </ul></li>
   </ul>
 </nav>
@@ -226,7 +225,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 </header>
 
 
-<p>This week’s assignment can be found <a href="https://classroom.github.com/a/vJYNBKR0">here</a>.</p>
+<p>This week’s assignment can be found <a href="https://classroom.github.com/a/yWUiqqOq">here</a>.</p>
 <section id="introduction" class="level1">
 <h1>Introduction</h1>
 <p>In this document, we will explore two significant aspects of data analysis: Data Input/Output (IO) and String Wrangling with Regular Expressions (Regex). Data IO is fundamental as it’s the first step in the data analysis pipeline, where we read or load data from various sources. String wrangling, particularly using Regex, is vital when we are dealing with text data and need to extract, replace, or modify strings based on specific patterns.</p>
@@ -373,7 +372,7 @@ dbl (1): id
 <p>Extracting digits from strings can be crucial to isolate specific numerical information such as prices or zip codes.</p>
 <div class="cell">
 <div class="sourceCode cell-code" id="cb10"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb10-1"><a href="#cb10-1" aria-hidden="true" tabindex="-1"></a>strings <span class="ot">&lt;-</span> <span class="fu">c</span>(<span class="st">"123 Main St"</span>, <span class="st">"Price: $200 0"</span>)</span>
-<span id="cb10-2"><a href="#cb10-2" aria-hidden="true" tabindex="-1"></a>digits <span class="ot">&lt;-</span> <span class="fu">str_extract_all</span>(strings, <span class="st">"</span><span class="sc">\\</span><span class="st">b</span><span class="sc">\\</span><span class="st">d+</span><span class="sc">\\</span><span class="st">b"</span>) <span class="co"># notice how only one backslash is needed for regex in Python</span></span>
+<span id="cb10-2"><a href="#cb10-2" aria-hidden="true" tabindex="-1"></a>digits <span class="ot">&lt;-</span> <span class="fu">str_extract_all</span>(strings, <span class="st">"</span><span class="sc">\\</span><span class="st">b</span><span class="sc">\\</span><span class="st">d+</span><span class="sc">\\</span><span class="st">b"</span>) </span>
 <span id="cb10-3"><a href="#cb10-3" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb10-4"><a href="#cb10-4" aria-hidden="true" tabindex="-1"></a>digits</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
@@ -464,14 +463,8 @@ dbl (1): id
 <li>Extract all words starting with ‘a’ or ‘A’ from the comment column.</li>
 </ul>
 </section>
-<section id="exercise-5-place-names" class="level2">
-<h2 class="anchored" data-anchor-id="exercise-5-place-names">Exercise 5: Place names</h2>
-<ul>
-<li>Which Princeton place name has the most vowels? What name has the highest proportion of vowels? (Hint: what is the denominator?)</li>
-</ul>
-</section>
-<section id="exercise-6-extracting-month-day-year-from-a-date-variable" class="level2">
-<h2 class="anchored" data-anchor-id="exercise-6-extracting-month-day-year-from-a-date-variable">Exercise 6: Extracting month, day, year from a date variable</h2>
+<section id="exercise-5-extracting-month-day-year-from-a-date-variable" class="level2">
+<h2 class="anchored" data-anchor-id="exercise-5-extracting-month-day-year-from-a-date-variable">Exercise 5: Extracting month, day, year from a date variable</h2>
 <p>Create a dataframe called <code>flights</code> from <code>nycflights.csv</code> and create the following variable <code>date_strings</code>:</p>
 <div class="cell">
 <div class="sourceCode cell-code" id="cb17"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb17-1"><a href="#cb17-1" aria-hidden="true" tabindex="-1"></a>date_strings <span class="ot">&lt;-</span> <span class="fu">paste</span>(flights<span class="sc">$</span>year, flights<span class="sc">$</span>month, flights<span class="sc">$</span>day, <span class="at">sep =</span> <span class="st">"-"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>

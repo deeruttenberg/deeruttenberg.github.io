@@ -298,7 +298,7 @@
     "href": "labs/lab4-stringwrangling/index.html#stringr-examples",
     "title": "BIO331 – Lab 04: Data/String Wrangling",
     "section": "stringr examples",
-    "text": "stringr examples\nExtracting digits from strings can be crucial to isolate specific numerical information such as prices or zip codes.\n\nstrings &lt;- c(\"123 Main St\", \"Price: $200 0\")\ndigits &lt;- str_extract_all(strings, \"\\\\b\\\\d+\\\\b\") # notice how only one backslash is needed for regex in Python\n\ndigits\n\n[[1]]\n[1] \"123\"\n\n[[2]]\n[1] \"200\" \"0\""
+    "text": "stringr examples\nExtracting digits from strings can be crucial to isolate specific numerical information such as prices or zip codes.\n\nstrings &lt;- c(\"123 Main St\", \"Price: $200 0\")\ndigits &lt;- str_extract_all(strings, \"\\\\b\\\\d+\\\\b\") \n\ndigits\n\n[[1]]\n[1] \"123\"\n\n[[2]]\n[1] \"200\" \"0\""
   },
   {
     "objectID": "labs/lab4-stringwrangling/index.html#tidyr-examples",
@@ -336,18 +336,11 @@
     "text": "Exercise 4: More string extraction\n\nIdentify locations with a number in their names and extract that number.\nExtract all words starting with ‘a’ or ‘A’ from the comment column."
   },
   {
-    "objectID": "labs/lab4-stringwrangling/index.html#exercise-5-place-names",
-    "href": "labs/lab4-stringwrangling/index.html#exercise-5-place-names",
+    "objectID": "labs/lab4-stringwrangling/index.html#exercise-5-extracting-month-day-year-from-a-date-variable",
+    "href": "labs/lab4-stringwrangling/index.html#exercise-5-extracting-month-day-year-from-a-date-variable",
     "title": "BIO331 – Lab 04: Data/String Wrangling",
-    "section": "Exercise 5: Place names",
-    "text": "Exercise 5: Place names\n\nWhich Princeton place name has the most vowels? What name has the highest proportion of vowels? (Hint: what is the denominator?)"
-  },
-  {
-    "objectID": "labs/lab4-stringwrangling/index.html#exercise-6-extracting-month-day-year-from-a-date-variable",
-    "href": "labs/lab4-stringwrangling/index.html#exercise-6-extracting-month-day-year-from-a-date-variable",
-    "title": "BIO331 – Lab 04: Data/String Wrangling",
-    "section": "Exercise 6: Extracting month, day, year from a date variable",
-    "text": "Exercise 6: Extracting month, day, year from a date variable\nCreate a dataframe called flights from nycflights.csv and create the following variable date_strings:\n\ndate_strings &lt;- paste(flights$year, flights$month, flights$day, sep = \"-\")\n\n\nExtract the months, days, and years from your new variable into three separate variables for each date component"
+    "section": "Exercise 5: Extracting month, day, year from a date variable",
+    "text": "Exercise 5: Extracting month, day, year from a date variable\nCreate a dataframe called flights from nycflights.csv and create the following variable date_strings:\n\ndate_strings &lt;- paste(flights$year, flights$month, flights$day, sep = \"-\")\n\n\nExtract the months, days, and years from your new variable into three separate variables for each date component"
   },
   {
     "objectID": "labs/lab3-controlflow/index.html",
