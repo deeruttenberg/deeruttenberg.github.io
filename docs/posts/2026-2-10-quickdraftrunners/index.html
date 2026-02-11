@@ -6,8 +6,10 @@
 
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
+<meta name="dcterms.date" content="2026-02-10">
+<meta name="description" content="Surely you’ll be offered that third Jeitinho…">
 
-<title>Blog – Dee Ruttenberg</title>
+<title>How to Win Netrunner Quick Draft (Runner) – Dee Ruttenberg</title>
 <style>
 code{white-space: pre-wrap;}
 span.smallcaps{font-variant: small-caps;}
@@ -23,25 +25,23 @@ ul.task-list li input[type="checkbox"] {
 </style>
 
 
-<script src="site_libs/quarto-nav/quarto-nav.js"></script>
-<script src="site_libs/quarto-nav/headroom.min.js"></script>
-<script src="site_libs/clipboard/clipboard.min.js"></script>
-<script src="site_libs/quarto-search/autocomplete.umd.js"></script>
-<script src="site_libs/quarto-search/fuse.min.js"></script>
-<script src="site_libs/quarto-search/quarto-search.js"></script>
-<meta name="quarto:offset" content="./">
-<script src="site_libs/quarto-listing/list.min.js"></script>
-<script src="site_libs/quarto-listing/quarto-listing.js"></script>
-<script src="site_libs/quarto-html/quarto.js" type="module"></script>
-<script src="site_libs/quarto-html/tabsets/tabsets.js" type="module"></script>
-<script src="site_libs/quarto-html/popper.min.js"></script>
-<script src="site_libs/quarto-html/tippy.umd.min.js"></script>
-<script src="site_libs/quarto-html/anchor.min.js"></script>
-<link href="site_libs/quarto-html/tippy.css" rel="stylesheet">
-<link href="site_libs/quarto-html/quarto-syntax-highlighting-e1a5c8363afafaef2c763b6775fbf3ca.css" rel="stylesheet" id="quarto-text-highlighting-styles">
-<script src="site_libs/bootstrap/bootstrap.min.js"></script>
-<link href="site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
-<link href="site_libs/bootstrap/bootstrap-c1fac2584b48ed01fb6e278e36375074.min.css" rel="stylesheet" append-hash="true" id="quarto-bootstrap" data-mode="light">
+<script src="../../site_libs/quarto-nav/quarto-nav.js"></script>
+<script src="../../site_libs/quarto-nav/headroom.min.js"></script>
+<script src="../../site_libs/clipboard/clipboard.min.js"></script>
+<script src="../../site_libs/quarto-search/autocomplete.umd.js"></script>
+<script src="../../site_libs/quarto-search/fuse.min.js"></script>
+<script src="../../site_libs/quarto-search/quarto-search.js"></script>
+<meta name="quarto:offset" content="../../">
+<script src="../../site_libs/quarto-html/quarto.js" type="module"></script>
+<script src="../../site_libs/quarto-html/tabsets/tabsets.js" type="module"></script>
+<script src="../../site_libs/quarto-html/popper.min.js"></script>
+<script src="../../site_libs/quarto-html/tippy.umd.min.js"></script>
+<script src="../../site_libs/quarto-html/anchor.min.js"></script>
+<link href="../../site_libs/quarto-html/tippy.css" rel="stylesheet">
+<link href="../../site_libs/quarto-html/quarto-syntax-highlighting-e1a5c8363afafaef2c763b6775fbf3ca.css" rel="stylesheet" id="quarto-text-highlighting-styles">
+<script src="../../site_libs/bootstrap/bootstrap.min.js"></script>
+<link href="../../site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
+<link href="../../site_libs/bootstrap/bootstrap-c1fac2584b48ed01fb6e278e36375074.min.css" rel="stylesheet" append-hash="true" id="quarto-bootstrap" data-mode="light">
 <script id="quarto-search-options" type="application/json">{
   "location": "navbar",
   "copy-button": false,
@@ -69,77 +69,19 @@ ul.task-list li input[type="checkbox"] {
     "search-label": "Search"
   }
 }</script>
-<script>
 
-  window.document.addEventListener("DOMContentLoaded", function (_event) {
-    const listingTargetEl = window.document.querySelector('#listing-listing .list');
-    if (!listingTargetEl) {
-      // No listing discovered, do not attach.
-      return; 
-    }
 
-    const options = {
-      valueNames: ['listing-date','listing-title','listing-author','listing-image','listing-description','listing-categories',{ data: ['index'] },{ data: ['categories'] },{ data: ['listing-date-sort'] },{ data: ['listing-file-modified-sort'] }],
-      
-      searchColumns: ["listing-date","listing-title","listing-author","listing-image","listing-description","listing-categories"],
-    };
-
-    window['quarto-listings'] = window['quarto-listings'] || {};
-    window['quarto-listings']['listing-listing'] = new List('listing-listing', options);
-
-    if (window['quarto-listing-loaded']) {
-      window['quarto-listing-loaded']();
-    }
-  });
-
-  window.addEventListener('hashchange',() => {
-    if (window['quarto-listing-loaded']) {
-      window['quarto-listing-loaded']();
-    }
-  })
-  </script>
-
-  <script src="https://cdnjs.cloudflare.com/polyfill/v3/polyfill.min.js?features=es6"></script>
-  <script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml-full.js" type="text/javascript"></script>
-
-<script type="text/javascript">
-const typesetMath = (el) => {
-  if (window.MathJax) {
-    // MathJax Typeset
-    window.MathJax.typeset([el]);
-  } else if (window.katex) {
-    // KaTeX Render
-    var mathElements = el.getElementsByClassName("math");
-    var macros = [];
-    for (var i = 0; i < mathElements.length; i++) {
-      var texText = mathElements[i].firstChild;
-      if (mathElements[i].tagName == "SPAN") {
-        window.katex.render(texText.data, mathElements[i], {
-          displayMode: mathElements[i].classList.contains('display'),
-          throwOnError: false,
-          macros: macros,
-          fleqn: false
-        });
-      }
-    }
-  }
-}
-window.Quarto = {
-  typesetMath
-};
-</script>
-
-<link rel="stylesheet" href="styles.css">
+<link rel="stylesheet" href="../../styles.css">
 </head>
 
 <body class="nav-fixed quarto-light">
 
 <div id="quarto-search-results"></div>
-  <header id="quarto-header" class="headroom fixed-top quarto-banner">
+  <header id="quarto-header" class="headroom fixed-top">
     <nav class="navbar navbar-expand-lg " data-bs-theme="dark">
       <div class="navbar-container container-fluid">
       <div class="navbar-brand-container mx-auto">
-    <a class="navbar-brand" href="./index.html">
+    <a class="navbar-brand" href="../../index.html">
     <span class="navbar-title">Dee Ruttenberg</span>
     </a>
   </div>
@@ -150,27 +92,27 @@ window.Quarto = {
           <div class="collapse navbar-collapse" id="navbarCollapse">
             <ul class="navbar-nav navbar-nav-scroll me-auto">
   <li class="nav-item">
-    <a class="nav-link" href="./index.html"> 
+    <a class="nav-link" href="../../index.html"> 
 <span class="menu-text">Home</span></a>
   </li>  
   <li class="nav-item">
-    <a class="nav-link" href="./about.html"> 
+    <a class="nav-link" href="../../about.html"> 
 <span class="menu-text">About</span></a>
   </li>  
   <li class="nav-item">
-    <a class="nav-link" href="./values.html"> 
+    <a class="nav-link" href="../../values.html"> 
 <span class="menu-text">Values</span></a>
   </li>  
   <li class="nav-item">
-    <a class="nav-link" href="./publications.html"> 
+    <a class="nav-link" href="../../publications.html"> 
 <span class="menu-text">Publications</span></a>
   </li>  
   <li class="nav-item">
-    <a class="nav-link active" href="./posts.html" aria-current="page"> 
+    <a class="nav-link" href="../../posts.html"> 
 <span class="menu-text">Blog</span></a>
   </li>  
   <li class="nav-item">
-    <a class="nav-link" href="./labs.html"> 
+    <a class="nav-link" href="../../labs.html"> 
 <span class="menu-text">Labs</span></a>
   </li>  
 </ul>
@@ -181,242 +123,119 @@ window.Quarto = {
     </nav>
 </header>
 <!-- content -->
-<header id="title-block-header" class="quarto-title-block default page-columns page-full">
-  <div class="quarto-title-banner page-columns page-full">
-    <div class="quarto-title column-page-left">
-      <h1 class="title">Blog</h1>
-            <p class="subtitle lead">Blog posts on teaching, biology, game design, and puzzles</p>
-                      </div>
-  </div>
-    
-  
-  <div class="quarto-title-meta column-page-left">
-
-      
-    
-      
-    </div>
-    
-  
-  </header><div id="quarto-content" class="quarto-container page-columns page-rows-contents page-layout-full page-navbar">
+<div id="quarto-content" class="quarto-container page-columns page-rows-contents page-layout-full page-navbar">
 <!-- sidebar -->
 <!-- margin-sidebar -->
     <div id="quarto-margin-sidebar" class="sidebar margin-sidebar">
-        
-    <h5 class="quarto-listing-category-title">Categories</h5><div class="quarto-listing-category category-default"><div class="category" data-category="">All <span class="quarto-category-count">(7)</span></div><div class="category" data-category="Y29tcGJpbw==">compbio <span class="quarto-category-count">(1)</span></div><div class="category" data-category="bmV0cnVubmVy">netrunner <span class="quarto-category-count">(2)</span></div><div class="category" data-category="b2ZmLXRvcGlj">off-topic <span class="quarto-category-count">(2)</span></div><div class="category" data-category="cGVkYWdvZ3k=">pedagogy <span class="quarto-category-count">(3)</span></div><div class="category" data-category="dmFsdWVz">values <span class="quarto-category-count">(3)</span></div></div></div>
+        <nav id="TOC" role="doc-toc" class="toc-active">
+    <h2 id="toc-title">On this page</h2>
+   
+  <ul>
+  <li><a href="#general-principles" id="toc-general-principles" class="nav-link active" data-scroll-target="#general-principles">General Principles:</a></li>
+  <li><a href="#icebreakers" id="toc-icebreakers" class="nav-link" data-scroll-target="#icebreakers">Icebreakers:</a></li>
+  <li><a href="#first-phase" id="toc-first-phase" class="nav-link" data-scroll-target="#first-phase">First Phase:</a></li>
+  <li><a href="#ids" id="toc-ids" class="nav-link" data-scroll-target="#ids">IDs:</a></li>
+  <li><a href="#second-phase" id="toc-second-phase" class="nav-link" data-scroll-target="#second-phase">Second Phase:</a></li>
+  <li><a href="#wincons-and-tech" id="toc-wincons-and-tech" class="nav-link" data-scroll-target="#wincons-and-tech">Wincons and Tech:</a></li>
+  <li><a href="#conclusion" id="toc-conclusion" class="nav-link" data-scroll-target="#conclusion">Conclusion:</a></li>
+  </ul>
+</nav>
+    </div>
 <!-- main -->
-<main class="content quarto-banner-title-block column-page-left" id="quarto-document-content">
+<main class="content column-page-left" id="quarto-document-content">
 
+<header id="title-block-header" class="quarto-title-block default">
+<div class="quarto-title">
+<h1 class="title">How to Win Netrunner Quick Draft (Runner)</h1>
+  <div class="quarto-categories">
+    <div class="quarto-category">netrunner</div>
+  </div>
+  </div>
 
-
-
-
-
-
-
-
-<div class="quarto-listing quarto-listing-container-default" id="listing-listing">
-<div class="list quarto-listing-default">
-<div class="quarto-post image-right" data-index="0" data-categories="bmV0cnVubmVy" data-listing-date-sort="1770699600000" data-listing-file-modified-sort="1770778284289" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="6" data-listing-word-count-sort="1184">
-<div class="thumbnail"><a href="./posts/2026-2-10-quickdraftrunners/index.html" class="no-external">
-
-<img loading="lazy" src="./posts/2026-2-10-quickdraftrunners/knickknack.jpg" class="thumbnail-image">
-
-</a></div>
-<div class="body">
-<h3 class="no-anchor listing-title">
-<a href="./posts/2026-2-10-quickdraftrunners/index.html" class="no-external">How to Win Netrunner Quick Draft (Runner)</a>
-</h3>
-<div class="listing-categories">
-
-<div class="listing-category" onclick="window.quartoListingCategory('bmV0cnVubmVy'); return false;">netrunner</div>
-
+<div>
+  <div class="description">
+    <p>Surely you’ll be offered that third Jeitinho…</p>
+  </div>
 </div>
-<div class="delink listing-description"><a href="./posts/2026-2-10-quickdraftrunners/index.html" class="no-external">
-<p>Surely you’ll be offered that third Jeitinho…</p>
-</a></div>
-</div>
-<div class="metadata">
-<a href="./posts/2026-2-10-quickdraftrunners/index.html" class="no-external">
-<div class="listing-date">
-Feb 10, 2026
-</div>
-</a>
-</div>
-</div>
-<div class="quarto-post image-right" data-index="1" data-categories="bmV0cnVubmVy" data-listing-date-sort="1770008400000" data-listing-file-modified-sort="1770442985027" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="8" data-listing-word-count-sort="1573">
-<div class="thumbnail"><a href="./posts/2026-2-2-quickdraftcorp/index.html" class="no-external">
 
-<img loading="lazy" src="./posts/2026-2-2-quickdraftcorp/zwicky.jpg" class="thumbnail-image">
 
-</a></div>
-<div class="body">
-<h3 class="no-anchor listing-title">
-<a href="./posts/2026-2-2-quickdraftcorp/index.html" class="no-external">How to Win Netrunner Quick Draft (Corp)</a>
-</h3>
-<div class="listing-categories">
+<div class="quarto-title-meta column-page-left">
 
-<div class="listing-category" onclick="window.quartoListingCategory('bmV0cnVubmVy'); return false;">netrunner</div>
+    
+    <div>
+    <div class="quarto-title-meta-heading">Published</div>
+    <div class="quarto-title-meta-contents">
+      <p class="date">February 10, 2026</p>
+    </div>
+  </div>
+  
+    
+  </div>
+  
 
-</div>
-<div class="delink listing-description"><a href="./posts/2026-2-2-quickdraftcorp/index.html" class="no-external">
-<p>Indian Union Stock Exchange into Indian Union Stock Exchange into Indian Union Stock Exchange into…</p>
-</a></div>
-</div>
-<div class="metadata">
-<a href="./posts/2026-2-2-quickdraftcorp/index.html" class="no-external">
-<div class="listing-date">
-Feb 2, 2026
-</div>
-</a>
-</div>
-</div>
-<div class="quarto-post image-right" data-index="2" data-categories="cGVkYWdvZ3klMkN2YWx1ZXM=" data-listing-date-sort="1766466000000" data-listing-file-modified-sort="1770090821942" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="6" data-listing-word-count-sort="1066">
-<div class="thumbnail"><a href="./posts/2025-12-23-boostinggrades/index.html" class="no-external">
 
-<img loading="lazy" src="./posts/2025-12-23-boostinggrades/principia.jpg" class="thumbnail-image">
+</header>
 
-</a></div>
-<div class="body">
-<h3 class="no-anchor listing-title">
-<a href="./posts/2025-12-23-boostinggrades/index.html" class="no-external">Why I (Probably) Won’t Boost Your Grade</a>
-</h3>
-<div class="listing-categories">
 
-<div class="listing-category" onclick="window.quartoListingCategory('cGVkYWdvZ3k='); return false;">pedagogy</div>
+<p>Welcome back! You have now learned to win as Corp.&nbsp;Unfortunately, your opponent has also read my guide, and now you are losing all of your runner games.</p>
+<section id="general-principles" class="level1">
+<h1>General Principles:</h1>
+<p>To me, there are three key principles to successful runner play:</p>
+<ol type="1">
+<li>On average, centrals are way stronger than they were in standard. This is because (a) defensive agendas are better and (b) while agenda density is about equivalent to midtempo corps in standard, you need to steal 1/2 of all agendas to win (usually), as opposed to standard where you can get by with 1/3.<br>
+</li>
+<li>Remotes are way more porous — y’all are used to Seamless servers and Skunkvoids, but to get good ice, good upgrades, and good bluffs is generally impossible in corp.<br>
+</li>
+<li>However, corps need to find way fewer scoring windows than in Standard. Sometimes even a single scoring window with Astro and then remotes literally don’t matter.</li>
+</ol>
+<p>What this means is being able to meaningfully remote camp 100% of the time is both more possible and important than in Standard.</p>
+</section>
+<section id="icebreakers" class="level1">
+<h1>Icebreakers:</h1>
+<p>The draft has three phases. In the first phase, you draft 3-ofs. Some rounds offer breakers, others don’t. In the third phase, you draft 2-ofs. In between these phases, you draft 3 breakers (fracter, decoder, killer). When drafting those breakers, you are offered 4 breakers and 3 extra cards. 4 is a significantly small number that you will not infrequently be offered 4 complete non options.</p>
+<p>Because of the importance of remote camping, I rate non-breakers exceedingly highly — bypass, boomerang, botulus, physarum, turtle, slap vandal. You really want a card such that if you smell an astro, you can be in that server in the blink of an eye. When it comes to breakers, cheaper is better: I love Shibboleth, Rising Tide, Cat’s Cradle, Mongoose. If the cost is 3c or less, even if the breaker is kinda mid, I will usually be happy. The exceptions to me are Paperclip (as you save a lot of money by not installing until the barrier is rezzed) and Laamb/Engolo (as they are incredibly good remote camp fodder).</p>
+<p>I’ll also use this space to add that Crypsis is not half bad. If the situation calls for it, it will reliably get through an ice that’s bugging you. You can rarely solo with it (at least if the corp knows what they’re doing), but Crypsis does mean you can afford to be down one of your three breakers and get in, or get around some awkwardness if you have a fixed strength breaker.</p>
+<p>However, I also think it is okay to end the second round down a breaker if you have some faker strategy. Remember, the corp isn’t likely to have more than 3 copies of any ice type — you can usually find another way.</p>
+</section>
+<section id="first-phase" class="level1">
+<h1>First Phase:</h1>
+<p>Draft Non-unique Money, Fakers, and only the highest-caliber wincons/icebreakers. Money is the most important, to me, as corps can often run you down quite a lot. With such a small deck, 3 copies of even a weaker money source (Telework, Armitage) goes a crazy long way.</p>
+<p>What this means is that, if you find a breaker you can stomach having 3 copies of (revolver, propeller, paperclip, engolo/laamb), I will usually be pretty happy to draft it in phase 1. Ensuring at least one of your breakers isn’t terrible is quite important.</p>
+</section>
+<section id="ids" class="level1">
+<h1>IDs:</h1>
+<p>You have 21 options. 3 are the draft IDs. Basically all 18 of your other options are takeable.</p>
+<p>Lat is S Tier. It’s draw. Draw is always good, and with such a small deck I’m often less excited to actually put draw cards in my deck.</p>
+<p>I’ve found Silhouette and Nero have both well exceeded expectations, as they let you read your opponent’s deck WAY quicker. I had Eddie Kim at S-tier originally but have been consistently underwhelmed (power operations are typically more situational than power assets, so it’s rare the game comes down to Eddie sweeping HQ and getting the seamless/biotic).</p>
+<p>Otherwise, it’s mostly WYSIWYG. Kit is great with inversificator or engolo (Yog if you feel spicy). Hailey is a lot weaker than usual but is fine with Cache or Coal. I am a certified Nasir enjoyer, and will pigeonhole him in in way too many games. The central moneys (Zahya and Gabe) are never not good but sometimes don’t do enough. I’m pretty afraid of Topan and Nasir in a format where I take Obokata about 40% of the time.</p>
+</section>
+<section id="second-phase" class="level1">
+<h1>Second Phase:</h1>
+<p>Again, here is where you start to find what goes together. If you’re down an icebreaker, try to find it or an acceptable faker. If you’ve taken two programs, try to find a source of mu. Wincons are odd — I’ve generally found that you either want to go big or not bother: rarely have I regretted an indexing, but I’ve very frequently regretted a last second deep dive instead of some more money or a remote-camping tool.</p>
+</section>
+<section id="wincons-and-tech" class="level1">
+<h1>Wincons and Tech:</h1>
+<ul>
+<li>Tag Me: Data Leak Reversal is great with pretty much any self-tagging tool as games are shorter and mill is easier. Countersurveilance and Mars are bad for similar reasons.</li>
+<li>HQ multiaccess is a bit weaker, and R&amp;D multiaccess a bit stronger. This is because the format rewards pushing whatever is in HQ a bit more, and corps are (with good reason) very scared of credit denial. Generally, my favorite multiaccess cards in format are Indexing Trick Shot, followed by Finality/Deep Data Mine, and Nyashia/Medium/Conduit after (I think events are better just because of the redundancies).<br>
+</li>
+<li>Credit denial is fine, but you cannot go all in around denial. This is because since you need to score 1/2 of all agendas, corps are able to durdle a bit more.</li>
+<li>Imp and Film Critic are both must takes, giving you way more flexibility against Medical Breakthrough, Bellona, Obokata, Vach, TFP. Probably will pick over Temujin they are that powerful.<br>
+</li>
+<li>About 10% of games at a high level will just be lost to Hired Help right now, so take that Pinhole Threading plz. It’s a good card anyway so you’ll want it.</li>
+<li>I love Damage Tech — so much ice does damage that even against non-Obakatas you’ll usually find a way to activate the Steelskin and IHW. Stonechip is fine too.<br>
+</li>
+<li>Tutors are almost always a trap. The decks are so dang consistent, unless you’re doing like, no breakers just Crypsis, I’d rather just pick a second draw card instead of a tutor.</li>
+</ul>
+</section>
+<section id="conclusion" class="level1">
+<h1>Conclusion:</h1>
+<p>Quick draft definitely favors corps, all the more so since the patch. This means that everything is against you when you play runner. Lean into the struggle, find a way to make it work however you can. Always Dee Running!</p>
 
-<div class="listing-category" onclick="window.quartoListingCategory('dmFsdWVz'); return false;">values</div>
 
-</div>
-<div class="delink listing-description"><a href="./posts/2025-12-23-boostinggrades/index.html" class="no-external">
-<p>AKA Prof.&nbsp;Dee bums you out.</p>
-</a></div>
-</div>
-<div class="metadata">
-<a href="./posts/2025-12-23-boostinggrades/index.html" class="no-external">
-<div class="listing-date">
-Dec 23, 2025
-</div>
-</a>
-</div>
-</div>
-<div class="quarto-post image-right" data-index="3" data-categories="b2ZmLXRvcGlj" data-listing-date-sort="1765861200000" data-listing-file-modified-sort="1770090821899" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="3" data-listing-word-count-sort="416">
-<div class="thumbnail"><a href="./posts/2025-12-16-albums/index.html" class="no-external">
+</section>
 
-<img loading="lazy" src="./posts/2025-12-16-albums/proprionegation.jpg" class="thumbnail-image">
-
-</a></div>
-<div class="body">
-<h3 class="no-anchor listing-title">
-<a href="./posts/2025-12-16-albums/index.html" class="no-external">Albums of the Year: 2025</a>
-</h3>
-<div class="listing-categories">
-
-<div class="listing-category" onclick="window.quartoListingCategory('b2ZmLXRvcGlj'); return false;">off-topic</div>
-
-</div>
-<div class="delink listing-description"><a href="./posts/2025-12-16-albums/index.html" class="no-external">
-<p>Rejoice, Rejoice!</p>
-</a></div>
-</div>
-<div class="metadata">
-<a href="./posts/2025-12-16-albums/index.html" class="no-external">
-<div class="listing-date">
-Dec 16, 2025
-</div>
-</a>
-</div>
-</div>
-<div class="quarto-post image-right" data-index="4" data-categories="dmFsdWVzJTJDb2ZmLXRvcGlj" data-listing-date-sort="1763096400000" data-listing-file-modified-sort="1770090821867" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="5" data-listing-word-count-sort="912">
-<div class="thumbnail"><a href="./posts/2025-11-14-pluribus/index.html" class="no-external">
-
-<img loading="lazy" src="./posts/2025-11-14-pluribus/lamplighter.jpg" class="thumbnail-image">
-
-</a></div>
-<div class="body">
-<h3 class="no-anchor listing-title">
-<a href="./posts/2025-11-14-pluribus/index.html" class="no-external">Pluribus is about AI, right?</a>
-</h3>
-<div class="listing-categories">
-
-<div class="listing-category" onclick="window.quartoListingCategory('dmFsdWVz'); return false;">values</div>
-
-<div class="listing-category" onclick="window.quartoListingCategory('b2ZmLXRvcGlj'); return false;">off-topic</div>
-
-</div>
-<div class="delink listing-description"><a href="./posts/2025-11-14-pluribus/index.html" class="no-external">
-<p>Clickbait-y thoughts on Pluribus</p>
-</a></div>
-</div>
-<div class="metadata">
-<a href="./posts/2025-11-14-pluribus/index.html" class="no-external">
-<div class="listing-date">
-Nov 14, 2025
-</div>
-</a>
-</div>
-</div>
-<div class="quarto-post image-right" data-index="5" data-categories="cGVkYWdvZ3klMkN2YWx1ZXM=" data-listing-date-sort="1757908800000" data-listing-file-modified-sort="1770090821864" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="4" data-listing-word-count-sort="757">
-<div class="thumbnail"><a href="./posts/2025-09-15-charliekirk/index.html" class="no-external">
-
-<img loading="lazy" src="./posts/2025-09-15-charliekirk/extruder.png" class="thumbnail-image">
-
-</a></div>
-<div class="body">
-<h3 class="no-anchor listing-title">
-<a href="./posts/2025-09-15-charliekirk/index.html" class="no-external">On Charlie Kirk</a>
-</h3>
-<div class="listing-categories">
-
-<div class="listing-category" onclick="window.quartoListingCategory('cGVkYWdvZ3k='); return false;">pedagogy</div>
-
-<div class="listing-category" onclick="window.quartoListingCategory('dmFsdWVz'); return false;">values</div>
-
-</div>
-<div class="delink listing-description"><a href="./posts/2025-09-15-charliekirk/index.html" class="no-external">
-<p>On flying a flag at half-staff for Charlie Kirk</p>
-</a></div>
-</div>
-<div class="metadata">
-<a href="./posts/2025-09-15-charliekirk/index.html" class="no-external">
-<div class="listing-date">
-Sep 15, 2025
-</div>
-</a>
-</div>
-</div>
-<div class="quarto-post image-right" data-index="6" data-categories="cGVkYWdvZ3klMkNjb21wYmlv" data-listing-date-sort="1756785600000" data-listing-file-modified-sort="1770090821841" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="5" data-listing-word-count-sort="902">
-<div class="thumbnail"><a href="./posts/2025-08-29-extendedaithoughts/index.html" class="no-external">
-
-<img loading="lazy" src="./posts/2025-08-29-extendedaithoughts/contemplation.jpg" class="thumbnail-image">
-
-</a></div>
-<div class="body">
-<h3 class="no-anchor listing-title">
-<a href="./posts/2025-08-29-extendedaithoughts/index.html" class="no-external">Extended Thoughts on AI</a>
-</h3>
-<div class="listing-categories">
-
-<div class="listing-category" onclick="window.quartoListingCategory('cGVkYWdvZ3k='); return false;">pedagogy</div>
-
-<div class="listing-category" onclick="window.quartoListingCategory('Y29tcGJpbw=='); return false;">compbio</div>
-
-</div>
-<div class="delink listing-description"><a href="./posts/2025-08-29-extendedaithoughts/index.html" class="no-external">
-<p>Further thoughts for students and interested educators on AI in the classroom</p>
-</a></div>
-</div>
-<div class="metadata">
-<a href="./posts/2025-08-29-extendedaithoughts/index.html" class="no-external">
-<div class="listing-date">
-Sep 2, 2025
-</div>
-</a>
-</div>
-</div>
-</div>
-<div class="listing-no-matching d-none">No matching items</div>
-</div></main> <!-- /main -->
+</main> <!-- /main -->
 <script id="quarto-html-after-body" type="application/javascript">
   window.document.addEventListener("DOMContentLoaded", function (event) {
     const icon = "";
