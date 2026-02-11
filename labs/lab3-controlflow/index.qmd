@@ -18,7 +18,7 @@ Before coming to precept, you should have:
 * A git repository for the precept. This git repository should be created using the precept assignment link. 
 * A draft branch in your assignment repository. ***Do not work in main!***
 
-# Precept 2 -- Introduction to Control Flow in R
+# Precept 3 -- Introduction to Control Flow in R
 
 Control flows in R determine the sequence in which the instructions are executed. This ability to control the flow of execution allows for more complex and flexible scripts. 
 

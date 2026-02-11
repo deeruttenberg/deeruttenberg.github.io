@@ -1,0 +1,69 @@
+---
+title: "Practice Exam 1"
+subtitle: "Practice Exam, and general R practice"
+author: Dee Ruttenberg 
+date: Feb. 11, 2026
+output: html_document
+---
+
+# Practice Exam
+
+1. You run the following code
+```{r, message = FALSE}
+sum = 0 
+list = c(2:5)
+for(i in list){
+  sum = sum + i
+}
+```
+
+(a) What would be the output of `print(list)`? 
+
+(b) When this function finishes running, what is `sum` equal to?
+
+2. You run the following code
+
+```{r, message=FALSE}
+x = 10
+y = 5
+while(x>y){
+  x = x-2
+}
+```
+
+(a) When you finish running this code, what will x equal?
+
+(b) What will y equal?
+
+(c) Consider this very slightly different code (remember, != means 'not equal').  What is the problem with it?
+
+```{r, eval = FALSE}
+x = 10
+y = 5
+while(x!=y){
+  x = x-2
+}
+```
+
+3. Consider the following function, which takes the sum of a given number of pennies, nickels, dimes, and quarters:
+
+```{r, message=FALSE}
+coin_sum = function(p, n, d, q){
+  c = p + 5*n + 10*d + 25*q
+  if(c >= 100){
+    return(c/100)
+  }
+  else{
+    return (c)
+  }
+}
+```
+
+(a) Calculate `coin_sum(1,1,1,1)`
+
+(b) Calculate `coin_sum(0,0,0,4)`
+
+(c) What does the variable `n` mean in the function?
+
+(d) Explain the purpose of the conditional (`if c>=100...`) in human terms.  Why might we have it?
+
