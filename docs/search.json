@@ -217,34 +217,6 @@
     "text": "Exercise 1: Reading TSV Files\n\nA TSV file, places_in_princeton.tsv, uses a tab character as a delimiter between values. Your task is to read this file into R using an appropriate reading function."
   },
   {
-    "objectID": "labs/lab4-stringwrangling/index.html#exercise-2.-regex-to-english",
-    "href": "labs/lab4-stringwrangling/index.html#exercise-2.-regex-to-english",
-    "title": "BIO331 – Lab 04: Data/String Wrangling",
-    "section": "Exercise 2. Regex to English",
-    "text": "Exercise 2. Regex to English\n\nExplain what this regex patters does: “\\d+[-]\\d+[-]\\d+\\s” in words. What is an example of something it matches? Leave your response as a comment block in your working script or file."
-  },
-  {
-    "objectID": "labs/lab4-stringwrangling/index.html#exercise-3-extracting-the-parts-of-an-address",
-    "href": "labs/lab4-stringwrangling/index.html#exercise-3-extracting-the-parts-of-an-address",
-    "title": "BIO331 – Lab 04: Data/String Wrangling",
-    "section": "Exercise 3: Extracting the parts of an address",
-    "text": "Exercise 3: Extracting the parts of an address\nWith the address column from the data from Exercise 1, we can extract ZIP codes as follows:\n\n# in R\nzip_codes &lt;- str_extract(data_tsv$address, \"\\\\b\\\\d{5}(?:-\\\\d{4})?\\\\b\")\n\n\nNow, extract the street address from the address string and search each comment for the word “Famous” to determine which locations are famous in Princeton. Follow this up by searching for “historic.” Make sure that your search is case-insensitive and captures when historic is a substring as well, like in “historical”."
-  },
-  {
-    "objectID": "labs/lab4-stringwrangling/index.html#exercise-4-more-string-extraction",
-    "href": "labs/lab4-stringwrangling/index.html#exercise-4-more-string-extraction",
-    "title": "BIO331 – Lab 04: Data/String Wrangling",
-    "section": "Exercise 4: More string extraction",
-    "text": "Exercise 4: More string extraction\n\nIdentify locations with a number in their names and extract that number.\nExtract all words starting with ‘a’ or ‘A’ from the comment column."
-  },
-  {
-    "objectID": "labs/lab4-stringwrangling/index.html#exercise-5-extracting-month-day-year-from-a-date-variable",
-    "href": "labs/lab4-stringwrangling/index.html#exercise-5-extracting-month-day-year-from-a-date-variable",
-    "title": "BIO331 – Lab 04: Data/String Wrangling",
-    "section": "Exercise 5: Extracting month, day, year from a date variable",
-    "text": "Exercise 5: Extracting month, day, year from a date variable\nCreate a dataframe called flights from nycflights.csv and create the following variable date_strings:\n\ndate_strings &lt;- paste(flights$year, flights$month, flights$day, sep = \"-\")\n\n\nExtract the months, days, and years from your new variable into three separate variables for each date component"
-  },
-  {
     "objectID": "labs/lab7-rblast/index.html",
     "href": "labs/lab7-rblast/index.html",
     "title": "BIO331 – Lab 07: Bioinformatics and BLAST",

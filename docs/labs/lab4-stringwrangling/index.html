@@ -182,10 +182,6 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
   <li><a href="#exercises" id="toc-exercises" class="nav-link" data-scroll-target="#exercises">Exercises</a>
   <ul class="collapse">
   <li><a href="#exercise-1-reading-tsv-files" id="toc-exercise-1-reading-tsv-files" class="nav-link" data-scroll-target="#exercise-1-reading-tsv-files">Exercise 1: Reading TSV Files</a></li>
-  <li><a href="#exercise-2.-regex-to-english" id="toc-exercise-2.-regex-to-english" class="nav-link" data-scroll-target="#exercise-2.-regex-to-english">Exercise 2. Regex to English</a></li>
-  <li><a href="#exercise-3-extracting-the-parts-of-an-address" id="toc-exercise-3-extracting-the-parts-of-an-address" class="nav-link" data-scroll-target="#exercise-3-extracting-the-parts-of-an-address">Exercise 3: Extracting the parts of an address</a></li>
-  <li><a href="#exercise-4-more-string-extraction" id="toc-exercise-4-more-string-extraction" class="nav-link" data-scroll-target="#exercise-4-more-string-extraction">Exercise 4: More string extraction</a></li>
-  <li><a href="#exercise-5-extracting-month-day-year-from-a-date-variable" id="toc-exercise-5-extracting-month-day-year-from-a-date-variable" class="nav-link" data-scroll-target="#exercise-5-extracting-month-day-year-from-a-date-variable">Exercise 5: Extracting month, day, year from a date variable</a></li>
   </ul></li>
   </ul>
 </nav>
@@ -297,6 +293,7 @@ dbl (1): id
 </section>
 <section id="a-quick-regex-guide" class="level1">
 <h1>A Quick Regex Guide</h1>
+<p><em>Note: Everything below here, while I’m keeping for the class, will be optional. Learning Regex is, imo, useful, but it is also a skill which is quite unintuitive, so I’m not going to require you to use regex this semester.</em></p>
 <p>Regular Expressions (Regex) are a powerful tool to match and manipulate text and can be used across languages. Here is a brief guide on some of the basic regex symbols and patterns with examples:</p>
 <ul>
 <li><code>\\d</code>: Matches any digit.
@@ -437,40 +434,6 @@ dbl (1): id
 <h2 class="anchored" data-anchor-id="exercise-1-reading-tsv-files">Exercise 1: Reading TSV Files</h2>
 <ul>
 <li>A TSV file, <code>places_in_princeton.tsv</code>, uses a tab character as a delimiter between values. Your task is to read this file into R using an appropriate reading function.</li>
-</ul>
-</section>
-<section id="exercise-2.-regex-to-english" class="level2">
-<h2 class="anchored" data-anchor-id="exercise-2.-regex-to-english">Exercise 2. Regex to English</h2>
-<ul>
-<li>Explain what this regex patters does: “\d+[-]\d+[-]\d+\s” in words. What is an example of something it matches? Leave your response as a comment block in your working script or file.</li>
-</ul>
-</section>
-<section id="exercise-3-extracting-the-parts-of-an-address" class="level2">
-<h2 class="anchored" data-anchor-id="exercise-3-extracting-the-parts-of-an-address">Exercise 3: Extracting the parts of an address</h2>
-<p>With the address column from the data from Exercise 1, we can extract ZIP codes as follows:</p>
-<div class="cell">
-<div class="sourceCode cell-code" id="cb16"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb16-1"><a href="#cb16-1" aria-hidden="true" tabindex="-1"></a><span class="co"># in R</span></span>
-<span id="cb16-2"><a href="#cb16-2" aria-hidden="true" tabindex="-1"></a>zip_codes <span class="ot">&lt;-</span> <span class="fu">str_extract</span>(data_tsv<span class="sc">$</span>address, <span class="st">"</span><span class="sc">\\</span><span class="st">b</span><span class="sc">\\</span><span class="st">d{5}(?:-</span><span class="sc">\\</span><span class="st">d{4})?</span><span class="sc">\\</span><span class="st">b"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-</div>
-<ul>
-<li>Now, extract the street address from the address string and search each comment for the word “Famous” to determine which locations are famous in Princeton. Follow this up by searching for “historic.” Make sure that your search is case-insensitive and captures when historic is a substring as well, like in “historical”.</li>
-</ul>
-</section>
-<section id="exercise-4-more-string-extraction" class="level2">
-<h2 class="anchored" data-anchor-id="exercise-4-more-string-extraction">Exercise 4: More string extraction</h2>
-<ul>
-<li>Identify locations with a number in their names and extract that number.</li>
-<li>Extract all words starting with ‘a’ or ‘A’ from the comment column.</li>
-</ul>
-</section>
-<section id="exercise-5-extracting-month-day-year-from-a-date-variable" class="level2">
-<h2 class="anchored" data-anchor-id="exercise-5-extracting-month-day-year-from-a-date-variable">Exercise 5: Extracting month, day, year from a date variable</h2>
-<p>Create a dataframe called <code>flights</code> from <code>nycflights.csv</code> and create the following variable <code>date_strings</code>:</p>
-<div class="cell">
-<div class="sourceCode cell-code" id="cb17"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb17-1"><a href="#cb17-1" aria-hidden="true" tabindex="-1"></a>date_strings <span class="ot">&lt;-</span> <span class="fu">paste</span>(flights<span class="sc">$</span>year, flights<span class="sc">$</span>month, flights<span class="sc">$</span>day, <span class="at">sep =</span> <span class="st">"-"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-</div>
-<ul>
-<li>Extract the months, days, and years from your new variable into three separate variables for each date component</li>
 </ul>
 
 
