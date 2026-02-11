@@ -28,17 +28,16 @@ What this means is being able to meaningfully remote camp 100% of the time is bo
 
 The draft has three phases.  In the first phase, you draft 3-ofs.  Some rounds offer breakers, others don’t.  In the third phase, you draft 2-ofs.  In between these phases, you draft 3 breakers (fracter, decoder, killer).  When drafting those breakers, you are offered 4 breakers and 3 extra cards.  4 is a significantly small number that you will not infrequently be offered 4 complete non options.  
 
-Because of the importance of remote camping, I rate non-breakers exceedingly highly — bypass, boomerang, botulus, physarum, turtle, slap vandal.  You really want a card such that if you smell an astro, you can be in that server in the blink of an eye.  When it comes to breakers, cheaper is better: I love Shibboleth, Rising Tide, Cat’s Cradle, Mongoose.  If the cost is 3c or less, even if the breaker is kinda mid, I will usually be happy.  The exceptions to me are Paperclip (as you save a lot of money by not installing until the barrier is rezzed) and Laamb/Engolo (as they are incredibly good remote camp fodder).  
+Because of the importance of remote camping, I rate non-breakers exceedingly highly — bypass, Boomerang, Botulus, Turtle, Slap vandal, whatever works.  You really want a card such that if you smell an astro, you can be in that server in the blink of an eye.  When it comes to breakers, cheaper is better: I love Shibboleth, Rising Tide, Cat’s Cradle, Mongoose.  If the cost is 3c or less, even if the breaker is kinda mid, I will usually be happy.  The exceptions to me are Paperclip (as you save a lot of money by not installing until the barrier is rezzed) and Laamb/Engolo (as they are incredibly good remote camp fodder).  
 
 I’ll also use this space to add that Crypsis is not half bad.  If the situation calls for it, it will reliably get through an ice that’s bugging you. You can rarely solo with it (at least if the corp knows what they’re doing), but Crypsis does mean you can afford to be down one of your three breakers and get in, or get around some awkwardness if you have a fixed strength breaker.  
- 
-However, I also think it is okay to end the second round down a breaker if you have some faker strategy.  Remember, the corp isn’t likely to have more than 3 copies of any ice type — you can usually find another way.  
+
 
 # First Phase:
 
 Draft Non-unique Money, Fakers, and only the highest-caliber wincons/icebreakers.  Money is the most important, to me, as corps can often run you down quite a lot.  With such a small deck, 3 copies of even a weaker money source (Telework, No Free Lunch) goes a very long way.   
 
-Because breakers are quite weak, if you find a breaker you can stomach having 3 copies of (revolver, propeller, paperclip, engolo/laamb), I will usually be pretty happy to draft it in phase 1.  Ensuring at least one of your breakers isn't terrible is quite important. 
+Because breakers are quite weak, if you find a breaker you can stomach having 3 copies of, I will usually be pretty happy to draft it in phase 1.  Ensuring at least one of your breakers isn't terrible is quite important. 
 
 # IDs:
 
@@ -48,21 +47,21 @@ Lat is S Tier.  It’s draw.  Draw is always good, and with such a small deck I�
 
 I’ve found Silhouette and Nero have both well exceeded expectations, as they let you read your opponent’s deck WAY quicker.  I had Eddie Kim at S-tier originally but have been consistently underwhelmed (power operations are typically more situational than power assets, so it’s rare the game comes down to Eddie sweeping HQ and getting the seamless/biotic).  
 
-Otherwise, it’s mostly WYSIWYG.  Kit is great with inversificator or engolo (Yog if you feel spicy).  Hailey is a lot weaker than usual but is fine with Cache or Coal.  I am a certified Nasir enjoyer, and will pigeonhole him in in way too many games. The central moneys (Zahya and Gabe) are never not good but sometimes don’t do enough.  I’m pretty afraid of Topan and Nasir in a format where I take Obokata about 40% of the time.  
+Otherwise, it’s mostly WYSIWYG.  Kit is great with inversificator or engolo (Yog if you feel spicy).  Hailey is a lot weaker than usual but is fine with Cache or Coal.  I am a certified Nasir enjoyer, and will pigeonhole him in in way too many games. The central moneys (Zahya and Gabe) are never not good but sometimes don’t do enough.  I’m pretty afraid of Topan and Gnat in a format where I as corp take Obokata about 40% of the time.  
 
 # Second Phase:
 
-Again, here is where you start to find what goes together.  If you’re down an icebreaker, try to find it or an acceptable faker.  If you’ve taken programs, try to find a decent source of mu.  Wincons are odd — I’ve generally found that you either want to go big or not bother: rarely have I regretted an indexing, but I’ve very frequently regretted a last second deep dive instead of some more money or a remote-camping tool.  
+Again, here is where you start to find what goes together.  If you’re down an icebreaker, try to find it or an acceptable faker. However, usually you can survive if down a single breaker type, the corp isn’t likely to have more than 3 copies of any ice type, so Crypsis is usually an acceptable alternative. If you’ve taken too many programs, try to find a console (they also usually have helpful abilities!). Wincons are odd — I’ve generally found that you either want to go big or not bother: rarely have I regretted an indexing, but I’ve very frequently regretted a last second deep dive instead of more money or a remote-camping tool.  
 
 # Wincons and Tech:
 
-* Tag Me: Data Leak Reversal is great with pretty much any self-tagging tool as games are shorter and mill is easier.  Countersurveilance and Mars are bad for similar reasons.
-* HQ multiaccess is a bit weaker, and R&D multiaccess a bit stronger.  This is because the format rewards pushing whatever is in HQ a bit more, and corps are (with good reason) very scared of credit denial.  Generally, my favorite multiaccess cards in format are Indexing Trick Shot, followed by Finality/Deep Data Mine, and Nyashia/Medium/Conduit after (I think events are better just because of the redundancies).  
-* Credit denial is fine, but you cannot go all in around denial.  This is because since you need to score 1/2 of all agendas, corps are able to durdle a bit more.
+* Mill: Data Leak Reversal is great with pretty much any self-tagging tool as games are shorter and mill is easier. Gravedigger is similarly a sleeper hit. 
+* HQ multiaccess is a bit weaker, and R&D multiaccess a bit stronger.  This is because the format rewards pushing whatever is in HQ a bit more, and corps are (with good reason) very scared of credit denial.  Generally, my favorite multiaccess cards in format are Indexing and Trick Shot, followed by Finality/Deep Data Mine, and Nyashia/Medium/Conduit after (I prefer events just because you are usually running multiple copies).  
+* Credit denial is fine, but you cannot go all in around denial. This is because since you need to score 1/2 of all agendas, corps are able to durdle a bit more. I've definitely fallen for corporate grant into Reina into Pan Weave one too many times before...
 * Imp and Film Critic are both must takes, giving you way more flexibility against Medical Breakthrough, Bellona, Obokata, Vach, TFP.  Probably will pick over Temujin they are that powerful.  
-* About 10% of games at a high level will just be lost to Hired Help right now, so take that Pinhole Threading plz.  It’s a good card anyway so you’ll want it.
+* About 10% of games at a high level will just be lost to Hired Help right now, so take that Pinhole Threading plz. It’s a good information gathering card anyways.  
 * I love Damage Tech — so much ice does damage that even against non-Obakatas you’ll usually find a way to activate the Steelskin and IHW.  Stonechip is fine too.  
-* Tutors are almost always a trap.  The decks are so dang consistent, unless you're doing like, no breakers just Crypsis, I'd rather just pick a second draw card instead of a tutor.  
+* Tutors are almost always a trap. The runners are so dang consistent; unless you're doing like, no breakers just Crypsis, I'd rather just pick a second draw card instead of a tutor.  
 
 # Conclusion:
 
