@@ -6,8 +6,6 @@ date: Feb. 25, 2026
 output: html_document
 ---
 
-## [GitHub Classroom Assignment](https://classroom.github.com/a/ku6jldbD)
-
 > **Reminder** If you have not installed pak, do so now.  You can install it from CRAN with `install.packages("pak")` Once installed, load it with `library(pak)`.
 
 # Data Wrangling with R
@@ -19,10 +17,42 @@ pak::pkg_install("tidyverse")
 library(tidyverse)
 ```
 
+Today, we will be working with a file type called a Data Frame. You can think of a data frame as essentially an excel spreadsheet. The key difference is that while an excel spreadsheet is "What You See Is What You Get", dataframes in R have to be manipulated in other ways.  While at first, this may be tricky, it makes data entry and manipulation FAR easier. It also means, if you are working with sensitive data, you are far less likely to make small errors you cannot easily identity.  Let's start by learning how to work with a dataframe.  
+
 ```{r, message = FALSE}
 # Visualizing the structure of the data to understand it better
-head(billboard) # billboard is a dataset that comes with the tidyr package
+billboarddf = head(billboard) # billboard is a dataset that comes with the tidyr package
 ```
+
+You can think of a dataframe as essentially a vector of vectors, so you can essentially get them by specifying a row, and then a column.
+```{r, message = FALSE}
+# Identifying columns and rows
+billboarddf[,1]
+billboarddf[1,]
+billboarddf[1:2,]
+billboarddf[3, 2]
+```
+However, there is also a syntax which makes working with data frames significantly easier.  Data frames come with an associated file which names your columns.  If you use a dollar sign, you can actually simply take those named columns:
+
+```{r, message = FALSE}
+# Identifying columns and rows
+billboarddf$artist
+billboarddf$artist[1]
+billboarddf$wk1
+billboarddf$wk1[billboarddf$wk1 >= 80]
+```
+Being able to use conditional functions is incredibly useful in order to actually filter your code and analyze only specific rows.  It also lets you do math.  
+
+```{r, message = FALSE}
+# Identifying columns and rows
+billboarddf$wk1 >= 80
+billboarddf[billboarddf$wk1 >= 80,]
+billboarddf$wk20 != NaN
+billboarddf[billboarddf$wk20 != NaN,]
+mean(billboarddf$wk3)
+```
+
+We're now going to discuss ways to transform entire data sets using R. 
 
 ## Tidying data
 
@@ -90,7 +120,6 @@ glimpse(rank)
 ## Joins/Merges
 In this section, we will join the `flights` dataset with the `weather` dataset from the `nycflights13` R package to analyze how weather conditions might have affected the flights.
 
-Make sure you have loaded in `flights.csv` and `weather.csv`!
 ```{r}
 library(nycflights13)  # R has built-in datasets that can be loaded directly from a library
 ```
@@ -135,20 +164,16 @@ average_delay_per_condition <- flights_weather_inner_joined %>%
 average_delay_per_condition
 ```
 
-#### Anti Join
-An anti join returns rows from the left dataset where there are no matching keys in the right dataset. It's useful for identifying records in one dataset that do not have a counterpart in another dataset.
-```{r}
-# R example
-flights_weather_anti_joined <- anti_join(flights, weather, by=c("year", "month", "day", "hour", "origin"))
-
-head(flights_weather_anti_joined)
-```
-
 ## Exercises
 
 We will use the weather and flights datasets from the `nycflights13` package (also provided as `.csv` files for Python users) for the exercises.
 
 Please see the [nycflights13"s documentation](https://cran.r-project.org/web/packages/nycflights13/nycflights13.pdf) for more information about the datasets.
+
+```{r}
+library(nycflights13)  
+flights
+```
 
 ### Exercise 1 -- Filtering and Summarizing
 
@@ -164,13 +189,20 @@ Please see the [nycflights13"s documentation](https://cran.r-project.org/web/pac
 
 ### Exercise 3 -- Wrangling Airport Data
 
+```{r}
+airports
+```
+
 - **Task:** Using the `airports` dataset, report the frequency of the time zones of destinations in descending order. Additionally, find an example of an airport with a missing time zone and report the name of the airport, explaining how you checked for it.
+
+To do this problem, you're going to need to use a function that is new to you: count
+
+```{r}
+library(dplyr)
+airports_dst_count <- airports %>% 
+  count(dst)
+```
+
 - **Expected Output:** 
    1. A `data.frame` listing the time zones by frequency in descending order.
    2. The name of at least one airport with a missing time zone and the code used to identify it.
-
-
-### Exercise 4: More Wrangling
-
-- **Task:** Identify the top 3 months with the highest average departure delays in the flights dataset. For these months, calculate the average, minimum, and maximum departure delay.
-- **Expected Output:** A `data.frame` showing the top 3 months along with their respective average, minimum, and maximum departure delay values.
