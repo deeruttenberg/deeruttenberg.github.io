@@ -1,0 +1,182 @@
+---
+title: "BIO331 -- Lab 07: Bioinformatics and Working with Strings of Biological Data"
+subtitle: "Bioinformatics"
+author: Dee Ruttenberg
+date: Mar. 18, 2026
+output: html_document
+---
+
+Today we're going to apply our work on R to Bioinformatic data sets. The typical output of a DNA sequencing experiment is a fastq file, consisting of often millions of configs which need to be stitched together (do you remember the two ways we do that?). Fastq files are different from fasta files as they contain quality scores -- this is useful to see how reliable your fastq data is.  The first tool we are going to use is Fastqc, to interpret the results of our fastq files.
+
+# Quality Control
+
+```{r}
+if (!require("BiocManager", quietly = TRUE))
+    install.packages("BiocManager")
+
+BiocManager::install("Rqc")
+```
+
+We will use a specific small dataset used specifically for teaching bioinformatics. Rqc will output an .html file (essentially a web page).  For this class, I will ask that you understand specifically the results of 'Average Quality', 'Cycle-Specific Average Quality', 'Cycle-specific Quality Distribution', and 'Cycle-Specific Base Call Proportion'.
+
+```{r}
+library(Rqc)
+folder <- system.file(package="ShortRead", "extdata/E-MTAB-1147")
+rqc(path = folder, pattern = ".fastq.gz")
+```
+
+# Bioconductor
+
+Bioconductor and Biostrings are especially powerful tools to examine fasta files in R.  In this section, we'll learn some tools to manipulate them.  
+
+```{r}
+library(Biostrings)
+seqs <- readDNAStringSet("Full_cmv_259sequences_Aln.fasta")
+```
+
+As Fasta files are labeled, you can identify specific sequences, either by loading a specfic label or identifying a keyword:
+
+```{r}
+my_seq <- seqs["Europe_United Kingdom_GQ221974.1_Human_herpesvirus_5_strain_3157_complete_genome"]
+names_with_uk <- grep("United Kingdom", names(seqs), ignore.case = TRUE)
+UK_seqs <- seqs[names_with_uk]
+UK_subset <- subseq(UK_seqs, start = 20000, end = 25000)
+```
+
+You can, using R, code an aligned genome as a matrix, in order to identify snps. 
+
+```{r}
+mat <- as.matrix(seqs)
+#mat <- as.matrix(UK_seqs)
+snp_positions <- which(apply(mat, 2, function(col) {
+  bases <- col[col %in% c("A","C","G","T")]
+  length(unique(bases)) > 1
+}))
+snp_matrix <- mat[, snp_positions]
+snp_list <- lapply(snp_positions, function(pos) {
+  data.frame(
+    Sequence = rownames(mat),
+    Position = pos,
+    Base = mat[, pos]
+  )
+})
+names(snp_list) <- paste0("Pos_", snp_positions)
+```
+
+#Alignment
+
+The final skill we need to learn is how to align .fasta files to a reference genome.  The data we have today is aligned so we'll have to arbitrarily "unalign" it.  We will use our first sequence as the reference.  
+
+```{r}
+UK_seqs_nogap <- DNAStringSet(gsub("-", "", as.character(UK_seqs))) 
+ref <- seqs[6]
+```
+
+The region of interest from hcmv will be our query site.   
+
+```{r}
+library(Biostrings)
+query <- readDNAStringSet("hcmv15-hcmv1b-1.fasta")
+reversecompquery <- reverseComplement(query)
+ref <- seqs["Europe_Germany_JX512204.1_Human_herpesvirus_5_strain_HAN16_complete_genome"]
+#ref <- readDNAStringSet("hcmvgenome.fasta")
+query <- DNAString(toupper(as.character(reversecompquery)))
+#ref <- DNAStringSet(gsub("-", "", as.character(ref))) 
+
+hits <- matchPattern(query, ref[[1]], max.mismatch=20)
+
+```
+
+We can now look at our aligned data!
+
+```{r}
+hits
+```
+
+# Homework Question 1: Interpretting QC data.
+
+a. Look at the 'Cycle-specific Base Call Proportion' rqc file.  What is the ratio of A/C/G/T in cycles 1-10. What is the ratio of A/C/G/T in cycles 65-75?  Based on your knowledge of DNA-sequencing, propose a hypothesis for why the cycles have a different ratio.
+
+b. Look at the 'Cycle specific Quality Distribution'. What is the typical quality of cycles 1-10?  What is the typical quality of cycles 65-75?  Based on your knowledge of DNA-sequencing, propose a hypothesis for why the cycles have a different quality
+
+# Homework Question 2: Loading a File, Reverse Complements
+
+For one of the research projects, we will be studying a specific protein coding site of hcmv associated with the transition of hcmv from latent to active. Align the following two queries to any genome in the reference file. Which one successfully aligns? What does that mean about the site of interest?
+
+```{r}
+query <- readDNAStringSet("hcmv15-hcmv1b-1.fasta")
+reversecompquery <- reverseComplement(query)
+
+# Load the reference genome (HAN16) and strip any alignment gaps
+ref_raw <- readDNAStringSet("hcmvgenome.fasta")
+ref     <- DNAString(gsub("-", "", as.character(ref_raw[[1]])))
+
+# Convert both query versions to DNAString
+fwd_query <- DNAString(toupper(as.character(query[[1]])))
+rc_query  <- DNAString(toupper(as.character(reversecompquery[[1]])))
+
+# Foward Align
+fwd_hits <- matchPattern(fwd_query, ref, max.mismatch = 50)
+cat("Forward query hits:", length(fwd_hits), "\n")
+
+# Reverse align
+rc_hits <- matchPattern(rc_query, ref_raw, max.mismatch = 50)
+cat("Reverse complement hits:", length(rc_hits), "\n")
+
+# Show where RC aligned
+if (length(rc_hits) > 0) {
+  cat("RC alignment position:", start(rc_hits[1]), "to", end(rc_hits[1]), "\n")
+}
+
+```
+
+
+```{r}
+query <- readDNAStringSet("hcmv15-hcmv1b-1.fasta")
+reversecompquery <- reverseComplement(query)
+
+query <- DNAString(toupper(as.character(query)))
+reversecompquery <- DNAString(toupper(as.character(reversecompquery)))
+
+queryallignment <- matchPattern(query, ref[[1]], max.mismatch=20)
+ reversequeryallignment <- matchPattern(reversecompquery, ref[[1]], max.mismatch=20)
+```
+
+```{r}
+ref_raw <- readDNAStringSet("hcmvgenome.fasta")
+all_seqs <- readDNAStringSet("hcmvgenome.fasta")
+query <- readDNAStringSet("hcmv15-hcmv1b-1.fasta")
+ref <- DNAString(gsub("-", "", as.character(ref_raw[[1]])))
+reversecompquery <- reverseComplement(query)
+rc_query  <- DNAString(toupper(as.character(reversecompquery[[1]])))
+rc_hits <- matchPattern(rc_query, ref, max.mismatch = 50)
+
+# Load all 259 aligned sequences
+all_seqs <- readDNAStringSet("hcmvgenome.fasta")
+
+# Map the gap-stripped hit position back to alignment column coordinates
+# ref_raw[[1]] is the reference WITH gaps; ref was gap-stripped for matching
+ref_chars <- strsplit(as.character(ref_raw[[1]]), "")[[1]]
+
+# For each alignment column, track the cumulative ungapped position
+ungapped_pos <- cumsum(ref_chars != "-")
+
+# Find which alignment columns correspond to the RC hit
+site_start <- start(rc_hits[1])
+site_end   <- end(rc_hits[1])
+aln_cols   <- which(ungapped_pos >= site_start & ungapped_pos <= site_end)
+
+# Expand window to ~4-5 kb (2000 bp either side of the hit)
+win_start_aln <- max(1, aln_cols[1] - 2000)
+win_end_aln   <- min(length(ref_chars), tail(aln_cols, 1) + 2000)
+
+# Extract that alignment window from all 259 sequences
+isolated_sites <- subseq(all_seqs, win_start_aln, win_end_aln)
+
+# Strip alignment gaps so each sequence is clean
+isolated_sites <- DNAStringSet(gsub("-", "", as.character(isolated_sites)))
+names(isolated_sites) <- names(all_seqs)
+```
+# Homework Question 3: Isolating a Site
+
+Isolate the 'hcmv15-hcmv1b-1.fasta' site in all 259 seqs. Your final result should be a DNAString set of 259 sequences about 4-5 kb long.  

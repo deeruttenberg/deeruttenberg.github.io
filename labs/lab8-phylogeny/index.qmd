@@ -1,0 +1,98 @@
+---
+title: "BIO331 -- Lab 08: Phylogenetics"
+author: "Dee Ruttenberg"
+format: html
+editor: visual
+---
+
+The final project for this semester will be doing phylogenetics in R. We will be using the same data set we used in the last lab.
+
+# Download Required Packages
+
+```{r}
+
+if (!require("BiocManager", quietly = TRUE))
+  install.packages("BiocManager")
+
+BiocManager::install("ape")
+
+if (!require("BiocManager", quietly = TRUE))
+  install.packages("BiocManager")
+
+BiocManager::install("ggtree")
+```
+
+I will show you in class how to use Clustal (https://www.ebi.ac.uk/jdispatcher/msa/clustalo) to perform alignment (and you will need to use it to answer a homework problem!). However, the fasta file we worked with yesterday was generated through multiple sequence alignment (this is why it has dashes), so we do not need to use clustal for alignment.
+
+```{r}
+#setwd("\~/Documents/GitHub/Bioinformatics2026/lab7-rblast") #You may need to set your working directory to your personal one
+seqs <- readDNAStringSet("Full_cmv_259sequences_Aln.fasta")
+```
+
+Generating a distance matrix for a 200,000 nt across 259 sequences will fry our computer, so we're going to just take a subset. We'll use hamming distance (which only considers whether two sites are the same)
+
+```{r}
+
+library(Biostrings)
+africa_ids <- grep("Africa", names(seqs), ignore.case = TRUE)
+africa_seqs <- seqs[africa_ids]
+#subseqs <- subseq(africa_seqs, start = 20000, end = 50000) #Use this if you only want to look at a specific region of the genome
+dist_matrix <- stringDist(africa_seqs, method = "hamming")
+
+```
+
+Using this district matrix, we can use the 'ape' library to make different kinds of trees (for this one, we will use a neighbor joining algorithm)
+
+```{r}
+
+library(ape)
+library(ggtree)
+nj_tree <- nj(dist_matrix)
+plot(nj_tree, main="Neighbor-Joining Tree") #Simpler method without ggtree
+
+#ggtree(nj_tree) +
+#geom_tiplab() +
+# ggplot2::xlim(0, 15000) +
+# theme_tree2() #Prettier plot using ggtree
+
+```
+
+# Question 1:
+
+In this question, you will generate a UPGMA phylogeny from the structure of a single gene (NADH Dehydrogenase) in Mus musculus domesticus, the common house mouse. Data from this question will be taken from https://www.ncbi.nlm.nih.gov/pmc/articles/PMC44202/pdf/pnas01136-0122.pdf.
+
+In Table 1, the researchers show the sequence of nucleotides in 16 haplotypes at the ND3 site. We will consider 5 haplotypes (slightly edited to make your answer more elegant-looking):
+
+Hap 1: CTCTTAAATCCTATATTTATTTGATCGA
+
+Hap 3: AACGTTCTTAAATCCTATACTTATTTGA
+
+Hap 5: CTCTTAAATCCTATGGGATCCATTTGATCGA
+
+Hap 7: AACTCTCTTAAGTCCTATTTATGTTTGA
+
+Hap 8: ATCGCTCTCAAGTCCTATTTTTATTTGA
+
+Using CLUSTAL, load these 5 haplotypes and create an aligned fasta file. Add the aligned fasta file to the github repository.
+
+# Question 2:
+
+Calculate a distance matrix of these 5 haplotypes, treating each pairwise mutation (including each site in an indel) as a single unit of change. Using the calculated distance matrix, create a Neighbor-Joining tree of these 5 haplotypes. Display this neighbor joining tree with ggtree.
+
+```{r, echo=FALSE}
+query <- readDNAStringSet("clustalo-I20260325-220913-0326-43010456-p1m.fa")
+seqs <- query
+seqs
+clean_seqs <- DNAStringSet(gsub("-","", seqs))
+clean_seqs
+dist_matrix <- stringDist(clean_seqs)
+nj_filtered <- nj(dist_matrix)
+ggtree(nj_filtered) +
+  geom_tiplab() +
+  ggplot2::xlim(0, 15)+
+  theme_tree2()
+```
+
+# Question 3:
+
+This distance matrix treats each indel its own point mutation. Filter these haplotypes to only contain sites where every haplotype has an associated nucleotide (so no indels), and display the neighbor joining tree for this data set.
