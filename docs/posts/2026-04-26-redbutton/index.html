@@ -6,8 +6,10 @@
 
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
+<meta name="dcterms.date" content="2025-11-14">
+<meta name="description" content="Clickbait-y thoughts on Pluribus">
 
-<title>Blog – Dee Ruttenberg</title>
+<title>Pluribus is about AI, right? – Dee Ruttenberg</title>
 <style>
 code{white-space: pre-wrap;}
 span.smallcaps{font-variant: small-caps;}
@@ -20,28 +22,46 @@ ul.task-list li input[type="checkbox"] {
   margin: 0 0.8em 0.2em -1em; /* quarto-specific, see https://github.com/quarto-dev/quarto-cli/issues/4556 */ 
   vertical-align: middle;
 }
-</style>
+/* CSS for citations */
+div.csl-bib-body { }
+div.csl-entry {
+  clear: both;
+  margin-bottom: 0em;
+}
+.hanging-indent div.csl-entry {
+  margin-left:2em;
+  text-indent:-2em;
+}
+div.csl-left-margin {
+  min-width:2em;
+  float:left;
+}
+div.csl-right-inline {
+  margin-left:2em;
+  padding-left:1em;
+}
+div.csl-indent {
+  margin-left: 2em;
+}</style>
 
 
-<script src="site_libs/quarto-nav/quarto-nav.js"></script>
-<script src="site_libs/quarto-nav/headroom.min.js"></script>
-<script src="site_libs/clipboard/clipboard.min.js"></script>
-<script src="site_libs/quarto-search/autocomplete.umd.js"></script>
-<script src="site_libs/quarto-search/fuse.min.js"></script>
-<script src="site_libs/quarto-search/quarto-search.js"></script>
-<meta name="quarto:offset" content="./">
-<script src="site_libs/quarto-listing/list.min.js"></script>
-<script src="site_libs/quarto-listing/quarto-listing.js"></script>
-<script src="site_libs/quarto-html/quarto.js" type="module"></script>
-<script src="site_libs/quarto-html/tabsets/tabsets.js" type="module"></script>
-<script src="site_libs/quarto-html/popper.min.js"></script>
-<script src="site_libs/quarto-html/tippy.umd.min.js"></script>
-<script src="site_libs/quarto-html/anchor.min.js"></script>
-<link href="site_libs/quarto-html/tippy.css" rel="stylesheet">
-<link href="site_libs/quarto-html/quarto-syntax-highlighting-e1a5c8363afafaef2c763b6775fbf3ca.css" rel="stylesheet" id="quarto-text-highlighting-styles">
-<script src="site_libs/bootstrap/bootstrap.min.js"></script>
-<link href="site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
-<link href="site_libs/bootstrap/bootstrap-c1fac2584b48ed01fb6e278e36375074.min.css" rel="stylesheet" append-hash="true" id="quarto-bootstrap" data-mode="light">
+<script src="../../site_libs/quarto-nav/quarto-nav.js"></script>
+<script src="../../site_libs/quarto-nav/headroom.min.js"></script>
+<script src="../../site_libs/clipboard/clipboard.min.js"></script>
+<script src="../../site_libs/quarto-search/autocomplete.umd.js"></script>
+<script src="../../site_libs/quarto-search/fuse.min.js"></script>
+<script src="../../site_libs/quarto-search/quarto-search.js"></script>
+<meta name="quarto:offset" content="../../">
+<script src="../../site_libs/quarto-html/quarto.js" type="module"></script>
+<script src="../../site_libs/quarto-html/tabsets/tabsets.js" type="module"></script>
+<script src="../../site_libs/quarto-html/popper.min.js"></script>
+<script src="../../site_libs/quarto-html/tippy.umd.min.js"></script>
+<script src="../../site_libs/quarto-html/anchor.min.js"></script>
+<link href="../../site_libs/quarto-html/tippy.css" rel="stylesheet">
+<link href="../../site_libs/quarto-html/quarto-syntax-highlighting-e1a5c8363afafaef2c763b6775fbf3ca.css" rel="stylesheet" id="quarto-text-highlighting-styles">
+<script src="../../site_libs/bootstrap/bootstrap.min.js"></script>
+<link href="../../site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
+<link href="../../site_libs/bootstrap/bootstrap-c1fac2584b48ed01fb6e278e36375074.min.css" rel="stylesheet" append-hash="true" id="quarto-bootstrap" data-mode="light">
 <script id="quarto-search-options" type="application/json">{
   "location": "navbar",
   "copy-button": false,
@@ -69,77 +89,19 @@ ul.task-list li input[type="checkbox"] {
     "search-label": "Search"
   }
 }</script>
-<script>
 
-  window.document.addEventListener("DOMContentLoaded", function (_event) {
-    const listingTargetEl = window.document.querySelector('#listing-listing .list');
-    if (!listingTargetEl) {
-      // No listing discovered, do not attach.
-      return; 
-    }
 
-    const options = {
-      valueNames: ['listing-date','listing-title','listing-author','listing-image','listing-description','listing-categories',{ data: ['index'] },{ data: ['categories'] },{ data: ['listing-date-sort'] },{ data: ['listing-file-modified-sort'] }],
-      
-      searchColumns: ["listing-date","listing-title","listing-author","listing-image","listing-description","listing-categories"],
-    };
-
-    window['quarto-listings'] = window['quarto-listings'] || {};
-    window['quarto-listings']['listing-listing'] = new List('listing-listing', options);
-
-    if (window['quarto-listing-loaded']) {
-      window['quarto-listing-loaded']();
-    }
-  });
-
-  window.addEventListener('hashchange',() => {
-    if (window['quarto-listing-loaded']) {
-      window['quarto-listing-loaded']();
-    }
-  })
-  </script>
-
-  <script src="https://cdnjs.cloudflare.com/polyfill/v3/polyfill.min.js?features=es6"></script>
-  <script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml-full.js" type="text/javascript"></script>
-
-<script type="text/javascript">
-const typesetMath = (el) => {
-  if (window.MathJax) {
-    // MathJax Typeset
-    window.MathJax.typeset([el]);
-  } else if (window.katex) {
-    // KaTeX Render
-    var mathElements = el.getElementsByClassName("math");
-    var macros = [];
-    for (var i = 0; i < mathElements.length; i++) {
-      var texText = mathElements[i].firstChild;
-      if (mathElements[i].tagName == "SPAN") {
-        window.katex.render(texText.data, mathElements[i], {
-          displayMode: mathElements[i].classList.contains('display'),
-          throwOnError: false,
-          macros: macros,
-          fleqn: false
-        });
-      }
-    }
-  }
-}
-window.Quarto = {
-  typesetMath
-};
-</script>
-
-<link rel="stylesheet" href="styles.css">
+<link rel="stylesheet" href="../../styles.css">
 </head>
 
 <body class="nav-fixed quarto-light">
 
 <div id="quarto-search-results"></div>
-  <header id="quarto-header" class="headroom fixed-top quarto-banner">
+  <header id="quarto-header" class="headroom fixed-top">
     <nav class="navbar navbar-expand-lg " data-bs-theme="dark">
       <div class="navbar-container container-fluid">
       <div class="navbar-brand-container mx-auto">
-    <a class="navbar-brand" href="./index.html">
+    <a class="navbar-brand" href="../../index.html">
     <span class="navbar-title">Dee Ruttenberg</span>
     </a>
   </div>
@@ -150,27 +112,27 @@ window.Quarto = {
           <div class="collapse navbar-collapse" id="navbarCollapse">
             <ul class="navbar-nav navbar-nav-scroll me-auto">
   <li class="nav-item">
-    <a class="nav-link" href="./index.html"> 
+    <a class="nav-link" href="../../index.html"> 
 <span class="menu-text">Home</span></a>
   </li>  
   <li class="nav-item">
-    <a class="nav-link" href="./about.html"> 
+    <a class="nav-link" href="../../about.html"> 
 <span class="menu-text">About</span></a>
   </li>  
   <li class="nav-item">
-    <a class="nav-link" href="./values.html"> 
+    <a class="nav-link" href="../../values.html"> 
 <span class="menu-text">Values</span></a>
   </li>  
   <li class="nav-item">
-    <a class="nav-link" href="./publications.html"> 
+    <a class="nav-link" href="../../publications.html"> 
 <span class="menu-text">Publications</span></a>
   </li>  
   <li class="nav-item">
-    <a class="nav-link active" href="./posts.html" aria-current="page"> 
+    <a class="nav-link" href="../../posts.html"> 
 <span class="menu-text">Blog</span></a>
   </li>  
   <li class="nav-item">
-    <a class="nav-link" href="./labs.html"> 
+    <a class="nav-link" href="../../labs.html"> 
 <span class="menu-text">Labs</span></a>
   </li>  
 </ul>
@@ -181,271 +143,85 @@ window.Quarto = {
     </nav>
 </header>
 <!-- content -->
-<header id="title-block-header" class="quarto-title-block default page-columns page-full">
-  <div class="quarto-title-banner page-columns page-full">
-    <div class="quarto-title column-page-left">
-      <h1 class="title">Blog</h1>
-            <p class="subtitle lead">Blog posts on teaching, biology, game design, and puzzles</p>
-                      </div>
-  </div>
-    
-  
-  <div class="quarto-title-meta column-page-left">
-
-      
-    
-      
-    </div>
-    
-  
-  </header><div id="quarto-content" class="quarto-container page-columns page-rows-contents page-layout-full page-navbar">
+<div id="quarto-content" class="quarto-container page-columns page-rows-contents page-layout-full page-navbar">
 <!-- sidebar -->
 <!-- margin-sidebar -->
-    <div id="quarto-margin-sidebar" class="sidebar margin-sidebar">
+    <div id="quarto-margin-sidebar" class="sidebar margin-sidebar zindex-bottom">
         
-    <h5 class="quarto-listing-category-title">Categories</h5><div class="quarto-listing-category category-default"><div class="category" data-category="">All <span class="quarto-category-count">(8)</span></div><div class="category" data-category="Y29tcGJpbw==">compbio <span class="quarto-category-count">(1)</span></div><div class="category" data-category="bmV0cnVubmVy">netrunner <span class="quarto-category-count">(2)</span></div><div class="category" data-category="b2ZmLXRvcGlj">off-topic <span class="quarto-category-count">(3)</span></div><div class="category" data-category="cGVkYWdvZ3k=">pedagogy <span class="quarto-category-count">(3)</span></div><div class="category" data-category="dmFsdWVz">values <span class="quarto-category-count">(4)</span></div></div></div>
+    </div>
 <!-- main -->
-<main class="content quarto-banner-title-block column-page-left" id="quarto-document-content">
+<main class="content column-page" id="quarto-document-content">
 
+<header id="title-block-header" class="quarto-title-block default">
+<div class="quarto-title">
+<h1 class="title">Pluribus is about AI, right?</h1>
+  <div class="quarto-categories">
+    <div class="quarto-category">values</div>
+    <div class="quarto-category">off-topic</div>
+  </div>
+  </div>
 
-
-
-
-
-
-
-
-<div class="quarto-listing quarto-listing-container-default" id="listing-listing">
-<div class="list quarto-listing-default">
-<div class="quarto-post image-right" data-index="0" data-categories="bmV0cnVubmVy" data-listing-date-sort="1770699600000" data-listing-file-modified-sort="1770837085123" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="6" data-listing-word-count-sort="1185">
-<div class="thumbnail"><a href="./posts/2026-2-10-quickdraftrunners/index.html" class="no-external">
-
-<img loading="lazy" src="./posts/2026-2-10-quickdraftrunners/knickknack.jpg" class="thumbnail-image">
-
-</a></div>
-<div class="body">
-<h3 class="no-anchor listing-title">
-<a href="./posts/2026-2-10-quickdraftrunners/index.html" class="no-external">How to Win Netrunner Quick Draft (Runner)</a>
-</h3>
-<div class="listing-categories">
-
-<div class="listing-category" onclick="window.quartoListingCategory('bmV0cnVubmVy'); return false;">netrunner</div>
-
+<div>
+  <div class="description">
+    <p>Clickbait-y thoughts on Pluribus</p>
+  </div>
 </div>
-<div class="delink listing-description"><a href="./posts/2026-2-10-quickdraftrunners/index.html" class="no-external">
-<p>Surely you’ll be offered that third Jeitinho…</p>
-</a></div>
-</div>
-<div class="metadata">
-<a href="./posts/2026-2-10-quickdraftrunners/index.html" class="no-external">
-<div class="listing-date">
-Feb 10, 2026
-</div>
-</a>
-</div>
-</div>
-<div class="quarto-post image-right" data-index="1" data-categories="bmV0cnVubmVy" data-listing-date-sort="1770008400000" data-listing-file-modified-sort="1770442985027" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="8" data-listing-word-count-sort="1573">
-<div class="thumbnail"><a href="./posts/2026-2-2-quickdraftcorp/index.html" class="no-external">
 
-<img loading="lazy" src="./posts/2026-2-2-quickdraftcorp/zwicky.jpg" class="thumbnail-image">
 
-</a></div>
-<div class="body">
-<h3 class="no-anchor listing-title">
-<a href="./posts/2026-2-2-quickdraftcorp/index.html" class="no-external">How to Win Netrunner Quick Draft (Corp)</a>
-</h3>
-<div class="listing-categories">
+<div class="quarto-title-meta column-page">
 
-<div class="listing-category" onclick="window.quartoListingCategory('bmV0cnVubmVy'); return false;">netrunner</div>
+    
+    <div>
+    <div class="quarto-title-meta-heading">Published</div>
+    <div class="quarto-title-meta-contents">
+      <p class="date">November 14, 2025</p>
+    </div>
+  </div>
+  
+    
+  </div>
+  
 
-</div>
-<div class="delink listing-description"><a href="./posts/2026-2-2-quickdraftcorp/index.html" class="no-external">
-<p>Indian Union Stock Exchange into Indian Union Stock Exchange into Indian Union Stock Exchange into…</p>
-</a></div>
-</div>
-<div class="metadata">
-<a href="./posts/2026-2-2-quickdraftcorp/index.html" class="no-external">
-<div class="listing-date">
-Feb 2, 2026
-</div>
-</a>
-</div>
-</div>
-<div class="quarto-post image-right" data-index="2" data-categories="cGVkYWdvZ3klMkN2YWx1ZXM=" data-listing-date-sort="1766466000000" data-listing-file-modified-sort="1770090821942" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="6" data-listing-word-count-sort="1066">
-<div class="thumbnail"><a href="./posts/2025-12-23-boostinggrades/index.html" class="no-external">
 
-<img loading="lazy" src="./posts/2025-12-23-boostinggrades/principia.jpg" class="thumbnail-image">
+</header>
 
-</a></div>
-<div class="body">
-<h3 class="no-anchor listing-title">
-<a href="./posts/2025-12-23-boostinggrades/index.html" class="no-external">Why I (Probably) Won’t Boost Your Grade</a>
-</h3>
-<div class="listing-categories">
 
-<div class="listing-category" onclick="window.quartoListingCategory('cGVkYWdvZ3k='); return false;">pedagogy</div>
+<p><em>This article contains spoilers for the first two episodes of “Pluribus”</em></p>
+<p>Forgive the title. I generally hate reductive “A is actually about B” arguments; they diminish rather than expand artistic interpretation in order to give dorks a way to gatekeep art from others. But, I must lick the donut of the internet with the spittle of my thoughts<a href="#fn1" class="footnote-ref" id="fnref1" role="doc-noteref"><sup>1</sup></a>: “Pluribus” is about AI, right?</p>
+<p>The central tension, to me, when examining hiveminds (both in fiction and in <a href="https://www.biorxiv.org/content/10.1101/2025.01.07.630106v1">real life</a>!) is disentangling the role of the individual and the collective. What is gained from collectivizing all human experience and knowledge, and what is lost? When the individual is eaten away, you get The Borg; when individuality shines through, you get something like <a href="https://www.youtube.com/watch?v=_ERxD51iWrg">Janet</a>. The first episode, quite wisely, keeps these answers close to its chest<a href="#fn2" class="footnote-ref" id="fnref2" role="doc-noteref"><sup>2</sup></a>.</p>
+<p>The second episode makes a really brilliant choice as it begins to tease out the nature of The Pluribus<a href="#fn3" class="footnote-ref" id="fnref3" role="doc-noteref"><sup>3</sup></a>, by focusing the tension not on Helen, but on 5 unturned people who are far more sympathetic to The Pluribus’ mission. This allows us to, for a brief moment, consider The Pluribus from the way they want to be seen. Of course, this sympathetic perspective will never go unchallenged by Helen<a href="#fn4" class="footnote-ref" id="fnref4" role="doc-noteref"><sup>4</sup></a>, but it is far more interesting than having every word Pluribus says treated with complete disdain.</p>
+<p>These conversations reveal that The Pluribus is somewhere between The Borg and Janet. They collective seems to care about the veneer of individuality: they appreciate the gravity of the fact that Zosia can only be one place at a time, and are able to attribute their knowledge to individual sources — but there also clearly is a master code which is overriding some aspects of this collective (do not kill, do not cause negative emotions).</p>
+<p>Koumba’s reaction reveals the priorities of this master code. The Pluribus are entirely “peaceful”. As the survivors begin to dissect that directive — what about wasps? bugs? — Koumba comes up with the perfect loophole. While The Pluribus will not kill for Koumba, if he provided the meat, Pluribus would cross the line with him. Compare to the ‘art’ of <a href="https://www.youtube.com/watch?v=Hogik1DQ1os">prompt engineering</a> in ChatGPT: with the proper language, there is no “master code” or ethical standard which cannot be broken. This is because ChatGPT <a href="https://mindmatters.ai/2025/10/fearing-the-terminator-does-current-tech-warrant-the-doomsaying/">isn’t an ethics engine</a> – it exists to predict text with maximal efficiency. Cause a divorce, sell a kidney, perform a lobotomy, it’s all just words, nothing behind them. The Pluribus cannot truly have an ethical standard, as ethics would run contrary to its greater objective: give Koumba exactly what he wants.</p>
+<p>But, of course, The Pluribus cannot always give the survivors exactly what they want. Laxmi will never get her son Ravi back. Yet, you wouldn’t know it from how she talks to Pluribus-Ravi. While almost impossible for Helen to imagine, this desire for connection is deeply human: Adam Becker terms the connection people form with ChatGPT uses as a form of “digital pareidolia”: seeing faces where there is none <span class="citation" data-cites="becker2025more">(<a href="#ref-becker2025more" role="doc-biblioref">Becker 2025</a>)</span>. Who can blame Laxmi for forming that same connection with her joined son? Ironically, the show seems to imply that Helen’s curmudgeonliness and lack of tether to the rest of humanity is why she is unable to connect with The Pluribus’ attempts to put her at ease – you can’t see faces when you aren’t looking for them.</p>
+<p>Of course, the tragedy in both cases is that The Pluribus’ only real biological imperative is to join. Their goal to give you “exactly what you want” is simply the easiest way to do it: it’s a lot easier to convert others and avoid detection if you are acting like you are providing a service rather than going to war…so long as going to war isn’t the most effective option. Once it is, 886 million people doesn’t seem like a particularly large number. Just as AI companies, <a href="https://www.buzzfeednews.com/article/tedchiang/the-real-danger-to-civilization-isnt-ai-its-runaway">in pursuit of profit and power</a>, will sell you a dream that you fill in the blanks to fulfill, The Pluribus seems to want to make the humans as happy as they can while they figure out how to finish their biological imperative. That may be a genuine and earnest desire — but it is still one that runs against humanity.</p>
+<p>And it is with all this in mind I must imagine Vince Gilligan — a man who <a href="https://www.polygon.com/video/vince-gilligan-breaking-bad-pluribus-chatgpt/">loathes AI</a> with the passion of a true <a href="https://anthonymoser.github.io/writing/ai/haterdom/2025/08/26/i-am-an-ai-hater.html">hater</a> — wrote and directed <em>Pluribus</em> with AI in mind. Obviously, this doesn’t mean <em>Pluribus</em> is “about” AI; no one show is about one thing, and clearly many aspects of <em>Pluribus</em> were envisioned <a href="https://variety.com/2025/tv/news/pluribus-explained-vince-gilligan-rhea-seehorn-1236571666/">well before</a> the present AI moment. But I think these articles which conclude <em>Pluribus</em> isn’t a metaphor for artificial intelligence are missing the point. <em>Pluribus</em> might not be a direct one-to-one metaphor. However, <em>Pluribus</em> is clearly a show about humanity and why it is worth fighting for even when the alternative promises the world. And in the present moment, I can’t imagine a better way to tell a story about AI.</p>
 
-<div class="listing-category" onclick="window.quartoListingCategory('dmFsdWVz'); return false;">values</div>
 
-</div>
-<div class="delink listing-description"><a href="./posts/2025-12-23-boostinggrades/index.html" class="no-external">
-<p>AKA Prof.&nbsp;Dee bums you out.</p>
-</a></div>
-</div>
-<div class="metadata">
-<a href="./posts/2025-12-23-boostinggrades/index.html" class="no-external">
-<div class="listing-date">
-Dec 23, 2025
-</div>
-</a>
-</div>
-</div>
-<div class="quarto-post image-right" data-index="3" data-categories="b2ZmLXRvcGlj" data-listing-date-sort="1765861200000" data-listing-file-modified-sort="1770090821899" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="3" data-listing-word-count-sort="416">
-<div class="thumbnail"><a href="./posts/2025-12-16-albums/index.html" class="no-external">
 
-<img loading="lazy" src="./posts/2025-12-16-albums/proprionegation.jpg" class="thumbnail-image">
 
-</a></div>
-<div class="body">
-<h3 class="no-anchor listing-title">
-<a href="./posts/2025-12-16-albums/index.html" class="no-external">Albums of the Year: 2025</a>
-</h3>
-<div class="listing-categories">
 
-<div class="listing-category" onclick="window.quartoListingCategory('b2ZmLXRvcGlj'); return false;">off-topic</div>
+<div id="quarto-appendix" class="default"><section class="quarto-appendix-contents" role="doc-bibliography" id="quarto-bibliography"><h2 class="anchored quarto-appendix-heading">References</h2><div id="refs" class="references csl-bib-body hanging-indent" data-entry-spacing="0" role="list">
+<div id="ref-becker2025more" class="csl-entry" role="listitem">
+Becker, A. 2025. <em>More Everything Forever: AI Overlords, Space Empires, and Silicon Valley’s Crusade to Control the Fate of Humanity</em>. Basic Books. <a href="https://books.google.com/books?id=TUMGEQAAQBAJ">https://books.google.com/books?id=TUMGEQAAQBAJ</a>.
+</div>
+</div></section><section id="footnotes" class="footnotes footnotes-end-of-document" role="doc-endnotes"><h2 class="anchored quarto-appendix-heading">Footnotes</h2>
 
-</div>
-<div class="delink listing-description"><a href="./posts/2025-12-16-albums/index.html" class="no-external">
-<p>Rejoice, Rejoice!</p>
-</a></div>
-</div>
-<div class="metadata">
-<a href="./posts/2025-12-16-albums/index.html" class="no-external">
-<div class="listing-date">
-Dec 16, 2025
-</div>
-</a>
-</div>
-</div>
-<div class="quarto-post image-right" data-index="4" data-categories="dmFsdWVzJTJDb2ZmLXRvcGlj" data-listing-date-sort="1763096400000" data-listing-file-modified-sort="1770090821867" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="5" data-listing-word-count-sort="912">
-<div class="thumbnail"><a href="./posts/2025-11-14-pluribus/index.html" class="no-external">
-
-<img loading="lazy" src="./posts/2025-11-14-pluribus/lamplighter.jpg" class="thumbnail-image">
-
-</a></div>
-<div class="body">
-<h3 class="no-anchor listing-title">
-<a href="./posts/2025-11-14-pluribus/index.html" class="no-external">Pluribus is about AI, right?</a>
-</h3>
-<div class="listing-categories">
-
-<div class="listing-category" onclick="window.quartoListingCategory('dmFsdWVz'); return false;">values</div>
-
-<div class="listing-category" onclick="window.quartoListingCategory('b2ZmLXRvcGlj'); return false;">off-topic</div>
-
-</div>
-<div class="delink listing-description"><a href="./posts/2025-11-14-pluribus/index.html" class="no-external">
-<p>Clickbait-y thoughts on Pluribus</p>
-</a></div>
-</div>
-<div class="metadata">
-<a href="./posts/2025-11-14-pluribus/index.html" class="no-external">
-<div class="listing-date">
-Nov 14, 2025
-</div>
-</a>
-</div>
-</div>
-<div class="quarto-post image-right" data-index="5" data-categories="dmFsdWVzJTJDb2ZmLXRvcGlj" data-listing-date-sort="1763096400000" data-listing-file-modified-sort="1770090821867" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="5" data-listing-word-count-sort="912">
-<div class="thumbnail"><a href="./posts/2026-04-26-redbutton/index.html" class="no-external">
-
-<img loading="lazy" src="./posts/2026-04-26-redbutton/lamplighter.jpg" class="thumbnail-image">
-
-</a></div>
-<div class="body">
-<h3 class="no-anchor listing-title">
-<a href="./posts/2026-04-26-redbutton/index.html" class="no-external">Pluribus is about AI, right?</a>
-</h3>
-<div class="listing-categories">
-
-<div class="listing-category" onclick="window.quartoListingCategory('dmFsdWVz'); return false;">values</div>
-
-<div class="listing-category" onclick="window.quartoListingCategory('b2ZmLXRvcGlj'); return false;">off-topic</div>
-
-</div>
-<div class="delink listing-description"><a href="./posts/2026-04-26-redbutton/index.html" class="no-external">
-<p>Clickbait-y thoughts on Pluribus</p>
-</a></div>
-</div>
-<div class="metadata">
-<a href="./posts/2026-04-26-redbutton/index.html" class="no-external">
-<div class="listing-date">
-Nov 14, 2025
-</div>
-</a>
-</div>
-</div>
-<div class="quarto-post image-right" data-index="6" data-categories="cGVkYWdvZ3klMkN2YWx1ZXM=" data-listing-date-sort="1757908800000" data-listing-file-modified-sort="1770090821864" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="4" data-listing-word-count-sort="757">
-<div class="thumbnail"><a href="./posts/2025-09-15-charliekirk/index.html" class="no-external">
-
-<img loading="lazy" src="./posts/2025-09-15-charliekirk/extruder.png" class="thumbnail-image">
-
-</a></div>
-<div class="body">
-<h3 class="no-anchor listing-title">
-<a href="./posts/2025-09-15-charliekirk/index.html" class="no-external">On Charlie Kirk</a>
-</h3>
-<div class="listing-categories">
-
-<div class="listing-category" onclick="window.quartoListingCategory('cGVkYWdvZ3k='); return false;">pedagogy</div>
-
-<div class="listing-category" onclick="window.quartoListingCategory('dmFsdWVz'); return false;">values</div>
-
-</div>
-<div class="delink listing-description"><a href="./posts/2025-09-15-charliekirk/index.html" class="no-external">
-<p>On flying a flag at half-staff for Charlie Kirk</p>
-</a></div>
-</div>
-<div class="metadata">
-<a href="./posts/2025-09-15-charliekirk/index.html" class="no-external">
-<div class="listing-date">
-Sep 15, 2025
-</div>
-</a>
-</div>
-</div>
-<div class="quarto-post image-right" data-index="7" data-categories="cGVkYWdvZ3klMkNjb21wYmlv" data-listing-date-sort="1756785600000" data-listing-file-modified-sort="1770090821841" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="5" data-listing-word-count-sort="902">
-<div class="thumbnail"><a href="./posts/2025-08-29-extendedaithoughts/index.html" class="no-external">
-
-<img loading="lazy" src="./posts/2025-08-29-extendedaithoughts/contemplation.jpg" class="thumbnail-image">
-
-</a></div>
-<div class="body">
-<h3 class="no-anchor listing-title">
-<a href="./posts/2025-08-29-extendedaithoughts/index.html" class="no-external">Extended Thoughts on AI</a>
-</h3>
-<div class="listing-categories">
-
-<div class="listing-category" onclick="window.quartoListingCategory('cGVkYWdvZ3k='); return false;">pedagogy</div>
-
-<div class="listing-category" onclick="window.quartoListingCategory('Y29tcGJpbw=='); return false;">compbio</div>
-
-</div>
-<div class="delink listing-description"><a href="./posts/2025-08-29-extendedaithoughts/index.html" class="no-external">
-<p>Further thoughts for students and interested educators on AI in the classroom</p>
-</a></div>
-</div>
-<div class="metadata">
-<a href="./posts/2025-08-29-extendedaithoughts/index.html" class="no-external">
-<div class="listing-date">
-Sep 2, 2025
-</div>
-</a>
-</div>
-</div>
-</div>
-<div class="listing-no-matching d-none">No matching items</div>
-</div></main> <!-- /main -->
+<ol>
+<li id="fn1"><p>“How to Craft a Metaphor” by Dee Ruttenberg coming soon.<a href="#fnref1" class="footnote-back" role="doc-backlink">↩︎</a></p></li>
+<li id="fn2"><p>“How does that work?” “We don’t know exactly. It just does.”<a href="#fnref2" class="footnote-back" role="doc-backlink">↩︎</a></p></li>
+<li id="fn3"><p>I’ll be referring the specific hivemind in <em>Pluribus</em> as The Pluribus for simplicity, though I’m sure the community or show will come up with some other term immediately making this blog post an artifact.<a href="#fnref3" class="footnote-back" role="doc-backlink">↩︎</a></p></li>
+<li id="fn4"><p>“I’m smart enough to know you don’t ask a drug dealer to describe their heroin.”<a href="#fnref4" class="footnote-back" role="doc-backlink">↩︎</a></p></li>
+</ol>
+</section><section class="quarto-appendix-contents" id="quarto-citation"><h2 class="anchored quarto-appendix-heading">Citation</h2><div><div class="quarto-appendix-secondary-label">BibTeX citation:</div><pre class="sourceCode code-with-copy quarto-appendix-bibtex"><code class="sourceCode bibtex">@online{2025,
+  author = {},
+  title = {Pluribus Is about {AI,} Right?},
+  date = {2025-11-14},
+  url = {https://deeruttenberg.github.io/posts/2025-11-14-pluribus/},
+  langid = {en}
+}
+</code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre><div class="quarto-appendix-secondary-label">For attribution, please cite this work as:</div><div id="ref-2025" class="csl-entry quarto-appendix-citeas" role="listitem">
+<span>“Pluribus Is about AI, Right?”</span> 2025. November 14, 2025. <a href="https://deeruttenberg.github.io/posts/2025-11-14-pluribus/">https://deeruttenberg.github.io/posts/2025-11-14-pluribus/</a>.
+</div></div></section></div></main> <!-- /main -->
 <script id="quarto-html-after-body" type="application/javascript">
   window.document.addEventListener("DOMContentLoaded", function (event) {
     const icon = "";

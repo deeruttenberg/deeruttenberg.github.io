@@ -2,6 +2,7 @@
 title: "BIO331 -- Lab 08: Phylogenetics"
 author: "Dee Ruttenberg"
 format: html
+date: Mar. 25, 2026
 editor: visual
 ---
 
@@ -9,7 +10,7 @@ The final project for this semester will be doing phylogenetics in R. We will be
 
 # Download Required Packages
 
-```{r}
+```{r, eval=FALSE}
 
 if (!require("BiocManager", quietly = TRUE))
   install.packages("BiocManager")
@@ -24,14 +25,14 @@ BiocManager::install("ggtree")
 
 I will show you in class how to use Clustal (https://www.ebi.ac.uk/jdispatcher/msa/clustalo) to perform alignment (and you will need to use it to answer a homework problem!). However, the fasta file we worked with yesterday was generated through multiple sequence alignment (this is why it has dashes), so we do not need to use clustal for alignment.
 
-```{r}
+```{r, eval=FALSE}
 #setwd("\~/Documents/GitHub/Bioinformatics2026/lab7-rblast") #You may need to set your working directory to your personal one
 seqs <- readDNAStringSet("Full_cmv_259sequences_Aln.fasta")
 ```
 
 Generating a distance matrix for a 200,000 nt across 259 sequences will fry our computer, so we're going to just take a subset. We'll use hamming distance (which only considers whether two sites are the same)
 
-```{r}
+```{r, eval=FALSE}
 
 library(Biostrings)
 africa_ids <- grep("Africa", names(seqs), ignore.case = TRUE)
@@ -43,7 +44,7 @@ dist_matrix <- stringDist(africa_seqs, method = "hamming")
 
 Using this district matrix, we can use the 'ape' library to make different kinds of trees (for this one, we will use a neighbor joining algorithm)
 
-```{r}
+```{r, eval=FALSE}
 
 library(ape)
 library(ggtree)
@@ -79,7 +80,7 @@ Using CLUSTAL, load these 5 haplotypes and create an aligned fasta file. Add the
 
 Calculate a distance matrix of these 5 haplotypes, treating each pairwise mutation (including each site in an indel) as a single unit of change. Using the calculated distance matrix, create a Neighbor-Joining tree of these 5 haplotypes. Display this neighbor joining tree with ggtree.
 
-```{r, echo=FALSE}
+```{r, eval=FALSE, echo=FALSE}
 query <- readDNAStringSet("clustalo-I20260325-220913-0326-43010456-p1m.fa")
 seqs <- query
 seqs

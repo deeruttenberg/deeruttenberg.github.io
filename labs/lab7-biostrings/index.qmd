@@ -29,14 +29,14 @@ rqc(path = folder, pattern = ".fastq.gz")
 
 Bioconductor and Biostrings are especially powerful tools to examine fasta files in R.  In this section, we'll learn some tools to manipulate them.  
 
-```{r}
+```{r, eval=FALSE}
 library(Biostrings)
 seqs <- readDNAStringSet("Full_cmv_259sequences_Aln.fasta")
 ```
 
 As Fasta files are labeled, you can identify specific sequences, either by loading a specfic label or identifying a keyword:
 
-```{r}
+```{r, eval=FALSE}
 my_seq <- seqs["Europe_United Kingdom_GQ221974.1_Human_herpesvirus_5_strain_3157_complete_genome"]
 names_with_uk <- grep("United Kingdom", names(seqs), ignore.case = TRUE)
 UK_seqs <- seqs[names_with_uk]
@@ -45,7 +45,7 @@ UK_subset <- subseq(UK_seqs, start = 20000, end = 25000)
 
 You can, using R, code an aligned genome as a matrix, in order to identify snps. 
 
-```{r}
+```{r, eval=FALSE}
 mat <- as.matrix(seqs)
 #mat <- as.matrix(UK_seqs)
 snp_positions <- which(apply(mat, 2, function(col) {
@@ -67,14 +67,14 @@ names(snp_list) <- paste0("Pos_", snp_positions)
 
 The final skill we need to learn is how to align .fasta files to a reference genome.  The data we have today is aligned so we'll have to arbitrarily "unalign" it.  We will use our first sequence as the reference.  
 
-```{r}
+```{r, eval=FALSE}
 UK_seqs_nogap <- DNAStringSet(gsub("-", "", as.character(UK_seqs))) 
 ref <- seqs[6]
 ```
 
 The region of interest from hcmv will be our query site.   
 
-```{r}
+```{r, eval=FALSE}
 library(Biostrings)
 query <- readDNAStringSet("hcmv15-hcmv1b-1.fasta")
 reversecompquery <- reverseComplement(query)
@@ -89,7 +89,7 @@ hits <- matchPattern(query, ref[[1]], max.mismatch=20)
 
 We can now look at our aligned data!
 
-```{r}
+```{r, eval=FALSE}
 hits
 ```
 
@@ -103,46 +103,12 @@ b. Look at the 'Cycle specific Quality Distribution'. What is the typical qualit
 
 For one of the research projects, we will be studying a specific protein coding site of hcmv associated with the transition of hcmv from latent to active. Align the following two queries to any genome in the reference file. Which one successfully aligns? What does that mean about the site of interest?
 
-```{r}
+```{r, eval=FALSE}
 query <- readDNAStringSet("hcmv15-hcmv1b-1.fasta")
 reversecompquery <- reverseComplement(query)
-
-# Load the reference genome (HAN16) and strip any alignment gaps
-ref_raw <- readDNAStringSet("hcmvgenome.fasta")
-ref     <- DNAString(gsub("-", "", as.character(ref_raw[[1]])))
-
-# Convert both query versions to DNAString
-fwd_query <- DNAString(toupper(as.character(query[[1]])))
-rc_query  <- DNAString(toupper(as.character(reversecompquery[[1]])))
-
-# Foward Align
-fwd_hits <- matchPattern(fwd_query, ref, max.mismatch = 50)
-cat("Forward query hits:", length(fwd_hits), "\n")
-
-# Reverse align
-rc_hits <- matchPattern(rc_query, ref_raw, max.mismatch = 50)
-cat("Reverse complement hits:", length(rc_hits), "\n")
-
-# Show where RC aligned
-if (length(rc_hits) > 0) {
-  cat("RC alignment position:", start(rc_hits[1]), "to", end(rc_hits[1]), "\n")
-}
-
 ```
 
-
-```{r}
-query <- readDNAStringSet("hcmv15-hcmv1b-1.fasta")
-reversecompquery <- reverseComplement(query)
-
-query <- DNAString(toupper(as.character(query)))
-reversecompquery <- DNAString(toupper(as.character(reversecompquery)))
-
-queryallignment <- matchPattern(query, ref[[1]], max.mismatch=20)
- reversequeryallignment <- matchPattern(reversecompquery, ref[[1]], max.mismatch=20)
-```
-
-```{r}
+```{r, eval=FALSE, echo=FALSE}
 ref_raw <- readDNAStringSet("hcmvgenome.fasta")
 all_seqs <- readDNAStringSet("hcmvgenome.fasta")
 query <- readDNAStringSet("hcmv15-hcmv1b-1.fasta")

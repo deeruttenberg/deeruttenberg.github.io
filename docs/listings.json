@@ -7,6 +7,7 @@
       "/posts/2025-12-23-boostinggrades/index.html",
       "/posts/2025-12-16-albums/index.html",
       "/posts/2025-11-14-pluribus/index.html",
+      "/posts/2026-04-26-redbutton/index.html",
       "/posts/2025-09-15-charliekirk/index.html",
       "/posts/2025-08-29-extendedaithoughts/index.html"
     ]
@@ -14,8 +15,8 @@
   {
     "listing": "/labs.html",
     "items": [
-      "/labs/lab8-assembly/index.html",
-      "/labs/lab7-rblast/index.html",
+      "/labs/lab8-phylogeny/index.html",
+      "/labs/lab7-biostrings/index.html",
       "/labs/lab6-dataviz/index.html",
       "/labs/lab5-datawrangling/index.html",
       "/labs/lab4-stringwrangling/index.html",
